@@ -38,6 +38,9 @@ dependencies:
   get: ^4.6.6
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
+  pin_code_fields: ^8.0.1
+  image_picker: ^1.1.0
+
 
 
 
@@ -76,7 +79,7 @@ flutter:
       - asset: assets/fonts/Inter-Light.ttf
       - asset: assets/fonts/Inter-Medium.ttf
       - asset: assets/fonts/Inter-Regular.ttf
-      - asset: assets/fonts/nter-SemiBold.ttf
+      - asset: assets/fonts/Inter-SemiBold.ttf
       - asset: assets/fonts/Inter-Thin.ttf
 
 

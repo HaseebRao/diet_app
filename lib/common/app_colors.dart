@@ -14,5 +14,22 @@ class AppColors {
   static const BlackColor = Color(0xff9A9A9A);
   static const Bookish = Color(0xffDED9C4);
   static const Bookishw = Color(0xffD45737);
+  static const loginLorem = Color(0xff8A8A8E);
+  static const Loginbordercolor = Color(0xffB9B9BB);
+  static const Logindivider = Color(0xffCBCBCB);
+  static const LoginOR = Color(0xff363F4E);
+  static const LoginTextform = Color(0xffC5C5C7);
+  static const Loginendm = Color(0xff6B7285);
+
+  static const wellcome = Color(0xffE5E5EA);
+
+  static const Profile = Color(0xffA3D2CA);
+  static const Profilecircle = Color(0xff78B0A3);
+  static const Profilecircles = Color(0xffA3D2CA);
+  static const Profiletext = Color(0xff354259);
+  static const Profiletexts = Color(0xff0E0E0E);
+  static const Profiletextes = Color(0xffE1F4FF);
+  static const Editprofile = Color(0xff0F1121);
+  static const account = Color(0xffBB2525);
 
 }
