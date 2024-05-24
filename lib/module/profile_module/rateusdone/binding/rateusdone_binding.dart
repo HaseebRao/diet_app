@@ -8,3 +8,36 @@ class RateusdoneBinding implements Bindings {
   }
 
 }
+
+
+
+// Column(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Row(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Text(
+// Apptexts.thanks,
+// style: TextStyle(
+// fontSize: 19.sp,
+// fontFamily: ApptextStyle.fontfamily,
+// color: AppColors.blackTextColor,
+// fontWeight: FontWeight.w700,
+// ),
+// ),
+// SizedBox(
+// width: 6.w,
+// ),
+// Container(
+// height: 35,
+// width: 35,
+// child: Image.asset(
+// 'assets/images/emojii.png',
+// fit: BoxFit.cover,
+// ),
+// ),
+// ],
+// ),
+// ],
+// ),

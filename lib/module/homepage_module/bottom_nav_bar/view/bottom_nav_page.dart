@@ -21,8 +21,5 @@ class BottomNavBarScreen extends GetView<BottomNavBarController>{
                   backgroundColor:AppColors.whiteTextColor
     ),
     );
-
-
   }
-
 }

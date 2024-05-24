@@ -8,3 +8,10 @@ class SubsmethodBinding implements Bindings{
   }
 
 }
+// SubsmethodWidget(
+//
+// text: "G pay",
+// ),
+
+//
+//

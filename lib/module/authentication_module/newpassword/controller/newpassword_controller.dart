@@ -1,49 +1,30 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-class NewpasswordController extends GetxController{
+class NewpasswordController extends GetxController {
   final TextEditingController textController1 = TextEditingController();
   final TextEditingController textController2 = TextEditingController();
-  final TextEditingController textController3 = TextEditingController();
   final FocusNode focusNode1 = FocusNode();
   final FocusNode focusNode2 = FocusNode();
-  final FocusNode focusNode3 = FocusNode();
-
+  // Add an observable to track text input
+  RxBool isTextEntered = false.obs;
   @override
   void onInit() {
     super.onInit();
-
-    focusNode1.addListener(() {
-      if (!focusNode1.hasFocus) {
-        print('Text field 1 lost focus');
-      }
+    // Listen to changes in text field 2
+    textController2.addListener(() {
+      updateButtonColor(textController2.text.isNotEmpty);
     });
-
-    focusNode2.addListener(() {
-      if (!focusNode2.hasFocus) {
-        print('Text field 2 lost focus');
-      }
-    });
-    focusNode3.addListener(() {
-      if (!focusNode3.hasFocus) {
-        print('Text field 3 lost focus');
-      }
-    });
+  }
+  // Method to update button color
+  void updateButtonColor(bool isTextEntered) {
+    this.isTextEntered.value = isTextEntered;
   }
   @override
   void onClose() {
     textController1.dispose();
     textController2.dispose();
-    textController3.dispose();
-
     focusNode1.dispose();
     focusNode2.dispose();
-    focusNode3.dispose();
-
     super.onClose();
   }
-
-
-
-
 }

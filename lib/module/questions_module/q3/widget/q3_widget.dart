@@ -3,22 +3,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 
 import '../../../../common/app_textstyle.dart';
 
 
 
-class ThemeContainerWidget extends GetView<Q3Controller> {
+class QuestionContainerWidget extends GetView<Q3Controller> {
   final String containerName;
   final int containerIndex;
-  final IconData icon;
+  final String icon;
   Function? onPressed;
 
-  ThemeContainerWidget(
+  QuestionContainerWidget(
       this.containerName, this.containerIndex, this.icon, this.onPressed);
 
   @override
@@ -42,14 +44,19 @@ class ThemeContainerWidget extends GetView<Q3Controller> {
               border: Border.all(color: AppColors.Profiletextes,width: 1.h),
             ),
             child:  Padding(
-              padding: EdgeInsets.symmetric(horizontal: 11.w),
+              padding: EdgeInsets.symmetric(horizontal: 1.w),
               child: Row(
+
                 children: [
-                  Icon(
-                    icon,
-                    size: 24.h,
-                    color: AppColors.Profilecircle,
-                  ),
+                 Container(
+                   height: 53.h,
+                   width: 60.w,
+                   decoration: BoxDecoration(
+                     color: AppColors.Profilecircle,
+                     borderRadius: BorderRadius.circular(10)
+                   ),
+                   child: SvgPicture.asset(icon,fit: BoxFit.scaleDown,),
+                 ),
                   SizedBox(
                     width: 11.w,
                   ),
@@ -62,7 +69,13 @@ class ThemeContainerWidget extends GetView<Q3Controller> {
                       fontFamily: ApptextStyle.fontfamily,
                       fontWeight: FontWeight.w400,),
                   ),
+
+
+
                   Spacer(),
+
+
+
                   Transform.scale(
                     scale: 1.h,
                     child: Obx(
@@ -75,18 +88,19 @@ class ThemeContainerWidget extends GetView<Q3Controller> {
                           // Call the changeTheme method to update the theme
                           switch (val) {
                             case 1:
-
                           }
                         },
                       ),
                     ),
                   ),
+
+
+
                 ],
               ),
             ),
           ),
         )
-
       ],
     );
   }

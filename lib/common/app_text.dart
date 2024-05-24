@@ -41,9 +41,8 @@ class Apptexts{
   static const String yourNewPassword = "Your new password must be different from previously used password.";
   static const String newPasswords = "New Password";
   static const String yourNewPasswords = "Your new password must be different from previously used password.";
-  static const String hintYourPasswords = '.  .  .  .  .  .  .  .  .  .';
+  static const String hintYourPasswords = 'x x x x x x';
   static const String confirmPassword = "Confirm Password";
-  static const String hintconfirmPassword = '.  .  .  .  .  .  .  .  .  .';
   static const String  resetPasword = "Reset Pasword";
   static const String passwordChanged = "Password Changed Successfully";
   static const String  profileEdit = "Kevin L. Lablanc";
@@ -69,22 +68,145 @@ class Apptexts{
   static const String   systemDefalt  = "System Default";
   static const String   light  = "Light";
   static const String   dark  = "Dark";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  static const String   dialog  = "Delete My Account";
+  static const String   dummytext  = "Select this option if you wish to delete your account permnantly,all of your data related to this will also be deleted. please not that once you delete your account you will no longer have acess to it.";
+  static const String   dialogText  = "Enter your password to delete your account.";
+  static const String    deleteaccount  = "Delete Account";
+  static const String    enterpassword  = "Enter your password";
+  static const String    logoutes  = "Log Out";
+  static const String    yestext = "Yes";
+  static const String    notext = "No";
+  static const String   reminders = "Reminders";
+  static const String   breakfast = "Breakfast";
+  static const String   share = "Share";
+  static const String   data = "Share your code with your friends and get excited bonus points";
+  static const String   refer = "Refer";
+  static const String   changepassword = "Change Password";
+  static const String   currentpassword = "Current Password";
+  static const String   password = "Confirm New Password";
+  static const String   passwordtyext = "Change password";
+  static const String   appversions = "Version is 1.1.0(2023)";
+  static const String   helpcenter = "Help center";
+  static const String   haqs = "FAQs";
+  static const String   loremtext = "Lorem Ipsum is simply dummy text of the printing?";
+  static const String  sixebox = "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
+  static const String   privacy = "Privacy policy";
+  static const String   thanks = "Thanks for Rating";
+  static const String privacypolicy = "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, \n remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,";
+  static const String   termofservice = "Terms of service";
+  static const String   rateus = "Rate us";
+  static const String   confirm = "Confirm New Password";
+  static const String   continues = "Continue";
+  static const String  rateues = "Rate our App";
+  static const String  helpus = "It will help to improve us";
+  static const String  Rateus = "Rate on google play";
+  static const String  appearances = "Appearance";
+  static const String themes = "Select Themes";
+  static const String select = "Select your goal?";
+  static const String wheatgain = "Weight gain";
+  static const String wheat = "Weight Lose";
+  static const String textno = "1/6";
+  static const String weight= " What’s your Weight?";
+  static const String Q2= "What’s your goal Weight?";
+  static const String valuetext = "2/6";
+  static const String agetext = "What’s your gender?";
+  static const String q3 = "3/6";
+  static const String day = "Day";
+  static const String month = "Month";
+  static const String year = "Year";
+  static const String bookish = "Bookish App Task";
+  static const String tell= "Tell us your age?";
+  static const String hading= "4/6";
+  static const String Q5= "5/6";
+  static const String Q5text= "What’s your height?";
+  static const String apptext= "6/6";
+  static const String apptexts= "How active are you?";
+  static const String applausescreen= "Your personalized health plan is";
+  static const String applaustext= " Ready!";
+  static const String applause2bdtext= "Follow your recommendations and you will reach the goal.";
+  static const String subscription= "personalized diet plan to enhance your lifestyle.";
+  static const String applaustextes= "\n Monthly: \$ 999.00";
+  static const String applaustextes2= "Monthly: \$ 2,999.00";
+  static const String applaustextes3= "Annually: \$ 4,499.00";
+  static const String applaustextes4= "Only \$ 499.00/month";
+  static const String applaustextes5= "Only \$ 249.00/month";
+  static const String exteratext= "";
+  static const String savetext= "Save 60%";
+  static const String subscriptiontext= "Subscriptions are auto-renewed. Cancel anytime.";
+  static const String substext= "if you have any Query ";
+  static const String substext1= " Contact Us";
+  static const String buynow= "Buy Now";
+  static const String payment= "Payment Method";
+  static const String pay= "Select your Preferable Payment Method";
+  static const String paymente= "Payment Method";
+  static const String paymentes= "Payment Method";
+  static const String next= "Next";
+  static const String oncard="Name on Card";
+  static const String Feliciaayase="Felicia Ayase";
+  static const String Cardnumber="Card Number";
+  static const String numbers="7463  8472  8472  435";
+  static const String Expiration="Expiration";
+  static const String Cvv="CVV";
+  static const String date="09/10";
+  static const String numberpayment="2952";
+  static const String paymenttask="oluptatem accusantium doloremque laudantium,  Please kindly check!";
+  static const String Next="Next";
+  static const String Yeytext="Yey! Payment Successfull";
+  static const String Close="Close";
+  static const String logouttext="Please Activate your plan before you follow this day.";
+  static const String hometext="Hi, Michael";
+  static const String  homepage="Good Morning";
+  static const String  goal="Goal";
+  static const String  protein="Protein";
+  static const String fat="Fat";
+  static const String  carb="Carb";
+  static const String  diet ="Today Diet";
+  static const String  breakfasts ="Breakfast";
+  static const String  carbs ="Recommended: 440 cals . 6g net carbs";
+  static const String lunch ="Lunch";
+  static const String  dinner  ="Dinner";
+  static const String  suggest  ="Suggested Breakfast";
+  static const String breakfastlist = "Nutrient-Packed Breakfast";
+  static const String calories = "Calories 255 cal";
+  static const String Snacks = "Snacks";
+  static const String cols = "Recommended: 440 cals . 6g net carbs";
+  static const String Snack = "Suggested Snacks";
+  static const String cheat = "Cheat Food";
+  static const String Redeem = "Redeem";
+  static const String simple = "Cheat Food";
+  static const String daily = "Daily running";
+  static const String calorieses = "Break a sweat, burn extra calories!";
+  static const String step = "Steps";
+  static const String number = "0/10,000";
+  static const String Water = "Water";
+  static const String numbrs = "(0/1.9L)";
+  static const String Break = "Break a sweat, burn extra calories!";
+  static const String rrecipe = "Recipe";
+  static const String rrecipe1 = "Find";
+  static const String rrecipe2 = " Your Food";
+  static const String rrecipe3 = "  Recipe";
+  static const String rrecipe4 = " Easily";
+  static const String Discover = "Discover";
+  static const String myrecipe = "My Recipes";
+  static const String Addnew = "Add New";
+  static const String spicy = "Spicy Noodle";
+  static const String serving= "Serving 1";
+  static const String keto = "Keto";
+  static const String kcl = "245kcl";
+  static const String myrecipes = "My Recipes";
+  static const String myrecipe1 = "Recipe 1";
+  static const String myrecipes2 = "Servings: 2";
+  static const String myrecipes3 = "17 July, 2023";
+  static const String progress = "My Calories Burn";
+  static const String progressno = "67.2%";
+  static const String cal= "3,000 Cal Expected";
+  static const String calorie= "Calories Burned";
+  static const String numbr = "2,234";
+  static const String Calories = "Calories";
+  static const String nCarbs = "Carbs";
+  static const String Fat = "Fat";
+  static const String kcaol = "1520 kcal";
+  static const String carbsg = "54 g";
+  static const String fatg = "115 g";
+  static const String success = "You have successfully added a recipe!";
 }

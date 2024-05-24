@@ -17,18 +17,19 @@ class ForgetView extends GetView<ForgerController>{
   Widget build(BuildContext context) {
   return
    Scaffold(
+     backgroundColor: AppColors.whiteTextColor,
      body: SingleChildScrollView(
        child: Padding(
          padding:  EdgeInsets.symmetric(horizontal: 21.w),
          child: Column(
            crossAxisAlignment: CrossAxisAlignment.start,
            children: [
-             SizedBox(height: 48.h,),
+             SizedBox(height: 47.h,),
              GestureDetector(
                onTap: (){
                  Get.back();
                },
-                 child: SvgPicture.asset(Appasset.Arrowdiet,height: 20.h,)),
+                 child: SvgPicture.asset(Appasset.Arrowdiet,height: 17.h,)),
              SizedBox(height:152.h,),
              Center(
                child: Column(
@@ -41,7 +42,7 @@ class ForgetView extends GetView<ForgerController>{
                        color:AppColors.blackTextColor,
                        fontWeight: FontWeight.w800,
                      ),),
-                   SizedBox(height: 17.h,),
+                   SizedBox(height: 14.h,),
                    SizedBox(
                      height: 36.h,
                      width: 245.w,
@@ -55,96 +56,97 @@ class ForgetView extends GetView<ForgerController>{
                          fontWeight: FontWeight.w400,
                        ),),
                    ),
-                   SizedBox(height: 31.h,),
+                   SizedBox(height: 45.h,),
+                 ],
+               ),
+             ),
+             Padding(
+               padding: EdgeInsets.only(left: 9.h),
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Text(
+                     textAlign: TextAlign.center,
+                     Apptexts.emailAdress,
+                     style: TextStyle(
+                       fontSize: 11.sp,
+                       fontFamily: ApptextStyle.fontfamily,
+                       color: AppColors.blackTextColor.withOpacity(0.5),
+                       fontWeight: FontWeight.w500,
+                     ),),
+                   SizedBox(height: 7.h,),
                    Container(
-                     height:70.h,
-                     width: 310.w,
+                     height:45.h,
+                     width: 300.w,
                      decoration: BoxDecoration(
-                       color:AppColors.whiteTextColor,
-                       boxShadow: [
-                         BoxShadow(
-                           color:AppColors.LoginTextform,
-                           blurRadius: 1.1, // Adjust the blur radius as needed
-                           spreadRadius: 1.0, // Adjust the spread radius as needed
-                           offset: Offset(0, 1), // Adjust the offset as needed
-                         ),
-                       ],
+                         color:AppColors.whiteTextColor,
+                         boxShadow: [
+                           BoxShadow(
+                             color:AppColors.LoginTextform,
+                             blurRadius: 1.1, // Adjust the blur radius as needed
+                             spreadRadius: 1.0, // Adjust the spread radius as needed
+                             offset: Offset(0, 1), // Adjust the offset as needed
+                           ),
+                         ],
+                         borderRadius: BorderRadius.circular(5)
                      ),
                      child: Padding(
-                       padding:  EdgeInsets.only(left: 30.w,top: 11.h,),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text(
-                             textAlign: TextAlign.center,
-                             Apptexts.emailAdress,
-                             style: TextStyle(
-                               fontSize: 11.sp,
+                       padding:  EdgeInsets.only(left: 27.w,),
+                       child: SizedBox(
+                         height: 40.h,
+                         child: TextFormField(
+                           focusNode: controller.focusNode1,
+                           textInputAction: TextInputAction.next,
+                           onFieldSubmitted: (_) {
+                             FocusScope.of(context).requestFocus(controller.focusNode2);
+                           },
+                           style: TextStyle(
+                             color:AppColors.LoginOR, // Setting text color to white
+                             fontFamily: ApptextStyle.fontfamily, // Setting font family
+                           ),
+                           decoration: InputDecoration(
+                             hintText:  Apptexts.gmailTexts,
+                             border: InputBorder.none,
+                             contentPadding: EdgeInsets.symmetric(vertical: 16.w),
+                             hintStyle: TextStyle(
+                               fontSize: 13.sp,
+                               color:AppColors.blackTextColor, // Setting hint text color to white with opacity
                                fontFamily: ApptextStyle.fontfamily,
-                               color:AppColors.blackTextColor.withOpacity(0.5) ,
-                               fontWeight: FontWeight.w400,
-                             ),),
-                           SizedBox(
-                             height: 40.h,
-                             child: TextFormField(
-                               focusNode: controller.focusNode1,
-                               textInputAction: TextInputAction.next,
-                               onFieldSubmitted: (_) {
-                                 FocusScope.of(context).requestFocus(controller.focusNode2);
-                               },
-                               style: TextStyle(
-                                 color:AppColors.LoginOR, // Setting text color to white
-                                 fontFamily: ApptextStyle.fontfamily, // Setting font family
-                               ),
-                               decoration: InputDecoration(
-
-                                 hintText:  Apptexts.gmailTexts,
-                                 border: InputBorder.none,
-                                 hintStyle: TextStyle(
-                                   fontSize: 14.sp,
-                                   color:AppColors.blackTextColor, // Setting hint text color to white with opacity
-                                   fontFamily: ApptextStyle.fontfamily,
-                                   fontWeight: FontWeight.w700,
-                                   // Setting font family for hint text
-                                 ),
-                               ),
+                               fontWeight: FontWeight.w700,
+                                      // Setting font family for hint text
                              ),
                            ),
-       
-       
-                         ],
-                       ),
-                     ),
-                   ),
-                   SizedBox(height:34.h,),
-                   GestureDetector(
-                     onTap: (){
-                       Get.to(VerifyView(),binding: VerifyBinding(),);
-       
-                     },
-                     child: Container(
-                       height: 49.h,
-                       decoration: BoxDecoration(
-                         color: AppColors.blueBtnColor,
-                         borderRadius: BorderRadius.circular(8),
-                       ),
-                       child:  Center(
-                         child: Text(
-                           textAlign: TextAlign.center,
-                           Apptexts.sendTexts,
-                           style: TextStyle(
-                             fontSize: 15.sp,
-                             fontFamily: ApptextStyle.fontfamily,
-                             color:AppColors.whiteTextColor,
-                             fontWeight: FontWeight.w600,
-                           ),),
+                         ),
                        ),
                      ),
                    ),
                  ],
                ),
              ),
-       
+             SizedBox(height: 34.h,),
+             GestureDetector(
+               onTap: (){
+                 Get.to(VerifyView(),binding: VerifyBinding(),);
+               },
+               child: Container(
+                 height: 49.h,
+                 decoration: BoxDecoration(
+                   color: AppColors.blueBtnColor,
+                   borderRadius: BorderRadius.circular(8),
+                 ),
+                 child:  Center(
+                   child: Text(
+                     textAlign: TextAlign.center,
+                     Apptexts.sendTexts,
+                     style: TextStyle(
+                       fontSize: 15.sp,
+                       fontFamily: ApptextStyle.fontfamily,
+                       color:AppColors.whiteTextColor,
+                       fontWeight: FontWeight.w600,
+                     ),),
+                 ),
+               ),
+             ),
            ],
          ),
        ),

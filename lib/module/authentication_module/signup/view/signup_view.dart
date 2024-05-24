@@ -51,7 +51,7 @@ class SignupView extends GetView<SignupController>{
                    textAlign: TextAlign.start,
                  Apptexts.fullName,
                    style: TextStyle(
-                     fontSize: 15.sp,
+                     fontSize: 14.sp,
                      fontFamily: ApptextStyle.fontfamily,
                      color:AppColors.blackTextColor,
                      fontWeight: FontWeight.w700,
@@ -84,6 +84,7 @@ class SignupView extends GetView<SignupController>{
                      hintText: Apptexts.insertYourText,
                      border: InputBorder.none,
                      hintStyle: TextStyle(
+                       fontSize: 12.5.h,// Setting hint text color to white with opacity
                        color:AppColors.LoginTextform, // Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
@@ -91,7 +92,7 @@ class SignupView extends GetView<SignupController>{
                  ),
                ),
              ),
-             SizedBox(height: 15.h,),
+             SizedBox(height: 22.h,),
              Row(
                mainAxisAlignment: MainAxisAlignment.start,
                children: [
@@ -99,7 +100,7 @@ class SignupView extends GetView<SignupController>{
                    textAlign: TextAlign.start,
                    Apptexts.emailText,
                    style: TextStyle(
-                     fontSize: 15.sp,
+                     fontSize: 14.sp,
                      fontFamily: ApptextStyle.fontfamily,
                      color:AppColors.blackTextColor,
                      fontWeight: FontWeight.w700,
@@ -132,14 +133,16 @@ class SignupView extends GetView<SignupController>{
                      hintText: Apptexts.insertEmail,
                      border: InputBorder.none,
                      hintStyle: TextStyle(
-                       color:AppColors.LoginTextform, // Setting hint text color to white with opacity
+                       fontSize: 12.5.h,// Setting hint text color to white with opacity
+                       color:AppColors.LoginTextform,
+                       // Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
                    ),
                  ),
                ),
              ),
-             SizedBox(height: 15.h,),
+             SizedBox(height: 22.h,),
              Row(
                mainAxisAlignment: MainAxisAlignment.start,
                children: [
@@ -147,7 +150,7 @@ class SignupView extends GetView<SignupController>{
                    textAlign: TextAlign.start,
                    Apptexts.createPassword,
                    style: TextStyle(
-                     fontSize: 15.sp,
+                     fontSize: 14.sp,
                      fontFamily: ApptextStyle.fontfamily,
                      color:AppColors.blackTextColor,
                      fontWeight: FontWeight.w700,
@@ -180,14 +183,15 @@ class SignupView extends GetView<SignupController>{
                      hintText: Apptexts.inputPassword,
                      border: InputBorder.none,
                      hintStyle: TextStyle(
-                       color:AppColors.LoginTextform, // Setting hint text color to white with opacity
+                       color:AppColors.LoginTextform,
+                       fontSize: 12.5.h,// Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
                    ),
                  ),
                ),
              ),
-             SizedBox(height:130.h,),
+             SizedBox(height:137.h,),
              GestureDetector(
                onTap: (){
                  Get.off(LoginView(),binding: LoginBinding(),);
@@ -212,7 +216,7 @@ class SignupView extends GetView<SignupController>{
                  ),
                ),
              ),
-             SizedBox(height: 33.h,),
+             SizedBox(height: 24.h,),
              GestureDetector(
                onTap: (){
                  Get.off(LoginView(),binding: LoginBinding(),);

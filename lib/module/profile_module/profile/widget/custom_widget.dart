@@ -15,7 +15,7 @@ class CustomWidget extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(bottom: 13.h),
+      padding:  EdgeInsets.only(bottom: 11.h),
       child: Container(
         height:49.h,
         decoration: BoxDecoration(
@@ -23,7 +23,7 @@ class CustomWidget extends StatelessWidget {
           border: Border.all(color: AppColors.Profiletextes,width: 1.h),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14.0),
+          padding: EdgeInsets.symmetric(horizontal: 13.h),
           child: Row(
             children: [
               Icon(

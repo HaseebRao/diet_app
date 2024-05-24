@@ -1,15 +1,14 @@
 import 'package:diet_app/module/authentication_module/wellcome/controller/wellcome_controller.dart';
-import 'package:diet_app/module/profile_module/profile/binding/profile_binding.dart';
-import 'package:diet_app/module/profile_module/profile/view/profile_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
+import '../../question/binding/question_binding.dart';
+import '../../question/view/question_view.dart';
 
 class WellcomeView extends GetView<WellcomeController>{
   @override
@@ -58,7 +57,7 @@ class WellcomeView extends GetView<WellcomeController>{
           SizedBox(height:100.h,),
       GestureDetector(
         onTap: (){
-          Get.to(ProfileView(),binding: ProfileBinding(),);
+          Get.off(QuestionView(),binding: QuestionBinding(),);
         },
             child: Container(
               height: 49.h,

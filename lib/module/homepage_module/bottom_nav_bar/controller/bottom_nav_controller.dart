@@ -1,7 +1,10 @@
 
 import 'package:diet_app/common/app_colors.dart';
 import 'package:diet_app/common/app_textstyle.dart';
+import 'package:diet_app/module/homepage_module/progress/view/progress_view.dart';
+import 'package:diet_app/module/homepage_module/recipe/view/recipe_view.dart';
 import 'package:diet_app/module/profile_module/profile/view/profile_view.dart';
+import 'package:diet_app/module/questions_module/practice/view/practice-view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +13,7 @@ import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../../../../common/app_assets.dart';
+import '../../homepage/view/homepage_view.dart';
 
 class BottomNavBarController extends GetxController{
   late List<Widget> tabItems;
@@ -17,9 +21,9 @@ class BottomNavBarController extends GetxController{
   @override
   void onInit() {
     tabItems = [
-     Center(child: Text("Home")),
-     Text("Progress"),
-     Text("Stats"),
+     HomepageView(),
+     RecipeView(),
+     ProgresVeiw(),
      ProfileView(),
     ];
     super.onInit();

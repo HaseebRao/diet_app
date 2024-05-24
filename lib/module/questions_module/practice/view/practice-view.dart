@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:diet_app/module/questions_module/q2/binding/q2_binding.dart';
+import 'package:diet_app/module/questions_module/q2/view/q2_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -13,12 +15,10 @@ import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
 import '../controller/practice_controller.dart';
 
-
-
-class WheelPickerExample extends GetView<PracticeController> {
-
-  const WheelPickerExample({Key? key,})
-      : super(key: key);
+class PracticeView extends GetView<PracticeController> {
+  const PracticeView({
+    Key? key,
+  }) : super(key: key);
 
   Widget itemBuilder(BuildContext context, int index, bool isSelected) {
     final textStyle = TextStyle(
@@ -27,13 +27,9 @@ class WheelPickerExample extends GetView<PracticeController> {
       fontWeight: FontWeight.w500,
       color: isSelected ? Colors.black : AppColors.blueBtnColor,
     );
-
-    final itemText = "$index".padLeft(2, '0');
-
+    final itemText = "$index".padLeft(2,);
     return Container(
-      decoration: BoxDecoration(
-
-      ),
+      decoration: BoxDecoration(),
       child: Text(itemText, style: textStyle),
     );
   }
@@ -41,26 +37,31 @@ class WheelPickerExample extends GetView<PracticeController> {
   @override
   Widget build(BuildContext context) {
     final wheelStyle = WheelPickerStyle(
-      size: 200,
+      size: 250,
       itemExtent: 50, // Adjusted item extent for better visibility
-      squeeze: 1.25,
+      squeeze: 1.20,
       diameterRatio: .8,
-      surroundingOpacity: .25,
+      surroundingOpacity: .28,
       magnification: 1.2,
     );
     return Scaffold(
       backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21.0),
+        padding: EdgeInsets.symmetric(horizontal: 21.0.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: 47.h,
             ),
-            SvgPicture.asset(
-              Appasset.Arrowdiet,
-              height: 17.h,
+            GestureDetector(
+              onTap: (){
+                Get.back();
+              },
+              child: SvgPicture.asset(
+                Appasset.Arrowdiet,
+                height: 17.h,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +69,7 @@ class WheelPickerExample extends GetView<PracticeController> {
                 Text(
                   Apptexts.textno,
                   style: TextStyle(
-                    fontSize: 16.sp,
+                      fontSize: 15.1.sp,
                     fontFamily: ApptextStyle.fontfamily,
                     color: AppColors.blackTextColor,
                     fontWeight: FontWeight.w700,
@@ -77,24 +78,25 @@ class WheelPickerExample extends GetView<PracticeController> {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 5.h,
             ),
             LinearProgressIndicator(
               value: 0.1, // 20% filled
               minHeight: 11.h,
               backgroundColor: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
+              valueColor:
+                  AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height: 75.h,
+              height: 65.h,
             ),
             Center(
               child: Text(
                 textAlign: TextAlign.center,
                 Apptexts.weight,
                 style: TextStyle(
-                  fontSize: 21.sp,
+                  fontSize: 20.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -102,7 +104,7 @@ class WheelPickerExample extends GetView<PracticeController> {
               ),
             ),
             SizedBox(
-              height: 40.h,
+              height: 51.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -110,15 +112,15 @@ class WheelPickerExample extends GetView<PracticeController> {
                 Stack(
                   children: [
                     Container(
-                      height: 210.h,
-                      width: 240.w,
+                      height: 208.h,
+                      width: 242.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(42),
+                        borderRadius: BorderRadius.circular(40),
                         color: AppColors.whiteTextColor,
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 3,
+                            spreadRadius: 2,
                             blurRadius: 5,
                             offset: Offset(0, 2), // changes position of shadow
                           ),
@@ -128,20 +130,27 @@ class WheelPickerExample extends GetView<PracticeController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           WheelPicker(
-
-                            builder: (context, index) =>
-                                itemBuilder(context, index, index == controller.selectedHour.value),
-                            itemCount: 500, // Increase itemCount to 500 for hours
+                            builder: (context, index) => itemBuilder(context,
+                                index, index == controller.selectedHour.value),
+                            itemCount:
+                                500, // Increase itemCount to 500 for hours
                             initialIndex: controller.selectedHour.value,
                             looping: false,
                             style: wheelStyle,
                             selectedIndexColor: Colors.black,
                             onIndexChanged: controller.handleHourChange,
                           ),
-                          const Text("        ", style: TextStyle(fontSize: 22.0, height: 1.5, fontWeight: FontWeight.w500, color: AppColors.blueBtnColor)),
+                          const Text("        ",
+                              style: TextStyle(
+                                  fontSize: 22.0,
+                                  height: 1.5,
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColors.blueBtnColor)),
                           WheelPicker(
-                            builder: (context, index) =>
-                                itemBuilder(context, index, index == controller.selectedMinute.value),
+                            builder: (context, index) => itemBuilder(
+                                context,
+                                index,
+                                index == controller.selectedMinute.value),
                             itemCount: 10, // Change itemCount to 10 for minutes
                             initialIndex: controller.selectedMinute.value,
                             looping: false,
@@ -157,7 +166,7 @@ class WheelPickerExample extends GetView<PracticeController> {
                       top: 120.h,
                       left: 35.w,
                       child: Container(
-                        height: min(1, 1),
+                        height: min(1.3, 1.3),
                         width: 70.w,
                         color: AppColors.blackTextColor,
                       ),
@@ -170,10 +179,28 @@ class WheelPickerExample extends GetView<PracticeController> {
                         width: 70.w,
                         color: AppColors.blackTextColor,
                       ),
-                    )
+                    ),
+                    Positioned(
+                      top: 75.h,
+                      left: 35.w,
+                      child: Container(
+                        height: min(1.3, 1.3),
+                        width: 70.w,
+                        color: AppColors.blackTextColor,
+                      ),
+                    ),
+                    Positioned(
+                      top: 75.h,
+                      right: 35.w,
+                      child: Container(
+                        height: min(1.3, 1.3),
+                        width: 70.w,
+                        color: AppColors.blackTextColor,
+                      ),
+                    ),
                   ],
                 ),
-                SizedBox(width: 20.w),
+                SizedBox(width: 15.w),
                 WheelPicker(
                   itemCount: 2,
                   builder: (context, index) {
@@ -196,13 +223,14 @@ class WheelPickerExample extends GetView<PracticeController> {
                 ),
               ],
             ),
-            SizedBox(height: 45.h), // Add some spacing
+            SizedBox(height: 43.h), // Add some spacing
             Center(
               child: Container(
                 height: 45.h,
-                width: 160.w,
+                width: 150.w,
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.backcolor, width: 1.w),
+                  border: Border.all(
+                      color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
                 ),
                 child: Center(
                   child: Obx(() {
@@ -212,10 +240,10 @@ class WheelPickerExample extends GetView<PracticeController> {
                         controller.selectedWeightUnitIndex.value;
                     return Text(
                       '${selectedWeightUnitIndex == 0 ? selectedHour.toString().padLeft(
-                        2,
-                      ) + ':' + selectedMinute.toString().padLeft(
-                        2,
-                      ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
+                            2,
+                          ) + ':' + selectedMinute.toString().padLeft(
+                            2,
+                          ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
                       style: TextStyle(
                           fontSize: 22.0,
                           height: 1.5,
@@ -226,10 +254,10 @@ class WheelPickerExample extends GetView<PracticeController> {
                 ),
               ),
             ),
-            SizedBox(height: 55.h), // Add some spacing
+            SizedBox(height: 62.h), // Add some spacing
             GestureDetector(
               onTap: () {
-                // Handle continue button tap
+                Get.to(Q2View(),binding: Q2Binding(),);
               },
               child: Container(
                 height: 49.h,

@@ -1,3 +1,5 @@
+import 'package:diet_app/module/questions_module/applausescreen/binding/applausescreen_binding.dart';
+import 'package:diet_app/module/questions_module/applausescreen/view/applausescreen_view.dart';
 import 'package:diet_app/module/questions_module/q3/controller/q3_controller.dart';
 import 'package:diet_app/module/questions_module/q3/widget/q3_widget.dart';
 import 'package:diet_app/module/questions_module/q4/view/q4_view.dart';
@@ -100,7 +102,7 @@ class Q6View extends GetView<Q6Controller>{
 
               GestureDetector(
                 onTap: () {
-                  Get.to(Q4View(),binding: Q4Binding(),);
+                  Get.to(ApplausescreenView(),binding:ApplausescreenBinding(),);
                 },
                 child: Container(
                   height: 49.h,

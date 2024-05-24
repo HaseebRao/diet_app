@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class NewpasswordBinding implements Bindings{
   @override
   void dependencies() {
-   Get.lazyPut(() => NewpasswordController());
+  Get.lazyPut(() => NewpasswordController());
   }
 
 }

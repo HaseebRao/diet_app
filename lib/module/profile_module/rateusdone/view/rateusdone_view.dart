@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:diet_app/module/profile_module/profile/binding/profile_binding.dart';
+import 'package:diet_app/module/profile_module/profile/view/profile_view.dart';
 import 'package:diet_app/module/profile_module/rateusdone/controller/rateusdone_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -14,30 +18,28 @@ import '../../rateus/widget/rateus_customwidget.dart';
 class RateusdoneView extends GetView<RateusdoneController> {
   @override
   Widget build(BuildContext context) {
+    Timer(const Duration(seconds: 3), () {
+      Get.off(() =>ProfileView(), binding: ProfileBinding());
+    });
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0), // Set the preferred height here
-        child: Padding(
-          padding: EdgeInsets.only(top: 45.0),
-          child: AppBar(
-            title: Center(
-                child: Text(
-              Apptexts.rateus,
+
+
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+
+          children: [
+            SizedBox(height: 60.h,),
+            Text(
+              Apptexts. rateus,
               style: TextStyle(
-                fontSize: 22.sp,
+                fontSize: 24.sp,
                 fontFamily: ApptextStyle.fontfamily,
                 color: AppColors.blackTextColor,
                 fontWeight: FontWeight.w700,
               ),
-            )),
-          ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+            ),
+            SizedBox(height: 275.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

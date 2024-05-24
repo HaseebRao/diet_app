@@ -68,13 +68,7 @@ class Q6widget extends GetView<Q6Controller> {
                       fontFamily: ApptextStyle.fontfamily,
                       fontWeight: FontWeight.w500,),
                   ),
-
-
-
                   Spacer(),
-
-
-
                   Transform.scale(
                     scale: 1.h,
                     child: Obx(

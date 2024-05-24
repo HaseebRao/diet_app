@@ -6,4 +6,10 @@ class RecipeController extends GetxController {
   void updateSearchText(String text) {
     searchText.value = text;
   }
+
+  var isSelectedDiscover = true.obs;
+
+  void toggleSelection() {
+    isSelectedDiscover.value = !isSelectedDiscover.value;
+  }
 }

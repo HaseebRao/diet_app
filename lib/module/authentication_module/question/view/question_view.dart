@@ -2,6 +2,8 @@ import 'package:diet_app/common/app_assets.dart';
 import 'package:diet_app/common/app_colors.dart';
 import 'package:diet_app/common/app_text.dart';
 import 'package:diet_app/common/app_textstyle.dart';
+import 'package:diet_app/module/questions_module/practice/binding/practice_binding.dart';
+import 'package:diet_app/module/questions_module/practice/view/practice-view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +26,7 @@ class QuestionView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 140.h,
+                height: 147.h,
               ), // Center(
               Text(
                 textAlign: TextAlign.center,
@@ -47,8 +49,8 @@ class QuestionView extends StatelessWidget {
                       controller.handleContainer1Tap(); // Call method to handle container 1 tap
                     },
                     child: Container(
-                      height: 183.h,
-                      width: 140.w,
+                      height: 187.h,
+                      width: 142.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(9),
                         color: controller.isSelectedContainer1.value
@@ -102,8 +104,8 @@ class QuestionView extends StatelessWidget {
                       controller.handleContainer2Tap(); // Call method to handle container 2 tap
                     },
                     child: Container(
-                      height: 183.h,
-                      width: 140.w,
+                      height: 187.h,
+                      width: 142.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(9),
                         color: controller.isSelectedContainer2.value
@@ -152,11 +154,11 @@ class QuestionView extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 163.h,
+                height: 158.h,
               ),
               GestureDetector(
                 onTap: () {
-                  Get.off(ProfileView(),binding: ProfileBinding(),);
+                  Get.off(PracticeView(),binding: PracticeBinding(),);
                 },
                 child: Container(
                   height: 49.h,

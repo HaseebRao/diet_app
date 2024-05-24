@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:diet_app/module/authentication_module/successpasword/controller/successpassword_controller.dart';
+import 'package:diet_app/module/authentication_module/verify/binding/verify_binding.dart';
+import 'package:diet_app/module/authentication_module/verify/view/verify_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +16,9 @@ import '../../../../common/app_textstyle.dart';
 class SuccesspasswordView extends GetView<SuccesspasswordController>{
   @override
   Widget build(BuildContext context) {
+    Timer(const Duration(seconds: 3), () {
+      Get.off(() => VerifyView(), binding: VerifyBinding());
+    });
    return
  Scaffold(
    backgroundColor: AppColors.whiteTextColor,
