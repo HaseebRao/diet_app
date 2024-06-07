@@ -14,6 +14,7 @@ class AppearancePage extends GetView<ApperanceController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteTextColor,
       body:
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -28,7 +29,7 @@ class AppearancePage extends GetView<ApperanceController> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                     Get.to(AccountView(),binding: AccountBinding(),);
+                   Get.back();
                     },
                       child: SvgPicture.asset(Appasset.Arrowdiet,height: 17.h,)
                   ),
@@ -36,7 +37,7 @@ class AppearancePage extends GetView<ApperanceController> {
                     textAlign: TextAlign.center,
                     Apptexts.appearances,
                     style: TextStyle(
-                      fontSize: 24.sp,
+                      fontSize: 21.sp,
                       fontFamily: ApptextStyle.fontfamily,
                       color:AppColors.blackTextColor,
                       fontWeight: FontWeight.w700,
@@ -53,12 +54,12 @@ class AppearancePage extends GetView<ApperanceController> {
                 textAlign: TextAlign.center,
                 Apptexts.themes,
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: 13.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color:AppColors.blackTextColor,
                   fontWeight: FontWeight.w600,
                 ),),
-              SizedBox(height: 8.h,),
+              SizedBox(height: 15.h,),
               ThemeContainerWidget(
                   "System Default",
                   1, Icons.tonality_rounded, () {

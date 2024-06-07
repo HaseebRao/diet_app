@@ -3,8 +3,6 @@ import 'package:diet_app/common/app_text.dart';
 import 'package:diet_app/common/app_textstyle.dart';
 import 'package:diet_app/module/authentication_module/login/binding/login_binding.dart';
 import 'package:diet_app/module/authentication_module/login/view/login_view.dart';
-import 'package:diet_app/module/authentication_module/successpasword/binding/successpassword_binding.dart';
-import 'package:diet_app/module/authentication_module/successpasword/view/successpassword_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

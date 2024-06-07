@@ -15,6 +15,7 @@ class TermofserviceView  extends GetView<TermofservieController>{
   Widget build(BuildContext context) {
  return
   Scaffold(
+    backgroundColor: AppColors.whiteTextColor,
     body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 23.0),
       child: Column(

@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:diet_app/module/homepage_module/homepage/view/homepage_view.dart';
+import 'package:diet_app/module/homepage_module/myrecipe/binding/myrecipe_binding.dart';
+import 'package:diet_app/module/homepage_module/myrecipe/view/myrecipe_view.dart';
 import 'package:diet_app/module/homepage_module/success/controller/success_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,7 +21,7 @@ class SuccessView extends GetView<SuccessController>{
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
-      Get.off(() => BottomNavBarScreen(), binding: BottomNavBarBinding());
+      Get.off(() => MyrecipeView(), binding: MyrecipeBinding());
     });
     return
       Scaffold(

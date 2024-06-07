@@ -30,7 +30,7 @@ class QuestionContainerWidget extends GetView<Q3Controller> {
     return Column(
       children: [
         SizedBox(
-          height: 10.h,
+          height: 15.h,
         ),
         GestureDetector(
           onTap: () {
@@ -80,7 +80,12 @@ class QuestionContainerWidget extends GetView<Q3Controller> {
                     scale: 1.h,
                     child: Obx(
                           () => Radio<int>(
-                        activeColor: AppColors.Profilecircle,
+                            fillColor:MaterialStateProperty.resolveWith ((Set  states) {
+                              if (states.contains(MaterialState.disabled)) {
+                                return AppColors.Profilecircle;
+                              }
+                              return AppColors.Profilecircle;
+                            }) ,
                         value: containerIndex,
                         groupValue: controller.selectedRadio.value,
                         onChanged: (val) {

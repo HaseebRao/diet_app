@@ -73,7 +73,12 @@ class Q6widget extends GetView<Q6Controller> {
                     scale: 1.h,
                     child: Obx(
                           () => Radio<int>(
-                        activeColor: AppColors.Profilecircle,
+                       fillColor: MaterialStateProperty.resolveWith ((Set  states) {
+                         if (states.contains(MaterialState.disabled)) {
+                           return AppColors.Profilecircle;
+                         }
+                         return AppColors.Profilecircle;
+                       }) ,
                         value: containerIndex,
                         groupValue: controller.selectedRadio.value,
                         onChanged: (val) {

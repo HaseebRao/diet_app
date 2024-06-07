@@ -46,4 +46,17 @@ class AppColors {
   static const yellowdark = Color(0xffF7B149);
   static const blues = Color(0xff1A95B0);
   static const purple = Color(0xff8665FD);
+  static const dietBackgroundColor = Color(0xffF1F1F1);
+  static const dietBorderColor = Color(0xffE1F4FF);
+  static const bordercolor = Color(0xffD6D6D6);
+  static const fastingtext = Color(0xff626262);
+  static const bordercolors = Color(0xffEEEEEE);
+  static const calendar = Color(0xffA3D2CA);
+  static const colorofcontainer = Color(0xffD9D9D9);
+  static const iconcolor = Color(0xff97A2B0);
+  static const borderofCon = Color (0xff838383);
+  static const graycolor = Color (0xff78B0A3);
+  static const coloroff = Color(0xffE3E3E3);
+  static const fieldinner = Color(0xffE1F4FF);
+  static const fieldinnercolor = Color(0xffF6F9FE);
 }

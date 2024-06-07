@@ -10,7 +10,6 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
-import '../../../authentication_module/successpasword/binding/successpassword_binding.dart';
 import '../../../authentication_module/successpasword/view/successpassword_view.dart';
 
 class ChangepasswordView extends GetView<ChangepasswordController>{
@@ -263,7 +262,7 @@ class ChangepasswordView extends GetView<ChangepasswordController>{
                    SizedBox(height:70.h,),
                    GestureDetector(
                      onTap: (){
-                       Get.to(SuccesspasswordView(),binding:SuccesspasswordBinding(),);
+                       Get.to(SuccesspasswordView(),);
                      },
                      child: Container(
                        height: 49.h,

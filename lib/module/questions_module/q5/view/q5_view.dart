@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'dart:ui';
-
 import 'package:diet_app/module/questions_module/q5/controller/q5_controller.dart';
 import 'package:diet_app/module/questions_module/q6/binding/q6_binding.dart';
 import 'package:diet_app/module/questions_module/q6/view/q6_view.dart';
@@ -10,30 +9,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:wheel_picker/wheel_picker.dart';
-
 import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
-import '../../../profile_module/profile/binding/profile_binding.dart';
-import '../../../profile_module/profile/view/profile_view.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
-import '../controller/q5_controller.dart';
+
 
 class Q5View extends GetView<Q5Controller>{
   Widget itemBuilder(BuildContext context, int index, bool isSelected) {
     final textStyle = TextStyle(
-      fontSize: 22.0,
-      height: 1.5,
+      fontSize: 22.0.sp,
+      height: 1.5.h,
       fontWeight: FontWeight.w500,
       color: isSelected ? Colors.black : AppColors.blueBtnColor,
     );
@@ -66,16 +52,19 @@ class Q5View extends GetView<Q5Controller>{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 47.h,
+              height: 35.h,
             ),
-            GestureDetector(
-              onTap: (){
-                Get.back();
-              },
-              child: SvgPicture.asset(
-                Appasset.Arrowdiet,
-                height: 17.h,
-              ),
+            SizedBox(
+              height: 25.h,
+              child: IconButton(
+                  focusColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(0),
+                  onPressed: (){
+                    Get.back();
+                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -92,7 +81,7 @@ class Q5View extends GetView<Q5Controller>{
               ],
             ),
             SizedBox(
-              height: 5.h,
+              height: 7.h,
             ),
             LinearProgressIndicator(
               value: 0.85, // 20% filled
@@ -103,7 +92,7 @@ class Q5View extends GetView<Q5Controller>{
               AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height: 65.h,
+              height:45.h,
             ),
             Center(
               child: Text(
@@ -118,7 +107,7 @@ class Q5View extends GetView<Q5Controller>{
               ),
             ),
             SizedBox(
-              height: 51.h,
+              height: 35.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -126,8 +115,8 @@ class Q5View extends GetView<Q5Controller>{
                 Stack(
                   children: [
                     Container(
-                      height: 208.h,
-                      width: 242.w,
+                      height: 210.h,
+                      width: 238.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: AppColors.whiteTextColor,
@@ -154,9 +143,9 @@ class Q5View extends GetView<Q5Controller>{
                             selectedIndexColor: Colors.black,
                             onIndexChanged: controller.handleHourChange,
                           ),
-                          const Text("        ",
+                           Text("        ",
                               style: TextStyle(
-                                  fontSize: 22.0,
+                                  fontSize: 21.sp,
                                   height: 1.5,
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.blueBtnColor)),
@@ -187,7 +176,7 @@ class Q5View extends GetView<Q5Controller>{
                     ),
                     Positioned(
                       top: 120.h,
-                      right: 35.w,
+                      right: 33.w,
                       child: Container(
                         height: min(1.3, 1.3),
                         width: 70.w,
@@ -205,7 +194,7 @@ class Q5View extends GetView<Q5Controller>{
                     ),
                     Positioned(
                       top: 75.h,
-                      right: 35.w,
+                      right: 33.w,
                       child: Container(
                         height: min(1.3, 1.3),
                         width: 70.w,
@@ -220,7 +209,7 @@ class Q5View extends GetView<Q5Controller>{
                   builder: (context, index) {
                     return Text(["Ft", "in"][index],
                         style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 21.sp,
                             height: 1.5,
                             fontWeight: FontWeight.w500,
                             color: AppColors.blueBtnColor));
@@ -237,39 +226,33 @@ class Q5View extends GetView<Q5Controller>{
                 ),
               ],
             ),
-            SizedBox(height: 43.h), // Add some spacing
-// Inside Q5View class
-            // Inside Q5View class
-            // Inside Q5View class
-            // Inside Q5View class
+            SizedBox(height: 35.h),
             Center(
               child: Container(
                 height: 45.h,
                 width: 150.w,
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
+                  border: Border.all(
+                      color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
                 ),
                 child: Center(
                   child: Obx(() {
                     final selectedHour = controller.selectedHour.value;
                     final selectedMinute = controller.selectedMinute.value;
-                    final selectedWeightUnitIndex = controller.selectedWeightUnitIndex.value;
-
+                    final selectedWeightUnitIndex =
+                        controller.selectedWeightUnitIndex.value;
                     String displayText;
                     if (selectedWeightUnitIndex == 0) {
-                      // Display in Ft
-                      displayText = '${selectedHour.toString().padLeft(2, )} .${selectedMinute.toString().padLeft(2, )} Ft';
+                      displayText = """${selectedHour.toString().padLeft(2, )}' ${selectedMinute.toString().padLeft(2, )}" """;
                     } else {
-                      // Display in inches
-                      displayText = '${(selectedHour * 12).toString().padLeft(2,)} .${selectedMinute.toString().padLeft(2, )} in';
-
+                      int totalInches = (selectedHour * 12) + selectedMinute;
+                      displayText = '$totalInches"';
                     }
-
                     return Text(
                       displayText,
                       style: TextStyle(
-                        fontSize: 22.0,
-                        height: 1.5,
+                        fontSize: 25.0,
+                        height: 1.8,
                         fontWeight: FontWeight.w500,
                         color: AppColors.blueBtnColor,
                       ),
@@ -278,49 +261,38 @@ class Q5View extends GetView<Q5Controller>{
                 ),
               ),
             ),
-
-
-
-
-
-
-            SizedBox(height: 62.h), // Add some spacing
+         Spacer(),
             GestureDetector(
               onTap: () {
                 Get.to(Q6View(),binding: Q6Binding(),);
               },
-              child: Container(
-                height: 49.h,
-                decoration: BoxDecoration(
-                  color: AppColors.blueBtnColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    Apptexts.continues,
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      fontFamily: ApptextStyle.fontfamily,
-                      color: AppColors.whiteTextColor,
-                      fontWeight: FontWeight.w600,
+              child: Padding(
+                padding:  EdgeInsets.only(bottom: 45.h),
+                child: Container(
+                  height: 49.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.blueBtnColor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      Apptexts.continues,
+                      style: TextStyle(
+                        fontSize: 15.sp,
+                        fontFamily: ApptextStyle.fontfamily,
+                        color: AppColors.whiteTextColor,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
+
                 ),
               ),
             ),
-
-
-
-
           ],
         ),
       ),
     );
   }
-
 }
-// else {
-// double inches = selectedHour * 12 + selectedMinute / 5; // Assuming 1 minute = 5 inches
-// displayText = '${inches.toStringAsFixed(2)} in';
-// }

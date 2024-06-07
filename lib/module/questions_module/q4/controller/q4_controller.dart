@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../common/app_colors.dart';
-import '../../../../common/app_textstyle.dart';
-
 class Q4Controller extends GetxController {
   var years = <Years>[].obs;
   var days = <Days>[].obs;
@@ -23,7 +20,6 @@ class Q4Controller extends GetxController {
     Months(month: "Dec"),
   ].obs;
 
-  // Variables to store the index of the selected day, month, and year
   var slectedDay = (-1).obs;
   var selectedMonth = (-1).obs;
   var selectedYear = (-1).obs;
@@ -37,7 +33,7 @@ class Q4Controller extends GetxController {
 
   void generateDays() {
     for (int day = 1; day <= 31; day++) {
-      days.add(Days(day: day.toString(), color: Colors.black)); // Set initial color
+      days.add(Days(day: day.toString(), color: Colors.black));
     }
   }
 
@@ -47,10 +43,23 @@ class Q4Controller extends GetxController {
     }
   }
 
-  // Method to change the color of the selected day
-  void changeDayColor(int index, Color color) {
-    days[index].color = color;
-    update(); // Update the UI
+  String calculateAge() {
+    if (slectedDay.value == -1 || selectedMonth.value == -1 || selectedYear.value == -1) {
+      return '';
+    }
+
+    int day = int.parse(days[slectedDay.value].day);
+    int month = selectedMonth.value + 1; // Month is 0-indexed
+    int year = int.parse(years[selectedYear.value].year);
+
+    DateTime birthDate = DateTime(year, month, day);
+    DateTime today = DateTime.now();
+    int age = today.year - birthDate.year;
+    if (today.month < birthDate.month || (today.month == birthDate.month && today.day < birthDate.day)) {
+      age--;
+    }
+
+    return age.toString();
   }
 }
 
@@ -63,13 +72,12 @@ class Months {
 
 class Years {
   final String year;
-
   Years({required this.year});
 }
 
 class Days {
   final String day;
-  Color color; // Color property
+  Color color;
 
   Days({required this.day, required this.color});
 }

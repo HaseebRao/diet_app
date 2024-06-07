@@ -1,4 +1,4 @@
-import 'package:diet_app/module/authentication_module/wellcome/controller/wellcome_controller.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -10,17 +10,18 @@ import '../../../../common/app_textstyle.dart';
 import '../../question/binding/question_binding.dart';
 import '../../question/view/question_view.dart';
 
-class WellcomeView extends GetView<WellcomeController>{
+class WellcomeView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return
   Scaffold(
+    backgroundColor: AppColors.whiteTextColor,
     body:  Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 21.0),
+      padding:  EdgeInsets.symmetric(horizontal: 21.w),
       child: Column(
 
         children: [
-          SizedBox(height: 130.h,),
+          SizedBox(height: 120.h,),
           Center(
             child: Container(
               height: 220.h,
@@ -42,19 +43,18 @@ class WellcomeView extends GetView<WellcomeController>{
             ),),
           SizedBox(height: 15.h,),
           SizedBox(
-            height:50.h,
             width: 260.w,
             child: Text(
               textAlign: TextAlign.center,
              Apptexts.yourProfile,
               style: TextStyle(
-                fontSize: 13.5.sp,
+                fontSize: 12.sp,
                 fontFamily: ApptextStyle.fontfamily,
                 color: AppColors.loginLorem,
                 fontWeight: FontWeight.w400,
               ),),
           ),
-          SizedBox(height:100.h,),
+          SizedBox(height:125.h,),
       GestureDetector(
         onTap: (){
           Get.off(QuestionView(),binding: QuestionBinding(),);

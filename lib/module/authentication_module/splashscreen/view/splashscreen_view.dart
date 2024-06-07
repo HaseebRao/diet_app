@@ -10,7 +10,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../../common/app_text.dart';
 import '../../login/binding/login_binding.dart';
-
 class SplashscreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

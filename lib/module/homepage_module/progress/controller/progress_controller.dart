@@ -19,6 +19,15 @@ class ProgressController extends GetxController {
     tooltip = TooltipBehavior(enable: true);
     super.onInit();
   }
+  List<ChartModelClass> chartData = <ChartModelClass>[
+    ChartModelClass(x: "Mon", y: 32),
+    ChartModelClass(x: "Tue", y: 32),  // 'TUS' ko 'TUE' mein change kar diya
+    ChartModelClass(x: "Wed", y: 23),
+    ChartModelClass(x: "Thu", y: 14),
+    ChartModelClass(x: "Fri", y: 23),
+    ChartModelClass(x: "Sat", y: 32),
+    ChartModelClass(x: "Sun", y: 30),
+  ].obs;
 }
 
 class ChartData {
@@ -27,4 +36,9 @@ class ChartData {
   final String x;
   final double y;
   final Color color;
+}
+class ChartModelClass {
+  String x;
+  double y;
+  ChartModelClass({required this.x, required this.y});
 }

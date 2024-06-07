@@ -15,22 +15,26 @@ class Q4View extends GetView<Q4Controller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21.0),
+        padding: EdgeInsets.symmetric(horizontal: 21.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 45.h,
+              height: 42.h,
             ),
-            GestureDetector(
-              onTap: (){
-                Get.back();
-              },
-              child: SvgPicture.asset(
-                Appasset.Arrowdiet,
-                height: 17.h,
-              ),
+            SizedBox(
+              height: 25.h,
+              child: IconButton(
+                  focusColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(0),
+                  onPressed: (){
+                    Get.back();
+                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,15 +54,14 @@ class Q4View extends GetView<Q4Controller> {
               height: 5.h,
             ),
             LinearProgressIndicator(
-              value: 0.65, // 20% filled
+              value: 0.65, // 65% filled
               minHeight: 10.h,
               backgroundColor: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
-              valueColor:
-                  AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
+              valueColor: AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height: 72.h,
+              height: 65.h,
             ),
             Center(
               child: Text(
@@ -72,13 +75,11 @@ class Q4View extends GetView<Q4Controller> {
                 ),
               ),
             ),
-
             SizedBox(height: 40.h),
             Column(
               children: [
-
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25.h),
+                  padding: EdgeInsets.symmetric(horizontal: 23.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -120,7 +121,7 @@ class Q4View extends GetView<Q4Controller> {
                   children: [
                     Container(
                       height: 185.h,
-                      width: 85.w,
+                      width: 80.w,
                       decoration: BoxDecoration(
                         color: AppColors.whiteTextColor,
                         borderRadius: BorderRadius.circular(8),
@@ -129,7 +130,7 @@ class Q4View extends GetView<Q4Controller> {
                             color: Colors.grey.withOpacity(0.4),
                             spreadRadius: 2,
                             blurRadius: 5,
-                            offset: Offset(0, 2), // changes position of shadow
+                            offset: Offset(0, 2),
                           ),
                         ],
                       ),
@@ -148,22 +149,20 @@ class Q4View extends GetView<Q4Controller> {
                               child: Padding(
                                 padding: EdgeInsets.only(bottom: 17.h),
                                 child: Obx(
-                                  () => SizedBox(
+                                      () => SizedBox(
                                     height: 27.h,
                                     child: Text(
                                       "${product.day}",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize:
-                                            controller.slectedDay.value == index
-                                                ? 19.sp
-                                                : 11.sp,
+                                        fontSize: controller.slectedDay.value == index
+                                            ? 17.sp
+                                            : 11.sp,
                                         fontFamily: ApptextStyle.fontfamily,
                                         color: AppColors.blackTextColor,
-                                        fontWeight:
-                                            controller.slectedDay.value == index
-                                                ? FontWeight.w800
-                                                : FontWeight.w400,
+                                        fontWeight: controller.slectedDay.value == index
+                                            ? FontWeight.w800
+                                            : FontWeight.w400,
                                       ),
                                     ),
                                   ),
@@ -186,7 +185,7 @@ class Q4View extends GetView<Q4Controller> {
                             color: Colors.grey.withOpacity(0.4),
                             spreadRadius: 2,
                             blurRadius: 5,
-                            offset: Offset(0, 2), // changes position of shadow
+                            offset: Offset(0, 2),
                           ),
                         ],
                       ),
@@ -205,24 +204,20 @@ class Q4View extends GetView<Q4Controller> {
                               child: Padding(
                                 padding: EdgeInsets.only(bottom: 15.h),
                                 child: Obx(
-                                  () => SizedBox(
+                                      () => SizedBox(
                                     height: 27.h,
                                     child: Text(
                                       "${product.month}",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize:
-                                            controller.selectedMonth.value ==
-                                                    index
-                                                ? 19.sp
-                                                : 11.sp,
+                                        fontSize: controller.selectedMonth.value == index
+                                            ? 17.sp
+                                            : 11.sp,
                                         fontFamily: ApptextStyle.fontfamily,
                                         color: AppColors.blackTextColor,
-                                        fontWeight:
-                                            controller.selectedMonth.value ==
-                                                    index
-                                                ? FontWeight.w700
-                                                : FontWeight.w400,
+                                        fontWeight: controller.selectedMonth.value == index
+                                            ? FontWeight.w700
+                                            : FontWeight.w400,
                                       ),
                                     ),
                                   ),
@@ -245,7 +240,7 @@ class Q4View extends GetView<Q4Controller> {
                             color: Colors.grey.withOpacity(0.4),
                             spreadRadius: 2,
                             blurRadius: 5,
-                            offset: Offset(0, 2), // changes position of shadow
+                            offset: Offset(0, 2),
                           ),
                         ],
                       ),
@@ -264,24 +259,20 @@ class Q4View extends GetView<Q4Controller> {
                               child: Padding(
                                 padding: EdgeInsets.only(bottom: 15.h),
                                 child: Obx(
-                                  () => SizedBox(
+                                      () => SizedBox(
                                     height: 27.h,
                                     child: Text(
                                       "${year.year}",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize:
-                                            controller.selectedYear.value ==
-                                                    index
-                                                ? 19.sp
-                                                : 11.sp,
+                                        fontSize: controller.selectedYear.value == index
+                                            ? 17.sp
+                                            : 11.sp,
                                         fontFamily: ApptextStyle.fontfamily,
                                         color: AppColors.blackTextColor,
-                                        fontWeight:
-                                            controller.selectedYear.value ==
-                                                    index
-                                                ? FontWeight.w700
-                                                : FontWeight.w400,
+                                        fontWeight: controller.selectedYear.value == index
+                                            ? FontWeight.w700
+                                            : FontWeight.w400,
                                       ),
                                     ),
                                   ),
@@ -297,36 +288,21 @@ class Q4View extends GetView<Q4Controller> {
                 SizedBox(height: 70.h),
                 Container(
                   height: 45.h,
-                  width: 150.w,
+                  width: 140.w,
                   decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.Profilecircle),
+                    border: Border.all(
+                        color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
                   ),
                   child: Center(
                     child: Obx(
-                      () {
-                        int selectedDayIndex = controller.slectedDay.value;
-                        int selectedMonthIndex = controller.selectedMonth.value;
-                        int selectedYearIndex = controller.selectedYear.value;
-
-                        String day = selectedDayIndex >= 0 &&
-                                selectedDayIndex < controller.days.length
-                            ? controller.days[selectedDayIndex].day
-                            : '';
-                        String month = selectedMonthIndex >= 0 &&
-                                selectedMonthIndex < controller.months.length
-                            ? controller.months[selectedMonthIndex].month
-                            : '';
-                        String year = selectedYearIndex >= 0 &&
-                                selectedYearIndex < controller.years.length
-                            ? controller.years[selectedYearIndex].year
-                            : '';
-
+                          () {
+                        String age = controller.calculateAge();
                         return Text(
-                          '$day $month $year',
+                          age.isEmpty ? '' : ' $age  years',
                           style: TextStyle(
-                            fontSize: 15.sp,
+                            fontSize: 16.sp,
                             fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.Profilecircle ,
+                            color: AppColors.Profilecircle,
                             fontWeight: FontWeight.w800,
                           ),
                         );
@@ -336,12 +312,10 @@ class Q4View extends GetView<Q4Controller> {
                 ),
               ],
             ),
-
-     SizedBox(height: 45.h,),
-
+            SizedBox(height: 38.h),
             GestureDetector(
               onTap: () {
-                Get.to(Q5View(),binding: Q5Binding(),);
+                Get.to(Q5View(), binding: Q5Binding());
               },
               child: Container(
                 height: 49.h,

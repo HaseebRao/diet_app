@@ -4,6 +4,15 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_text.dart';
 
 class HomepageController extends GetxController {
+  final List<String>textes =[
+"Intermittent Fasting",
+    "Water",
+    "My Daily Diet",
+    "Cheat Food",
+    "Grocery",
+    "Diary",
+
+];
   var currentIndex = 0.obs; // Observable for the current index of the carousel
   var currentPage = 0.obs;
   var isChecked = <bool>[false, false, false].obs;

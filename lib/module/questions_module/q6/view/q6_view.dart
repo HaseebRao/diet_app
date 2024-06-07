@@ -1,21 +1,15 @@
 import 'package:diet_app/module/questions_module/applausescreen/binding/applausescreen_binding.dart';
 import 'package:diet_app/module/questions_module/applausescreen/view/applausescreen_view.dart';
-import 'package:diet_app/module/questions_module/q3/controller/q3_controller.dart';
-import 'package:diet_app/module/questions_module/q3/widget/q3_widget.dart';
-import 'package:diet_app/module/questions_module/q4/view/q4_view.dart';
 import 'package:diet_app/module/questions_module/q6/controller/q6_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
 import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
-import '../../../profile_module/Apperance/widget/apperance_widget.dart';
-import '../../q4/binding/q4_binding.dart';
 import '../widget/q6_widget.dart';
 
 class Q6View extends GetView<Q6Controller>{
@@ -23,22 +17,26 @@ class Q6View extends GetView<Q6Controller>{
   Widget build(BuildContext context) {
     return
       Scaffold(
+        backgroundColor: AppColors.whiteTextColor,
         body: Padding(
           padding:EdgeInsets.symmetric(horizontal: 21.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 47.h,
+                height: 42.h,
               ),
-              GestureDetector(
-                onTap: (){
-                  Get.back();
-                },
-                child: SvgPicture.asset(
-                  Appasset.Arrowdiet,
-                  height: 17.h,
-                ),
+              SizedBox(
+                height: 25.h,
+                child: IconButton(
+                    focusColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    alignment: Alignment.topLeft,
+                    padding: EdgeInsets.all(0),
+                    onPressed: (){
+                      Get.back();
+                    }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -97,9 +95,7 @@ class Q6View extends GetView<Q6Controller>{
                   "Highly active", 3, Appasset.svg3,
                       () {
                   }),
-              SizedBox(height: 202.h), // Add some spacing
-
-
+              SizedBox(height: 189.h), // Add some spacing
               GestureDetector(
                 onTap: () {
                   Get.to(ApplausescreenView(),binding:ApplausescreenBinding(),);
@@ -124,11 +120,6 @@ class Q6View extends GetView<Q6Controller>{
                   ),
                 ),
               ),
-
-
-
-
-
             ],
           ),
         ),

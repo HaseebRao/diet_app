@@ -8,6 +8,7 @@ class RecipedetailController extends GetxController{
   late List<ChartData> data;
   late TooltipBehavior tooltip;
   var selecterecipes = 'Add to meal'.obs;
+
   @override
   void onInit() {
     data = [

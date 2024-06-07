@@ -15,7 +15,7 @@ class AppversionView extends GetView<AppversionController>{
   Widget build(BuildContext context) {
  return
   Scaffold(
-    backgroundColor: AppColors.blueBtnColor,
+    backgroundColor: AppColors.Profilecircle,
     body:Padding(
       padding:  EdgeInsets.symmetric(horizontal:23.0),
       child: Column(

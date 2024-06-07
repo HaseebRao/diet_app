@@ -22,19 +22,26 @@ class _SubsmethodViewState extends State<SubsmethodView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21.w),
+        padding: EdgeInsets.symmetric(horizontal: 21.w,),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 45.h),
-            GestureDetector(
-                onTap: (){
-                  Get.back();
-                },
+            SizedBox(
+              height: 40.h,
+            ),
+            SizedBox(
+              height: 25.h,
+              child: IconButton(
 
-                child: SvgPicture.asset(Appasset.Arrowdiet,height: 17.h,)),
-            SizedBox(height: 100.h),
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(0),
+                  onPressed: (){
+                    Get.back();
+                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
+            ),
+            SizedBox(height: 75.h),
             Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,7 +50,7 @@ class _SubsmethodViewState extends State<SubsmethodView> {
                     Apptexts.paymente,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 19.5,
+                      fontSize: 18.sp,
                       fontFamily: ApptextStyle.fontfamily,
                       color: AppColors.blackTextColor,
                       fontWeight: FontWeight.w800,
@@ -54,7 +61,7 @@ class _SubsmethodViewState extends State<SubsmethodView> {
                     Apptexts.pay,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 14.3,
+                      fontSize: 14.sp,
                       fontFamily: ApptextStyle.fontfamily,
                       color: AppColors.blackTextColor.withOpacity(0.6),
                       fontWeight: FontWeight.w600,
@@ -83,7 +90,7 @@ class _SubsmethodViewState extends State<SubsmethodView> {
                     },
                   ),
                   SizedBox(
-                    height: 230.h,
+                    height: 217 .h,
                   ),
                   GestureDetector(
                     onTap: (){

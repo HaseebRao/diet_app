@@ -4,7 +4,7 @@ import 'package:diet_app/module/authentication_module/forget/view/forget_view.da
 import 'package:diet_app/module/authentication_module/login/controller/login_controller.dart';
 import 'package:diet_app/module/authentication_module/signup/binding/signup_binding.dart';
 import 'package:diet_app/module/authentication_module/signup/view/signup_view.dart';
-import 'package:diet_app/module/authentication_module/wellcome/binding/wellcome_binding.dart';
+
 import 'package:diet_app/module/authentication_module/wellcome/view/wellcome_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +21,7 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
 return
    Scaffold(
+     backgroundColor: AppColors.whiteTextColor,
      body: SingleChildScrollView(
        child: Padding(
          padding:  EdgeInsets.symmetric(horizontal: 21.w),
@@ -31,107 +32,99 @@ return
              Text(
                Apptexts.welcomeText,
                style: TextStyle(
-                 fontSize: 20.5.sp,
+                 fontSize: 20.sp,
                  fontFamily: ApptextStyle.fontfamily,
                  color:AppColors.blackTextColor,
                  fontWeight: FontWeight.w700,
                ),),
-             SizedBox(height: 10.2.h,),
+             SizedBox(height: 10.h,),
              SizedBox(
-               height: 35.h,
+               width: 340.w,
                child: Text(
                  textAlign: TextAlign.center,
                  Apptexts.dummyText,
                  style: TextStyle(
-                   fontSize: 11.3.sp,
+                   fontSize: 11.sp,
+                   height: 1.3.h,
                    fontFamily: ApptextStyle.fontfamily,
                    color:AppColors.loginLorem ,
                    fontWeight: FontWeight.w400,
                  ),),
              ),
-             SizedBox(height: 19.2.h,),
+             SizedBox(height: 19.h,),
              Container(
-               height: 37.h,
+               height: 40.h,
                decoration: BoxDecoration(
-
                  border: Border.all(color:AppColors.Loginbordercolor,),
                  borderRadius: BorderRadius.circular(8),
                ),
-               child: Padding(
-                 padding:  EdgeInsets.symmetric(horizontal: 61.h),
-                 child: Row(
-                  children: [
-                    SvgPicture.asset(Appasset.LoginAplle,height: 20.h,),
-                   Spacer(),
-                    Text(
-                      textAlign: TextAlign.center,
-                      Apptexts.appleTexts,
-                      style: TextStyle(
-                        fontSize: 13.7.sp,
-                        fontFamily: ApptextStyle.fontfamily,
-                        color:AppColors.blackTextColor,
-                        fontWeight: FontWeight.w700,
-                      ),),
-                  ],
-                 ),
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(Appasset.LoginAplle,height: 20.h,),
+                  SizedBox(
+                    width: 12.w,
+                  ),
+                  Text(
+                    Apptexts.appleTexts,
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                      fontFamily: ApptextStyle.fontfamily,
+                      color:AppColors.blackTextColor,
+                      fontWeight: FontWeight.w700,
+                    ),),
+                ],
                ),
              ),
              SizedBox(height: 16.h,),
              Container(
-               height: 37.h,
+               height: 40.h,
                decoration: BoxDecoration(
 
                  border: Border.all(color:AppColors.Loginbordercolor,),
                  borderRadius: BorderRadius.circular(8),
                ),
-               child: Padding(
-                 padding: EdgeInsets.only(left: 61.h),
-                 child: Row(
-                   children: [
-                     SvgPicture.asset(Appasset.LoginGoogle,height: 20.h,),
-                    SizedBox(width: 15.w,),
-                     Text(
-                       textAlign: TextAlign.center,
-                       Apptexts.googleTexts,
-                       style: TextStyle(
-                         fontSize: 13.7.sp,
-                         fontFamily: ApptextStyle.fontfamily,
-                         color:AppColors.blackTextColor,
-                         fontWeight: FontWeight.w700,
-                       ),),
-                   ],
-                 ),
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   SvgPicture.asset(Appasset.LoginGoogle,height: 20.h,),
+                  SizedBox(width: 12.w,),
+                   Text(
+                     Apptexts.googleTexts,
+                     style: TextStyle(
+                       fontSize: 13.sp,
+                       fontFamily: ApptextStyle.fontfamily,
+                       color:AppColors.blackTextColor,
+                       fontWeight: FontWeight.w700,
+                     ),),
+                 ],
                ),
              ),
              SizedBox(height:16.h,),
              Container(
-               height: 37.h,
+               height: 40.h,
                decoration: BoxDecoration(
 
                  border: Border.all(color:AppColors.Loginbordercolor,),
                  borderRadius: BorderRadius.circular(8),
                ),
-               child: Padding(
-                 padding:  EdgeInsets.only(left: 61.h),
-                 child: Row(
-                   children: [
-                     SvgPicture.asset(Appasset.LoginFacebook,height: 20.h,),
-                   SizedBox(width: 8.w,),
-                     Text(
-                       textAlign: TextAlign.center,
-                       Apptexts.facebookText,
-                       style: TextStyle(
-                         fontSize: 13.7.sp,
-                         fontFamily: ApptextStyle.fontfamily,
-                         color:AppColors.blackTextColor,
-                         fontWeight: FontWeight.w700,
-                       ),),
-                     Spacer(),
-                   ],
-                 ),
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   SvgPicture.asset(Appasset.LoginFacebook,height: 20.h,),
+                 SizedBox(width: 12.w,),
+                   Text(
+                     Apptexts.facebookText,
+                     style: TextStyle(
+                       fontSize: 13.sp,
+                       fontFamily: ApptextStyle.fontfamily,
+                       color:AppColors.blackTextColor,
+                       fontWeight: FontWeight.w700,
+                     ),),
+                 ],
                ),
              ),
-             SizedBox(height: 26.5.h,),
+             SizedBox(height: 24.h,),
              Row(
                mainAxisAlignment: MainAxisAlignment.center,
                children: [
@@ -158,24 +151,21 @@ return
                  ),
                ],
              ),
-             SizedBox(height: 12.5.h,),
-             Row(
-               mainAxisAlignment: MainAxisAlignment.start,
-               children: [
-                 Text(
-                   textAlign: TextAlign.start,
-                   Apptexts.emailTexts,
-                   style: TextStyle(
-                     fontSize: 13.3.sp,
-                     fontFamily: ApptextStyle.fontfamily,
-                     color:AppColors.blackTextColor,
-                     fontWeight: FontWeight.w500,
-                   ),),
-               ],
+             SizedBox(height: 11.h,),
+             Align(
+               alignment: Alignment.topLeft,
+               child: Text(
+                 Apptexts.emailTexts,
+                 style: TextStyle(
+                   fontSize: 13.sp,
+                   fontFamily: ApptextStyle.fontfamily,
+                   color:AppColors.blackTextColor,
+                   fontWeight: FontWeight.w500,
+                 ),),
              ),
-             SizedBox(height: 8.5.h,),
+             SizedBox(height: 8.h,),
              Container(
-               height: 49.h,
+               height: 44.h,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(8),
                  border: Border.all(
@@ -196,11 +186,11 @@ return
                    ),
                    decoration: InputDecoration(
 
-                     contentPadding: EdgeInsets.symmetric(vertical:16.w,horizontal: 18.w),
+                     contentPadding: EdgeInsets.symmetric(vertical:16.h,horizontal: 18.w),
                      hintText: Apptexts.hintText,
                      border: InputBorder.none,
                      hintStyle: TextStyle(
-                       fontSize: 12.8.h,
+                       fontSize: 12.sp,
                        color:AppColors.LoginTextform, // Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
@@ -208,7 +198,7 @@ return
                  ),
                ),
              ),
-             SizedBox(height: 11.h,),
+             SizedBox(height: 13.h,),
              Row(
                mainAxisAlignment: MainAxisAlignment.start,
                children: [
@@ -216,20 +206,20 @@ return
                    textAlign: TextAlign.start,
                    Apptexts.passwordTexts,
                    style: TextStyle(
-                     fontSize: 13.3.sp,
+                     fontSize: 13.sp,
                      fontFamily: ApptextStyle.fontfamily,
                      color:AppColors.blackTextColor,
                      fontWeight: FontWeight.w500,
                    ),),
                ],
              ),
-             SizedBox(height: 8.3.h,),
+             SizedBox(height: 8.h,),
              Container(
-               height: 49.h,
+               height: 44.h,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(8),
                  border: Border.all(
-                   width: 1,
+                   width: 1.w,
                    color:AppColors. Loginbordercolor,
                  ),
                ),
@@ -245,12 +235,12 @@ return
                      fontFamily: ApptextStyle.fontfamily, // Setting font family
                    ),
                    decoration: InputDecoration(
-                     contentPadding: EdgeInsets.symmetric(vertical:16.w,horizontal: 18.w),
+                     contentPadding: EdgeInsets.symmetric(vertical:16.h,horizontal: 18.w),
                      hintText: Apptexts.passwordHint,
                      border: InputBorder.none,
 
                      hintStyle: TextStyle(
-                       fontSize: 12.8.h,
+                       fontSize: 12.sp,
                        color:AppColors.LoginTextform, // Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
@@ -258,7 +248,7 @@ return
                  ),
                ),
              ),
-SizedBox(height: 12.h,),
+          SizedBox(height: 12.h,),
              Row(
                mainAxisAlignment: MainAxisAlignment.end,
                children: [
@@ -282,18 +272,17 @@ SizedBox(height: 12.h,),
              SizedBox(height:21.5.h,),
              GestureDetector(
                onTap: (){
-                 Get.to(WellcomeView(),binding: WellcomeBinding(),);
+                 Get.off(WellcomeView(),);
 
                },
                child: Container(
-                 height: 49.h,
+                 height: 47.h,
                decoration: BoxDecoration(
                  color: AppColors.blueBtnColor,
                  borderRadius: BorderRadius.circular(8),
                ),
                 child:  Center(
                   child: Text(
-                    textAlign: TextAlign.center,
                     Apptexts.loginText,
                     style: TextStyle(
                       fontSize: 15.5.sp,
@@ -309,7 +298,6 @@ Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     Text(
-      textAlign: TextAlign.center,
       Apptexts.stillAccount,
       style: TextStyle(
         fontSize: 11.sp,

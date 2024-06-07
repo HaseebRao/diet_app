@@ -17,6 +17,7 @@ class InvitefriendsView extends GetView<InvitefriendsController>{
   Widget build(BuildContext context) {
   return
   Scaffold(
+    backgroundColor: AppColors.whiteTextColor,
     body: Column(
       children: [
         SizedBox(

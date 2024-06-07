@@ -12,7 +12,7 @@ class Q5Controller extends GetxController{
     selectedHour.value = hour;
   }
 
-// Callback method for minute change
+
   void handleMinuteChange(int minute) {
     selectedMinute.value = minute;
   }
