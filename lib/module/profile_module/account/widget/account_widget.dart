@@ -12,7 +12,7 @@ class AccountWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:54.h,
+      height:50.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: AppColors.Profiletextes,width: 1.h),

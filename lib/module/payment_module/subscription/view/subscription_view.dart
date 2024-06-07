@@ -23,22 +23,29 @@ class SubscriptionView extends GetView<SubscriptionController> {
           crossAxisAlignment: CrossAxisAlignment.start,
 
           children: [
-            SizedBox(height: 45.h),
-            GestureDetector(
-              onTap: () {
-                Get.back();
-              },
-              child: SvgPicture.asset(
-                Appasset.Arrowdiet,
-                height: 17.h,
-              ),
+            SizedBox(
+              height: 40.h,
+            ),
+            SizedBox(
+              height: 25.h,
+              child: IconButton(
+                  focusColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(0),
+                  onPressed: (){
+                    Get.back();
+                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Container(
-              height: 145.h,
+              height: 195.h,
               child: ImageSlideshow(
                 indicatorBackgroundColor:
                     AppColors.Profilecircles.withOpacity(0.5),
                 indicatorRadius: 4,
+                indicatorPadding: 30,
+                indicatorBottomPadding: 4,
                 indicatorColor: AppColors.Profilecircle,
                 onPageChanged: (value) {
                   debugPrint('Page changed: $value');
@@ -46,39 +53,84 @@ class SubscriptionView extends GetView<SubscriptionController> {
                 autoPlayInterval: 0,
                 isLoop: true,
                 children: [
-                  Image.asset(
-                    'assets/images/subscription2.png',
-                    fit: BoxFit.contain,
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          height: 130.h,
+                          width: 120.w,
+                          'assets/images/subscription2.png',
+                        ),
+                        SizedBox(
+                          width: 240.w,
+                          child: Text(
+                            Apptexts.subscription,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Image.asset(
-                    'assets/images/subscription1.png',
-                    fit: BoxFit.none,
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          height: 130.h,
+                          width: 120.w,
+                          'assets/images/subscription1.png',
+                        ),
+                        SizedBox(
+                          width: 240.w,
+                          child: Text(
+                            Apptexts.subscription,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Image.asset(
-                    'assets/images/subscription3.png',
-                    fit: BoxFit.none,
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          height: 130.h,
+                          width: 120.w,
+                          'assets/images/subscription3.png',
+                        ),
+                        SizedBox(
+                          width: 240.w,
+                          child: Text(
+                            Apptexts.subscription,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 8.h),
-            Center(
-              child: SizedBox(
-                width: 240.w,
-                child: Text(
-                  Apptexts.subscription,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: ApptextStyle.fontfamily,
-                    color: AppColors.blackTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
+
             SizedBox(
-              height: 244.h,
+              height: 255.h,
               child: ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
@@ -93,8 +145,8 @@ class SubscriptionView extends GetView<SubscriptionController> {
                       child: Obx(
                         () => Container(
                           height:
-                              72, // Adjusted height to accommodate two texts
-                          width: 220,
+                              65.h, // Adjusted height to accommodate two texts
+                          width: 220.w,
                           decoration: BoxDecoration(
                             color:
                                 index == controller.selectedContainerIndex.value
@@ -107,17 +159,18 @@ class SubscriptionView extends GetView<SubscriptionController> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Checkbox(
-                                  side:
-                                      BorderSide(color: AppColors.Profilecircle),
-                                  activeColor: AppColors.Profilecircle,
-                                  value: controller.isChecked[index],
-                                  onChanged: (value) {
-                                    controller.toggleCheckbox(
-                                        index, value ?? false);
-                                  },
-                                ),
-                                SizedBox(width: 1.w),
+                                SizedBox(width: 12.w,),
+                               Container(
+                                 height: 17.h,
+                                 width: 17.w,
+                                 decoration: BoxDecoration(
+                                 color:controller.selectedContainerIndex.value==index?AppColors.whiteTextColor: Colors.transparent,
+                                   shape: BoxShape.circle,
+                                   border: Border.all(color:controller.selectedContainerIndex.value==index?Colors.transparent: AppColors.blackTextColor)
+                                 ),
+                                 child: Icon(Icons.done,size: 10,color: controller.selectedContainerIndex.value==index?AppColors.Profilecircle: Colors.transparent,),
+                               ),
+                                SizedBox(width: 8.w),
                                 Center(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,28 +218,29 @@ class SubscriptionView extends GetView<SubscriptionController> {
                                 // Visibility(
                                 SizedBox(width: 28.w,),
                                 Visibility(
-                                  visible: index == 2 &&
-                                      controller.isSaveButtonVisible.value,
+                                  visible: index == 2 ,
                                   child: GestureDetector(
                                     onTap: () {
                             // Handle save button tap action
                                       print('Save button tapped!');
                                     },
                                     child: Container(
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 5, horizontal: 12),
+                                      width: 75.w,
+                                      height: 24.h,
                                       decoration: BoxDecoration(
                                         color: AppColors.whiteTextColor,
                                         borderRadius: BorderRadius.circular(5),
 
                                       ),
-                                      child: Text(
-                                        Apptexts.savetext,
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontFamily: ApptextStyle.fontfamily,
-                                          color: AppColors.Profilecircle,
-                                          fontWeight: FontWeight.w500,
+                                      child: Center(
+                                        child: Text(
+                                          Apptexts.savetext,
+                                          style: TextStyle(
+                                            fontSize: 11.sp,
+                                            fontFamily: ApptextStyle.fontfamily,
+                                            color: AppColors.Profilecircle,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -202,23 +256,18 @@ class SubscriptionView extends GetView<SubscriptionController> {
                 },
               ),
             ),
-SizedBox(height: 15.h,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  Apptexts.subscriptiontext,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 11.4,
-                    fontFamily: ApptextStyle.fontfamily,
-                    color: AppColors.blackTextColor,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
+SizedBox(height: 10.h,),
+            Text(
+              Apptexts.subscriptiontext,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 11.sp,
+                fontFamily: ApptextStyle.fontfamily,
+                color: AppColors.blackTextColor,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-            SizedBox(height: 11.h,),
+            SizedBox(height: 7.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -245,14 +294,14 @@ SizedBox(height: 15.h,),
               ],
             ),
             SizedBox(
-              height: 55.h,
+              height: 35.h,
             ),
             GestureDetector(
               onTap: () {
                 Get.to(SubsmethodView(),binding: SubsmethodBinding(),);
               },
               child: Container(
-                height: 49.h,
+                height: 47.h,
                 decoration: BoxDecoration(
                   color: AppColors.blueBtnColor,
                   borderRadius: BorderRadius.circular(8),

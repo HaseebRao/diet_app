@@ -24,6 +24,7 @@ class HelpcenterView extends GetView<HelpcenterController>{
   Widget build(BuildContext context) {
    return
   Scaffold(
+    backgroundColor: AppColors.whiteTextColor,
     body: Padding(
       padding: EdgeInsets.symmetric(horizontal: 21.0),
       child: Column(

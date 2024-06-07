@@ -6,35 +6,36 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
 import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
-import '../../../profile_module/Apperance/widget/apperance_widget.dart';
 import '../../q4/binding/q4_binding.dart';
-
 class Q3View extends GetView<Q3Controller>{
   @override
   Widget build(BuildContext context) {
    return
  Scaffold(
+   backgroundColor: AppColors.whiteTextColor,
    body: Padding(
      padding:EdgeInsets.symmetric(horizontal: 21.w),
      child: Column(
        crossAxisAlignment: CrossAxisAlignment.start,
        children: [
          SizedBox(
-           height: 47.h,
+           height: 42.h,
          ),
-         GestureDetector(
-           onTap: (){
-             Get.back();
-           },
-           child: SvgPicture.asset(
-             Appasset.Arrowdiet,
-             height: 17.h,
-           ),
+         SizedBox(
+           height: 25.h,
+           child: IconButton(
+               focusColor: Colors.transparent,
+               splashColor: Colors.transparent,
+               hoverColor: Colors.transparent,
+               alignment: Alignment.topLeft,
+               padding: EdgeInsets.all(0),
+               onPressed: (){
+                 Get.back();
+               }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
          ),
          Row(
            mainAxisAlignment: MainAxisAlignment.center,
@@ -62,7 +63,7 @@ class Q3View extends GetView<Q3Controller>{
            AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
          ),
          SizedBox(
-           height: 65.h,
+           height: 50.h,
          ),
          Center(
            child: Text(
@@ -93,7 +94,7 @@ class Q3View extends GetView<Q3Controller>{
              "Binary", 3, Appasset.binary,
                  () {
              }),
-         SizedBox(height: 202.h), // Add some spacing
+         SizedBox(height: 193.h), // Add some spacing
 
 
          GestureDetector(

@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:diet_app/module/questions_module/q2/binding/q2_binding.dart';
 import 'package:diet_app/module/questions_module/q2/view/q2_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -47,21 +46,24 @@ class PracticeView extends GetView<PracticeController> {
     return Scaffold(
       backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21.0.w),
+        padding: EdgeInsets.symmetric(horizontal: 21.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 47.h,
+              height: 35.h,
             ),
-            GestureDetector(
-              onTap: (){
+            SizedBox(
+              height: 30,
+              child: IconButton(
+                focusColor: Colors.transparent,
+                 splashColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                alignment: Alignment.topLeft,
+                 padding: EdgeInsets.all(0),
+                  onPressed: (){
                 Get.back();
-              },
-              child: SvgPicture.asset(
-                Appasset.Arrowdiet,
-                height: 17.h,
-              ),
+              }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +71,7 @@ class PracticeView extends GetView<PracticeController> {
                 Text(
                   Apptexts.textno,
                   style: TextStyle(
-                      fontSize: 15.1.sp,
+                      fontSize: 15.sp,
                     fontFamily: ApptextStyle.fontfamily,
                     color: AppColors.blackTextColor,
                     fontWeight: FontWeight.w700,
@@ -78,7 +80,7 @@ class PracticeView extends GetView<PracticeController> {
               ],
             ),
             SizedBox(
-              height: 5.h,
+              height: 7.h,
             ),
             LinearProgressIndicator(
               value: 0.1, // 20% filled
@@ -89,14 +91,14 @@ class PracticeView extends GetView<PracticeController> {
                   AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height: 65.h,
+              height: 45.h,
             ),
             Center(
               child: Text(
                 textAlign: TextAlign.center,
                 Apptexts.weight,
                 style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 19.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -104,7 +106,7 @@ class PracticeView extends GetView<PracticeController> {
               ),
             ),
             SizedBox(
-              height: 51.h,
+              height: 35.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -112,8 +114,8 @@ class PracticeView extends GetView<PracticeController> {
                 Stack(
                   children: [
                     Container(
-                      height: 208.h,
-                      width: 242.w,
+                      height: 215.h,
+                      width: 240.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: AppColors.whiteTextColor,
@@ -133,16 +135,16 @@ class PracticeView extends GetView<PracticeController> {
                             builder: (context, index) => itemBuilder(context,
                                 index, index == controller.selectedHour.value),
                             itemCount:
-                                500, // Increase itemCount to 500 for hours
+                                200, // Increase itemCount to 500 for hours
                             initialIndex: controller.selectedHour.value,
                             looping: false,
                             style: wheelStyle,
                             selectedIndexColor: Colors.black,
                             onIndexChanged: controller.handleHourChange,
                           ),
-                          const Text("        ",
+                           Text("        ",
                               style: TextStyle(
-                                  fontSize: 22.0,
+                                  fontSize: 21.sp,
                                   height: 1.5,
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.blueBtnColor)),
@@ -173,7 +175,7 @@ class PracticeView extends GetView<PracticeController> {
                     ),
                     Positioned(
                       top: 120.h,
-                      right: 35.w,
+                      right: 33.w,
                       child: Container(
                         height: min(1.3, 1.3),
                         width: 70.w,
@@ -191,7 +193,7 @@ class PracticeView extends GetView<PracticeController> {
                     ),
                     Positioned(
                       top: 75.h,
-                      right: 35.w,
+                      right: 33.w,
                       child: Container(
                         height: min(1.3, 1.3),
                         width: 70.w,
@@ -206,7 +208,7 @@ class PracticeView extends GetView<PracticeController> {
                   builder: (context, index) {
                     return Text(["Kg", "Lb"][index],
                         style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 21.sp,
                             height: 1.5,
                             fontWeight: FontWeight.w500,
                             color: AppColors.blueBtnColor));
@@ -223,7 +225,7 @@ class PracticeView extends GetView<PracticeController> {
                 ),
               ],
             ),
-            SizedBox(height: 43.h), // Add some spacing
+            SizedBox(height: 35.h), // Add some spacing
             Center(
               child: Container(
                 height: 45.h,
@@ -241,7 +243,7 @@ class PracticeView extends GetView<PracticeController> {
                     return Text(
                       '${selectedWeightUnitIndex == 0 ? selectedHour.toString().padLeft(
                             2,
-                          ) + ':' + selectedMinute.toString().padLeft(
+                          ) + '.' + selectedMinute.toString().padLeft(
                             2,
                           ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
                       style: TextStyle(
@@ -254,26 +256,29 @@ class PracticeView extends GetView<PracticeController> {
                 ),
               ),
             ),
-            SizedBox(height: 62.h), // Add some spacing
+          Spacer(), // Add some spacing
             GestureDetector(
               onTap: () {
                 Get.to(Q2View(),binding: Q2Binding(),);
               },
-              child: Container(
-                height: 49.h,
-                decoration: BoxDecoration(
-                  color: AppColors.blueBtnColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    Apptexts.continues,
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      fontFamily: ApptextStyle.fontfamily,
-                      color: AppColors.whiteTextColor,
-                      fontWeight: FontWeight.w600,
+              child: Padding(
+                padding:  EdgeInsets.only(bottom: 45.h),
+                child: Container(
+                  height: 47.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.blueBtnColor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      Apptexts.continues,
+                      style: TextStyle(
+                        fontSize: 15.sp,
+                        fontFamily: ApptextStyle.fontfamily,
+                        color: AppColors.whiteTextColor,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),

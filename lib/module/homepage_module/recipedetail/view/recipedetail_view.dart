@@ -1,3 +1,5 @@
+import 'package:diet_app/module/homepage_module/diet/binding/diet_binding.dart';
+import 'package:diet_app/module/homepage_module/diet/view/diet_view.dart';
 import 'package:diet_app/module/homepage_module/recipedetail/controller/recipedetail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -426,7 +428,7 @@ class RecipedetailView extends GetView<RecipedetailController>{
         
             GestureDetector(
               onTap: (){
-                Get.off(() => BottomNavBarScreen(), binding: BottomNavBarBinding());
+                Get.off(() => DietView(), binding: DietBinding());
               },
               child: Container(
                 height: 49.h,

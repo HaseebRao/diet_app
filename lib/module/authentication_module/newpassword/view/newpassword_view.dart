@@ -8,16 +8,19 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
-import '../../successpasword/binding/successpassword_binding.dart';
+
 import '../../successpasword/view/successpassword_view.dart';
 
 class NewpasswordView extends GetView<NewpasswordController> {
+  const NewpasswordView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteTextColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 21.h),
+          padding: EdgeInsets.symmetric(horizontal: 21.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -28,10 +31,9 @@ class NewpasswordView extends GetView<NewpasswordController> {
                 },
                 child: SvgPicture.asset(
                   Appasset.Arrowdiet,
-                  height: 17.h,
                 ),
               ),
-              SizedBox(height: 130.h),
+              SizedBox(height: 120.h),
               Center(
                 child: Column(
                   children: [
@@ -46,13 +48,13 @@ class NewpasswordView extends GetView<NewpasswordController> {
                     ),
                     SizedBox(height: 14.h),
                     SizedBox(
-                      height: 45.h,
                       width: 280.w,
                       child: Text(
                         textAlign: TextAlign.center,
                         Apptexts.yourNewPasswords,
                         style: TextStyle(
-                          fontSize: 12.2.sp,
+                          height: 1.3.h,
+                          fontSize: 12.sp,
                           fontFamily: ApptextStyle.fontfamily,
                           color: AppColors.blackTextColor.withOpacity(0.3),
                           fontWeight: FontWeight.w400,
@@ -60,68 +62,60 @@ class NewpasswordView extends GetView<NewpasswordController> {
                       ),
                     ),
                     SizedBox(height: 30.h),
-                    Padding(
-                      padding: EdgeInsets.only(left: 2.h),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            textAlign: TextAlign.center,
-                            Apptexts.newPassword,
-                            style: TextStyle(
-                              fontSize: 11.sp,
-                              fontFamily: ApptextStyle.fontfamily,
-                              color: AppColors.blackTextColor.withOpacity(0.5),
-                              fontWeight: FontWeight.w500,
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          textAlign: TextAlign.center,
+                          Apptexts.newPassword,
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            fontFamily: ApptextStyle.fontfamily,
+                            color: AppColors.blackTextColor.withOpacity(0.5),
+                            fontWeight: FontWeight.w500,
                           ),
-                          SizedBox(height: 7.h),
-                          Container(
-                            height: 45.h,
-                            width: 300.w,
-                            decoration: BoxDecoration(
-                              color: AppColors.whiteTextColor,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: AppColors.LoginTextform,
-                                  blurRadius: 1.1,
-                                  spreadRadius: 1.0,
-                                  offset: Offset(0, 1),
-                                ),
-                              ],
-                              borderRadius: BorderRadius.circular(5),
+                        ),
+                        SizedBox(height: 7.h),
+                        Container(
+                          height: 45.h,
+                          width: 300.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteTextColor,
+                            boxShadow: const [
+                              BoxShadow(
+                                color: AppColors.LoginTextform,
+                                blurRadius: 1.1,
+                                spreadRadius: 1.0,
+                                offset: Offset(0, 1),
+                              ),
+                            ],
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: TextFormField(
+                            controller: controller.textController1,
+                            focusNode: controller.focusNode1,
+                            textInputAction: TextInputAction.next,
+                            onFieldSubmitted: (_) {
+                              FocusScope.of(context).requestFocus(controller.focusNode2);
+                            },
+                            style: TextStyle(
+                              color: AppColors.LoginOR,
+                              fontFamily: ApptextStyle.fontfamily,
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 30.w),
-                              child: SizedBox(
-                                height: 40.h,
-                                child: TextFormField(
-                                  controller: controller.textController1,
-                                  focusNode: controller.focusNode1,
-                                  textInputAction: TextInputAction.next,
-                                  onFieldSubmitted: (_) {
-                                    FocusScope.of(context).requestFocus(controller.focusNode2);
-                                  },
-                                  style: TextStyle(
-                                    color: AppColors.LoginOR,
-                                    fontFamily: ApptextStyle.fontfamily,
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: Apptexts.hintYourPasswords,
-                                    border: InputBorder.none,
-                                    hintStyle: TextStyle(
-                                      fontSize: 13.sp,
-                                      color: AppColors.blackTextColor,
-                                      fontFamily: ApptextStyle.fontfamily,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 15.h),
+                              hintText: Apptexts.hintYourPasswords,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                fontSize: 13.sp,
+                                color: AppColors.blackTextColor,
+                                fontFamily: ApptextStyle.fontfamily,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 20.h),
                     Column(
@@ -143,7 +137,7 @@ class NewpasswordView extends GetView<NewpasswordController> {
                           width: 300.w,
                           decoration: BoxDecoration(
                             color: AppColors.whiteTextColor,
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 color: AppColors.LoginTextform,
                                 blurRadius: 1.1,
@@ -153,31 +147,26 @@ class NewpasswordView extends GetView<NewpasswordController> {
                             ],
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 30.w),
-                            child: SizedBox(
-                              height: 40.h,
-                              child: TextFormField(
-                                controller: controller.textController2,
-                                focusNode: controller.focusNode2,
-                                textInputAction: TextInputAction.done,
-                                onChanged: (value) {
-                                  controller.updateButtonColor(value.isNotEmpty);
-                                },
-                                style: TextStyle(
-                                  color: AppColors.LoginOR,
-                                  fontFamily: ApptextStyle.fontfamily,
-                                ),
-                                decoration: InputDecoration(
-                                  hintText: Apptexts.hintYourPasswords,
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                    fontSize: 13.sp,
-                                    color: AppColors.blackTextColor,
-                                    fontFamily: ApptextStyle.fontfamily,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
+                          child: TextFormField(
+                            controller: controller.textController2,
+                            focusNode: controller.focusNode2,
+                            textInputAction: TextInputAction.done,
+                            onChanged: (value) {
+                              controller.updateButtonColor(value.isNotEmpty);
+                            },
+                            style: TextStyle(
+                              color: AppColors.LoginOR,
+                              fontFamily: ApptextStyle.fontfamily,
+                            ),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 15.h),
+                              hintText: Apptexts.hintYourPasswords,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                fontSize: 13.sp,
+                                color: AppColors.blackTextColor,
+                                fontFamily: ApptextStyle.fontfamily,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
@@ -191,10 +180,10 @@ class NewpasswordView extends GetView<NewpasswordController> {
                       },
                       child: GestureDetector(
                         onTap: (){
-                          Get.to(SuccesspasswordView(),binding:SuccesspasswordBinding(),);
+                          Get.to(SuccesspasswordView(),);
                         },
                         child: Container(
-                          height: 49.h,
+                          height: 47.h,
                           decoration: BoxDecoration(
                             color: controller.isTextEntered.value ? AppColors.Profilecircle : AppColors.Profilecircles,
                             borderRadius: BorderRadius.circular(8),

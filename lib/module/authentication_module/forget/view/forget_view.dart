@@ -29,8 +29,8 @@ class ForgetView extends GetView<ForgerController>{
                onTap: (){
                  Get.back();
                },
-                 child: SvgPicture.asset(Appasset.Arrowdiet,height: 17.h,)),
-             SizedBox(height:152.h,),
+                 child: SvgPicture.asset(Appasset.Arrowdiet,)),
+             SizedBox(height:140.h,),
              Center(
                child: Column(
                  children: [
@@ -44,19 +44,18 @@ class ForgetView extends GetView<ForgerController>{
                      ),),
                    SizedBox(height: 14.h,),
                    SizedBox(
-                     height: 36.h,
                      width: 245.w,
                      child: Text(
                        textAlign: TextAlign.center,
                        Apptexts.pleaseEnter,
                        style: TextStyle(
-                         fontSize: 13.2.sp,
+                         fontSize: 13.sp,
                          fontFamily: ApptextStyle.fontfamily,
                          color: AppColors.blackTextColor.withOpacity(0.3),
                          fontWeight: FontWeight.w400,
                        ),),
                    ),
-                   SizedBox(height: 45.h,),
+                   SizedBox(height: 32.h,),
                  ],
                ),
              ),
@@ -74,7 +73,7 @@ class ForgetView extends GetView<ForgerController>{
                        color: AppColors.blackTextColor.withOpacity(0.5),
                        fontWeight: FontWeight.w500,
                      ),),
-                   SizedBox(height: 7.h,),
+                   SizedBox(height: 10.h,),
                    Container(
                      height:45.h,
                      width: 300.w,
@@ -90,32 +89,26 @@ class ForgetView extends GetView<ForgerController>{
                          ],
                          borderRadius: BorderRadius.circular(5)
                      ),
-                     child: Padding(
-                       padding:  EdgeInsets.only(left: 27.w,),
-                       child: SizedBox(
-                         height: 40.h,
-                         child: TextFormField(
-                           focusNode: controller.focusNode1,
-                           textInputAction: TextInputAction.next,
-                           onFieldSubmitted: (_) {
-                             FocusScope.of(context).requestFocus(controller.focusNode2);
-                           },
-                           style: TextStyle(
-                             color:AppColors.LoginOR, // Setting text color to white
-                             fontFamily: ApptextStyle.fontfamily, // Setting font family
-                           ),
-                           decoration: InputDecoration(
-                             hintText:  Apptexts.gmailTexts,
-                             border: InputBorder.none,
-                             contentPadding: EdgeInsets.symmetric(vertical: 16.w),
-                             hintStyle: TextStyle(
-                               fontSize: 13.sp,
-                               color:AppColors.blackTextColor, // Setting hint text color to white with opacity
-                               fontFamily: ApptextStyle.fontfamily,
-                               fontWeight: FontWeight.w700,
-                                      // Setting font family for hint text
-                             ),
-                           ),
+                     child: TextFormField(
+                       focusNode: controller.focusNode1,
+                       textInputAction: TextInputAction.next,
+                       onFieldSubmitted: (_) {
+                         FocusScope.of(context).requestFocus(controller.focusNode2);
+                       },
+                       style: TextStyle(
+                         color:AppColors.LoginOR, // Setting text color to white
+                         fontFamily: ApptextStyle.fontfamily, // Setting font family
+                       ),
+                       decoration: InputDecoration(
+                         hintText:  Apptexts.gmailTexts,
+                         border: InputBorder.none,
+                         contentPadding: EdgeInsets.symmetric(vertical: 16.h,horizontal: 25.w),
+                         hintStyle: TextStyle(
+                           fontSize: 12.sp,
+                           color:AppColors.blackTextColor, // Setting hint text color to white with opacity
+                           fontFamily: ApptextStyle.fontfamily,
+                           fontWeight: FontWeight.w700,
+                                  // Setting font family for hint text
                          ),
                        ),
                      ),
@@ -129,7 +122,7 @@ class ForgetView extends GetView<ForgerController>{
                  Get.to(VerifyView(),binding: VerifyBinding(),);
                },
                child: Container(
-                 height: 49.h,
+                 height: 47.h,
                  decoration: BoxDecoration(
                    color: AppColors.blueBtnColor,
                    borderRadius: BorderRadius.circular(8),

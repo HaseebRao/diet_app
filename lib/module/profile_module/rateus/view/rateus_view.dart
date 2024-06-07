@@ -1,3 +1,5 @@
+import 'package:diet_app/module/profile_module/profile/binding/profile_binding.dart';
+import 'package:diet_app/module/profile_module/profile/view/profile_view.dart';
 import 'package:diet_app/module/profile_module/rateus/controller/rateus_controller.dart';
 import 'package:diet_app/module/profile_module/rateusdone/binding/rateusdone_binding.dart';
 import 'package:diet_app/module/profile_module/rateusdone/view/rateusdone_view.dart';
@@ -18,6 +20,7 @@ class RateusView extends GetView<IconController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteTextColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -30,7 +33,7 @@ class RateusView extends GetView<IconController> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Get.back();
+                  Get.back();
                   },
                   child: SvgPicture.asset(
                     Appasset.Arrowdiet,

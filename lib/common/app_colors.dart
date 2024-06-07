@@ -46,4 +46,9 @@ class AppColors {
   static const yellowdark = Color(0xffF7B149);
   static const blues = Color(0xff1A95B0);
   static const purple = Color(0xff8665FD);
+  static const dietBackgroundColor = Color(0xffF1F1F1);
+  static const dietBorderColor = Color(0xffE1F4FF);
+  static const bordercolor = Color(0xffD6D6D6);
+  static const fastingtext = Color(0xff626262);
+  static const bordercolors = Color(0xffEEEEEE);
 }

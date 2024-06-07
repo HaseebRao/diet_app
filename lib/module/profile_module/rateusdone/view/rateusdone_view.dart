@@ -18,27 +18,41 @@ import '../../rateus/widget/rateus_customwidget.dart';
 class RateusdoneView extends GetView<RateusdoneController> {
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 3), () {
-      Get.off(() =>ProfileView(), binding: ProfileBinding());
-    });
+
     return Scaffold(
 
-
+      backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding:  EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
 
           children: [
-            SizedBox(height: 60.h,),
-            Text(
-              Apptexts. rateus,
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontFamily: ApptextStyle.fontfamily,
-                color: AppColors.blackTextColor,
-                fontWeight: FontWeight.w700,
-              ),
+            SizedBox(height: 45.h,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: SvgPicture.asset(
+                    Appasset.Arrowdiet,
+                    height: 17.h,
+                  ),
+                ),
+SizedBox(width: 80.w,),
+                Text(
+                  Apptexts. rateus,
+                  style: TextStyle(
+                    fontSize: 24.sp,
+                    fontFamily: ApptextStyle.fontfamily,
+                    color: AppColors.blackTextColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ),
+
             SizedBox(height: 275.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

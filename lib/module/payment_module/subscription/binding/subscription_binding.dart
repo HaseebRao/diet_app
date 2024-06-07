@@ -6,7 +6,6 @@ class SubscriptionBinding implements Bindings {
   void dependencies() {
    Get.lazyPut(() => SubscriptionController());
   }
-
 }
 
 

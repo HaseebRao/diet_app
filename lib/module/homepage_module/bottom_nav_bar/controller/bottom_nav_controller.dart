@@ -23,7 +23,7 @@ class BottomNavBarController extends GetxController{
     tabItems = [
      HomepageView(),
      RecipeView(),
-     ProgresVeiw(),
+     ProgressView(),
      ProfileView(),
     ];
     super.onInit();

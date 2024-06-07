@@ -15,6 +15,7 @@ class FaqsView extends GetView<FaqsController>{
   Widget build(BuildContext context) {
    return
    Scaffold(
+     backgroundColor: AppColors.whiteTextColor,
      body: Padding(
        padding: EdgeInsets.symmetric(horizontal: 23.0),
        child: Column(

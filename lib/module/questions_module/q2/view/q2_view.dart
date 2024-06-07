@@ -49,21 +49,24 @@ class Q2View extends GetView<Q2Controller> {
     return Scaffold(
       backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21.0.w),
+        padding: EdgeInsets.symmetric(horizontal: 21.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 47.h,
+              height:35.h,
             ),
-            GestureDetector(
-              onTap: (){
-                Get.back();
-              },
-              child: SvgPicture.asset(
-                Appasset.Arrowdiet,
-                height: 17.h,
-              ),
+            SizedBox(
+              height: 25.h,
+              child: IconButton(
+                  focusColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(0),
+                  onPressed: (){
+                    Get.back();
+                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +74,7 @@ class Q2View extends GetView<Q2Controller> {
                 Text(
                   Apptexts.valuetext,
                   style: TextStyle(
-                    fontSize: 15.1.sp,
+                    fontSize: 15.sp,
                     fontFamily: ApptextStyle.fontfamily,
                     color: AppColors.blackTextColor,
                     fontWeight: FontWeight.w700,
@@ -80,25 +83,25 @@ class Q2View extends GetView<Q2Controller> {
               ],
             ),
             SizedBox(
-              height: 5.h,
+              height: 7.h,
             ),
             LinearProgressIndicator(
-              value: 0.26, // 20% filled
-              minHeight: 10.h,
+              value: 0.2, // 20% filled
+              minHeight: 11.h,
               backgroundColor: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
               valueColor:
-                  AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
+              AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height: 65.h,
+              height: 45.h,
             ),
             Center(
               child: Text(
                 textAlign: TextAlign.center,
-                Apptexts.Q2,
+                Apptexts.weight,
                 style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 19.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -106,7 +109,7 @@ class Q2View extends GetView<Q2Controller> {
               ),
             ),
             SizedBox(
-              height: 51.h,
+              height: 35.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -114,8 +117,8 @@ class Q2View extends GetView<Q2Controller> {
                 Stack(
                   children: [
                     Container(
-                      height: 208.h,
-                      width: 242.w,
+                      height: 215.h,
+                      width: 240.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: AppColors.whiteTextColor,
@@ -135,16 +138,16 @@ class Q2View extends GetView<Q2Controller> {
                             builder: (context, index) => itemBuilder(context,
                                 index, index == controller.selectedHour.value),
                             itemCount:
-                                500, // Increase itemCount to 500 for hours
+                            200, // Increase itemCount to 500 for hours
                             initialIndex: controller.selectedHour.value,
                             looping: false,
                             style: wheelStyle,
                             selectedIndexColor: Colors.black,
                             onIndexChanged: controller.handleHourChange,
                           ),
-                          const Text("        ",
+                          Text("        ",
                               style: TextStyle(
-                                  fontSize: 22.0,
+                                  fontSize: 21.sp,
                                   height: 1.5,
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.blueBtnColor)),
@@ -175,7 +178,7 @@ class Q2View extends GetView<Q2Controller> {
                     ),
                     Positioned(
                       top: 120.h,
-                      right: 35.w,
+                      right: 33.w,
                       child: Container(
                         height: min(1.3, 1.3),
                         width: 70.w,
@@ -193,7 +196,7 @@ class Q2View extends GetView<Q2Controller> {
                     ),
                     Positioned(
                       top: 75.h,
-                      right: 35.w,
+                      right: 33.w,
                       child: Container(
                         height: min(1.3, 1.3),
                         width: 70.w,
@@ -202,13 +205,13 @@ class Q2View extends GetView<Q2Controller> {
                     ),
                   ],
                 ),
-                SizedBox(width:15.w),
+                SizedBox(width: 15.w),
                 WheelPicker(
                   itemCount: 2,
                   builder: (context, index) {
                     return Text(["Kg", "Lb"][index],
                         style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 21.sp,
                             height: 1.5,
                             fontWeight: FontWeight.w500,
                             color: AppColors.blueBtnColor));
@@ -225,13 +228,14 @@ class Q2View extends GetView<Q2Controller> {
                 ),
               ],
             ),
-            SizedBox(height: 43.h), // Add some spacing
+            SizedBox(height: 35.h), // Add some spacing
             Center(
               child: Container(
                 height: 45.h,
                 width: 150.w,
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
+                  border: Border.all(
+                      color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
                 ),
                 child: Center(
                   child: Obx(() {
@@ -241,10 +245,10 @@ class Q2View extends GetView<Q2Controller> {
                         controller.selectedWeightUnitIndex.value;
                     return Text(
                       '${selectedWeightUnitIndex == 0 ? selectedHour.toString().padLeft(
-                            2,
-                          ) + ':' + selectedMinute.toString().padLeft(
-                            2,
-                          ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
+                        2,
+                      ) + '.' + selectedMinute.toString().padLeft(
+                        2,
+                      ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
                       style: TextStyle(
                           fontSize: 22.0,
                           height: 1.5,
@@ -255,26 +259,29 @@ class Q2View extends GetView<Q2Controller> {
                 ),
               ),
             ),
-            SizedBox(height: 62.h), // Add some spacing
+          Spacer(),
             GestureDetector(
               onTap: () {
                 Get.to(Q3View(),binding: Q3Binding(),);
               },
-              child: Container(
-                height: 49.h,
-                decoration: BoxDecoration(
-                  color: AppColors.blueBtnColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    Apptexts.continues,
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      fontFamily: ApptextStyle.fontfamily,
-                      color: AppColors.whiteTextColor,
-                      fontWeight: FontWeight.w600,
+              child: Padding(
+                padding:  EdgeInsets.only(bottom: 45.h),
+                child: Container(
+                  height: 47.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.blueBtnColor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      Apptexts.continues,
+                      style: TextStyle(
+                        fontSize: 15.sp,
+                        fontFamily: ApptextStyle.fontfamily,
+                        color: AppColors.whiteTextColor,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),

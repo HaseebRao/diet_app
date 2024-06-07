@@ -1,6 +1,6 @@
 import 'dart:async';
-
-import 'package:diet_app/module/authentication_module/successpasword/controller/successpassword_controller.dart';
+import 'package:diet_app/module/authentication_module/login/binding/login_binding.dart';
+import 'package:diet_app/module/authentication_module/login/view/login_view.dart';
 import 'package:diet_app/module/authentication_module/verify/binding/verify_binding.dart';
 import 'package:diet_app/module/authentication_module/verify/view/verify_view.dart';
 import 'package:flutter/material.dart';
@@ -13,17 +13,17 @@ import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
 
-class SuccesspasswordView extends GetView<SuccesspasswordController>{
+class SuccesspasswordView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
-      Get.off(() => VerifyView(), binding: VerifyBinding());
+      Get.off(() => LoginView(), binding: LoginBinding());
     });
    return
  Scaffold(
    backgroundColor: AppColors.whiteTextColor,
    body: Padding(
-     padding: const EdgeInsets.symmetric(horizontal: 21.0),
+     padding:  EdgeInsets.symmetric(horizontal: 21.w),
      child: Column(
        children: [
 SizedBox(height: 180.h,),

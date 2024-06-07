@@ -28,6 +28,7 @@ class AccountView extends GetView <AccountController>{
   Widget build(BuildContext context) {
    return
   Scaffold(
+    backgroundColor: AppColors.whiteTextColor,
     body: Padding(
       padding:  EdgeInsets.symmetric(horizontal: 21.0),
       child: Column(
@@ -38,7 +39,7 @@ class AccountView extends GetView <AccountController>{
             children: [
               GestureDetector(
                   onTap: (){
-                   Get.to(ProfileView(),binding: ProfileBinding(),);
+                 Get.back();
                   },
 
                   child: SvgPicture.asset(Appasset.Arrowdiet,height: 17.h,)),
@@ -60,14 +61,14 @@ class AccountView extends GetView <AccountController>{
           SizedBox(height: 55.h,),
           GestureDetector(
             onTap: (){
-              Get.off(AppearancePage(),binding:ApperanceBinding(),);
+              Get.to(AppearancePage(),binding:ApperanceBinding(),);
             },
             child: AccountWidget(
               text: Apptexts.acounts,
                icon:  Icons.arrow_forward_ios,
             ),
           ),
-          SizedBox(height:17.h,),
+          SizedBox(height:16.h,),
           GestureDetector(
             onTap: (){
               Get.off(ChangepasswordView(),binding:ChangepasswordBinding(),);
@@ -77,7 +78,7 @@ class AccountView extends GetView <AccountController>{
               icon:  Icons.arrow_forward_ios,
             ),
           ),
-          SizedBox(height:17.h,),
+          SizedBox(height:16.h,),
           Container(
             height:54.h,
             decoration: BoxDecoration(
@@ -106,7 +107,7 @@ class AccountView extends GetView <AccountController>{
               ),
             ),
           ),
-          SizedBox(height:17.h,),
+          SizedBox(height:16.h,),
 
           Container(
             height:54.h,
@@ -152,7 +153,7 @@ class AccountView extends GetView <AccountController>{
               ),
             ),
           ),
-          SizedBox(height:18.h,),
+          SizedBox(height:16.h,),
           GestureDetector(
             onTap: (){
               Get.to(AppversionView(),binding: AppversionBinding());
@@ -173,7 +174,7 @@ class AccountView extends GetView <AccountController>{
               icon:  Icons.arrow_forward_ios,
             ),
           ),
-          SizedBox(height:18.h,),
+          SizedBox(height:16.h,),
           GestureDetector(
             onTap: (){
               Get.dialog( LogoutDialogue(),);
@@ -197,7 +198,7 @@ class AccountView extends GetView <AccountController>{
                         fontWeight: FontWeight.w700,
                       ),),
                     Spacer(),
-                    SvgPicture.asset(Appasset.Logout,height: 12.h,),
+                    SvgPicture.asset(Appasset.svgg,height: 12.h,),
                   ],
                 ),
               ),

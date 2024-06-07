@@ -1,6 +1,7 @@
 import 'package:diet_app/module/authentication_module/login/binding/login_binding.dart';
 import 'package:diet_app/module/authentication_module/login/view/login_view.dart';
 import 'package:diet_app/module/authentication_module/signup/controller/signup_controller.dart';
+import 'package:diet_app/module/authentication_module/wellcome/view/wellcome_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,52 +16,52 @@ class SignupView extends GetView<SignupController>{
   Widget build(BuildContext context) {
    return
    Scaffold(
+     backgroundColor: AppColors.whiteTextColor,
      body: SingleChildScrollView(
        child: Padding(
          padding:  EdgeInsets.symmetric(horizontal: 21.w),
          child: Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
            children: [
-             SizedBox(height: 52.h,),
-             Text(
-               Apptexts.cteateYour,
-               style: TextStyle(
-                 fontSize: 20.5.sp,
-                 fontFamily: ApptextStyle.fontfamily,
-                 color:AppColors.blackTextColor,
-                 fontWeight: FontWeight.w700,
-               ),),
-             SizedBox(height: 10.5.h,),
+             SizedBox(height: 47.h,),
+             Center(
+               child: Text(
+                 Apptexts.cteateYour,
+                 style: TextStyle(
+                   fontSize: 20.sp,
+                   fontFamily: ApptextStyle.fontfamily,
+                   color:AppColors.blackTextColor,
+                   fontWeight: FontWeight.w700,
+                 ),),
+             ),
+             SizedBox(height: 10.h,),
              SizedBox(
-               height: 35.h,
+              width: 340.w,
                child: Text(
                  textAlign: TextAlign.center,
                 Apptexts.CreateDummy,
                  style: TextStyle(
-                   fontSize: 11.3.sp,
+                   height: 1.3.h,
+                   fontSize: 11.sp,
                    fontFamily: ApptextStyle.fontfamily,
                    color:AppColors.loginLorem ,
                    fontWeight: FontWeight.w400,
                  ),),
              ),
 
-             SizedBox(height: 36.h,),
-             Row(
-               mainAxisAlignment: MainAxisAlignment.start,
-               children: [
-                 Text(
-                   textAlign: TextAlign.start,
-                 Apptexts.fullName,
-                   style: TextStyle(
-                     fontSize: 14.sp,
-                     fontFamily: ApptextStyle.fontfamily,
-                     color:AppColors.blackTextColor,
-                     fontWeight: FontWeight.w700,
-                   ),),
-               ],
-             ),
+             SizedBox(height: 31.h,),
+             Text(
+               textAlign: TextAlign.start,
+             Apptexts.fullName,
+               style: TextStyle(
+                 fontSize: 13.sp,
+                 fontFamily: ApptextStyle.fontfamily,
+                 color:AppColors.blackTextColor,
+                 fontWeight: FontWeight.w700,
+               ),),
              SizedBox(height: 8.h,),
              Container(
-               height: 49.h,
+               height: 47.h,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(8),
                  border: Border.all(
@@ -84,7 +85,7 @@ class SignupView extends GetView<SignupController>{
                      hintText: Apptexts.insertYourText,
                      border: InputBorder.none,
                      hintStyle: TextStyle(
-                       fontSize: 12.5.h,// Setting hint text color to white with opacity
+                       fontSize: 12.sp,// Setting hint text color to white with opacity
                        color:AppColors.LoginTextform, // Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
@@ -93,23 +94,17 @@ class SignupView extends GetView<SignupController>{
                ),
              ),
              SizedBox(height: 22.h,),
-             Row(
-               mainAxisAlignment: MainAxisAlignment.start,
-               children: [
-                 Text(
-                   textAlign: TextAlign.start,
-                   Apptexts.emailText,
-                   style: TextStyle(
-                     fontSize: 14.sp,
-                     fontFamily: ApptextStyle.fontfamily,
-                     color:AppColors.blackTextColor,
-                     fontWeight: FontWeight.w700,
-                   ),),
-               ],
-             ),
+             Text(
+               Apptexts.emailText,
+               style: TextStyle(
+                 fontSize: 13.sp,
+                 fontFamily: ApptextStyle.fontfamily,
+                 color:AppColors.blackTextColor,
+                 fontWeight: FontWeight.w700,
+               ),),
              SizedBox(height: 8.h,),
              Container(
-               height: 49.h,
+               height: 47.h,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(8),
                  border: Border.all(
@@ -133,7 +128,7 @@ class SignupView extends GetView<SignupController>{
                      hintText: Apptexts.insertEmail,
                      border: InputBorder.none,
                      hintStyle: TextStyle(
-                       fontSize: 12.5.h,// Setting hint text color to white with opacity
+                       fontSize: 12.sp,// Setting hint text color to white with opacity
                        color:AppColors.LoginTextform,
                        // Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
@@ -150,7 +145,7 @@ class SignupView extends GetView<SignupController>{
                    textAlign: TextAlign.start,
                    Apptexts.createPassword,
                    style: TextStyle(
-                     fontSize: 14.sp,
+                     fontSize: 13.sp,
                      fontFamily: ApptextStyle.fontfamily,
                      color:AppColors.blackTextColor,
                      fontWeight: FontWeight.w700,
@@ -159,7 +154,7 @@ class SignupView extends GetView<SignupController>{
              ),
              SizedBox(height: 8.h,),
              Container(
-               height: 49.h,
+               height: 47.h,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(8),
                  border: Border.all(
@@ -184,28 +179,27 @@ class SignupView extends GetView<SignupController>{
                      border: InputBorder.none,
                      hintStyle: TextStyle(
                        color:AppColors.LoginTextform,
-                       fontSize: 12.5.h,// Setting hint text color to white with opacity
+                       fontSize: 12.sp,// Setting hint text color to white with opacity
                        fontFamily: ApptextStyle.fontfamily, // Setting font family for hint text
                      ),
                    ),
                  ),
                ),
              ),
-             SizedBox(height:137.h,),
+             SizedBox(height:120.h,),
              GestureDetector(
                onTap: (){
-                 Get.off(LoginView(),binding: LoginBinding(),);
+                 Get.off(WellcomeView(),);
 
                },
                child: Container(
-                 height: 49.h,
+                 height: 47.h,
                  decoration: BoxDecoration(
                    color: AppColors.blueBtnColor,
                    borderRadius: BorderRadius.circular(8),
                  ),
                  child:  Center(
                    child: Text(
-                     textAlign: TextAlign.center,
                      Apptexts.signupTexts,
                      style: TextStyle(
                        fontSize: 15.sp,
@@ -216,7 +210,7 @@ class SignupView extends GetView<SignupController>{
                  ),
                ),
              ),
-             SizedBox(height: 24.h,),
+             SizedBox(height: 30.h,),
              GestureDetector(
                onTap: (){
                  Get.off(LoginView(),binding: LoginBinding(),);

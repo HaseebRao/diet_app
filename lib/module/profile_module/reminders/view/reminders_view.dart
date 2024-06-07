@@ -19,6 +19,7 @@ class RemindersVeiw extends GetView<MyCheckboxController>{
   Widget build(BuildContext context) {
    return
   Scaffold(
+    backgroundColor:AppColors.whiteTextColor ,
     body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 21.0),
       child: Column(

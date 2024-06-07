@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
@@ -17,6 +20,7 @@ class VerifyView extends GetView<VerifyController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteTextColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 21.w),
@@ -70,30 +74,61 @@ class VerifyView extends GetView<VerifyController> {
                     SizedBox(
                       height: 35.h,
                     ),
-                    Center(
-                        child: OTPTextField(
-                            controller: otpController,
-                            length: 4,
-                            width: MediaQuery.of(context).size.width,
+                    SizedBox(
+                      width: 300.w,
+                      child: PinCodeTextField(
+                        keyboardType: TextInputType.number,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        obscuringCharacter: '....',
+                        length: 4,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(
+                            RegExp(r'^[0-9]+$'),
+                          ),
+                        ],
+                        obscureText: false,
+                        animationType: AnimationType.fade,
+                        pinTheme: PinTheme(
 
-                            textFieldAlignment: MainAxisAlignment.spaceAround,
-                            fieldWidth: 68,
-                            fieldStyle: FieldStyle.box,
-                            outlineBorderRadius: 65,
-                            style: TextStyle(
-                              height: 1.2.h,
-                              fontSize: 28.sp,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.blackTextColor,
-                            ),
-                            onChanged: (pin) {
-                              print("Changed: " + pin);
-                            },
-                            onCompleted: (pin) {
-                              print("Completed: " + pin);
-                            },
-                            // Setting circular border
-                            )),
+                          activeBoxShadow: [
+                            BoxShadow(
+                                color: AppColors.blackTextColor.withOpacity(0.25),
+                                blurRadius: 5,
+                                offset: Offset(0.1, 0.1),
+                                spreadRadius: 0,
+                                blurStyle: BlurStyle.outer
+                            )
+                          ],
+                          inActiveBoxShadow: [
+                            BoxShadow(
+                                color: AppColors.blackTextColor.withOpacity(0.25),
+                                blurRadius: 5,
+                                offset: Offset(0.1, 0.1),
+                                spreadRadius: 0,
+                                blurStyle: BlurStyle.outer
+                            )
+                          ],
+                          activeColor: AppColors.whiteTextColor,
+                          activeFillColor: AppColors.whiteTextColor,
+                          inactiveFillColor:
+                          Colors.grey.withOpacity(0.1),
+                          inactiveColor:
+                                Colors.grey.withOpacity(0),
+                          selectedFillColor: AppColors.whiteTextColor,
+                          selectedColor: AppColors.whiteTextColor,
+                          fieldHeight: 60.h,
+                          fieldWidth: 60.w,
+                          shape: PinCodeFieldShape.circle,
+                        ),
+                        animationDuration: const Duration(milliseconds: 300),
+                        backgroundColor: Colors.transparent,
+                        enableActiveFill: true,
+                        onChanged: (otp) {
+                          controller.pin.value = otp;
+                        },
+                        appContext: context,
+                      ),
+                    ),
                     SizedBox(
                       height: 34.h,
                     ),

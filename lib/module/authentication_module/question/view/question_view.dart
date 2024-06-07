@@ -20,8 +20,9 @@ class QuestionView extends StatelessWidget {
     return GetBuilder<QuestionController>(
       init: QuestionController(), // Initialize your controller
       builder: (controller) => Scaffold(
+        backgroundColor: AppColors.whiteTextColor,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 21.0),
+          padding:  EdgeInsets.symmetric(horizontal: 21.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -154,14 +155,14 @@ class QuestionView extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 158.h,
+                height: 151.h,
               ),
               GestureDetector(
                 onTap: () {
-                  Get.off(PracticeView(),binding: PracticeBinding(),);
+                  Get.to(PracticeView(),binding: PracticeBinding(),);
                 },
                 child: Container(
-                  height: 49.h,
+                  height: 47.h,
                   decoration: BoxDecoration(
                     color: AppColors.blueBtnColor,
                     borderRadius: BorderRadius.circular(8),

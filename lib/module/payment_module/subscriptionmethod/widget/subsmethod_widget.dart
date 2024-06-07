@@ -34,9 +34,9 @@ class _SubsmethodWidgetState extends State<SubsmethodWidget> {
           height: 54.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: AppColors.whiteTextColor,
+            color: AppColors.whiteTextColor.withOpacity(0.6),
             border: Border.all(
-              color: widget.isSelected ? AppColors.Profilecircle : Colors.transparent,
+              color: widget.isSelected ? AppColors.Profilecircle : AppColors.Loginbordercolor.withOpacity(0.4),
             ),
           ),
           child: Padding(
