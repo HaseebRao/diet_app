@@ -57,6 +57,7 @@ dependencies:
   liquid_progress_indicator_v2:
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
