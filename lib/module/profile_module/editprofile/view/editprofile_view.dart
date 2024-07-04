@@ -29,7 +29,7 @@ class EditprofileView extends GetView<EditprofileController> {
           child: Column(
             children: [
               SizedBox(
-                height: 48.h,
+                height: 45.h,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,13 +37,17 @@ class EditprofileView extends GetView<EditprofileController> {
                   Padding(
                     padding: EdgeInsets.only(top: 11.h),
                     child: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Get.back();
                         },
-
-                        child: SvgPicture.asset(Appasset.Arrowdiet,height: 17.h,)),
+                        child: SvgPicture.asset(
+                          Appasset.Arrowdiet,
+                          height: 17.h,
+                        )),
                   ),
-                  SizedBox(width:85.w,),
+                  SizedBox(
+                    width: 85.w,
+                  ),
                   Obx(
                     () => Center(
                       child: Container(
@@ -66,20 +70,21 @@ class EditprofileView extends GetView<EditprofileController> {
                                 color: AppColors.Profilecircles,
                                 image: controller.imagePath.isNotEmpty
                                     ? DecorationImage(
-                                  image: FileImage(File(controller.imagePath.toString())),
-                                  fit: BoxFit.fitWidth,
-                                )
+                                        image: FileImage(File(
+                                            controller.imagePath.toString())),
+                                        fit: BoxFit.fitWidth,
+                                      )
                                     : null, // Set image to null if imagePath is empty
                               ),
-                              child: controller.imagePath.isNotEmpty // Check if imagePath is not empty
+                              child: controller.imagePath
+                                      .isNotEmpty // Check if imagePath is not empty
                                   ? null // If image is chosen, no need for SvgPicture
                                   : SvgPicture.asset(
-                                Appasset.Camera,
-                                width: 20.w,
-                                fit: BoxFit.scaleDown,
-                              ),
+                                      Appasset.Camera,
+                                      width: 20.w,
+                                      fit: BoxFit.scaleDown,
+                                    ),
                             ),
-
                           ),
                         ),
                       ),
@@ -88,7 +93,7 @@ class EditprofileView extends GetView<EditprofileController> {
                 ],
               ),
               SizedBox(
-                height: 14.h,
+                height: 12.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -106,14 +111,14 @@ class EditprofileView extends GetView<EditprofileController> {
                 ],
               ),
               SizedBox(
-                height: 5.5.h,
+                height: 5.h,
               ),
               Container(
                 height: 46.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                      color: AppColors.Profiletextes, width: 1.h),
+                  border:
+                      Border.all(color: AppColors.Profiletextes, width: 1.h),
                 ),
                 child: Center(
                   child: TextFormField(
@@ -124,8 +129,7 @@ class EditprofileView extends GetView<EditprofileController> {
                           .requestFocus(controller.focusNode2);
                     },
                     style: TextStyle(
-                      color:
-                          AppColors.LoginOR, // Setting text color to white
+                      color: AppColors.LoginOR, // Setting text color to white
                       fontFamily: ApptextStyle.fontfamily,
                       fontSize: 12.sp,
                     ),
@@ -144,7 +148,7 @@ class EditprofileView extends GetView<EditprofileController> {
                 ),
               ),
               SizedBox(
-                height: 16.h,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -162,14 +166,14 @@ class EditprofileView extends GetView<EditprofileController> {
                 ],
               ),
               SizedBox(
-                height: 5.5.h,
+                height: 5.h,
               ),
               Container(
                 height: 46.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                      color: AppColors.Profiletextes, width: 1.h),
+                  border:
+                      Border.all(color: AppColors.Profiletextes, width: 1.h),
                 ),
                 child: Center(
                   child: TextFormField(
@@ -180,8 +184,7 @@ class EditprofileView extends GetView<EditprofileController> {
                           .requestFocus(controller.focusNode3);
                     },
                     style: TextStyle(
-                      color:
-                          AppColors.LoginOR, // Setting text color to white
+                      color: AppColors.LoginOR, // Setting text color to white
                       fontFamily: ApptextStyle.fontfamily,
                       fontSize: 12.sp,
                     ),
@@ -201,7 +204,7 @@ class EditprofileView extends GetView<EditprofileController> {
                 ),
               ),
               SizedBox(
-                height: 16.h,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -219,14 +222,14 @@ class EditprofileView extends GetView<EditprofileController> {
                 ],
               ),
               SizedBox(
-                height: 5.5.h,
+                height: 5.h,
               ),
               Container(
                 height: 46.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                      color: AppColors.Profiletextes, width: 1.h),
+                  border:
+                      Border.all(color: AppColors.Profiletextes, width: 1.h),
                 ),
                 child: Center(
                   child: TextFormField(
@@ -237,8 +240,7 @@ class EditprofileView extends GetView<EditprofileController> {
                           .requestFocus(controller.focusNode4);
                     },
                     style: TextStyle(
-                      color:
-                          AppColors.LoginOR, // Setting text color to white
+                      color: AppColors.LoginOR, // Setting text color to white
                       fontFamily: ApptextStyle.fontfamily,
                       fontSize: 12.sp,
                     ),
@@ -257,7 +259,7 @@ class EditprofileView extends GetView<EditprofileController> {
                 ),
               ),
               SizedBox(
-                height:16.h,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -275,14 +277,14 @@ class EditprofileView extends GetView<EditprofileController> {
                 ],
               ),
               SizedBox(
-                height: 5.5.h,
+                height: 5.h,
               ),
               Container(
                 height: 46.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                      color: AppColors.Profiletextes, width: 1.h),
+                  border:
+                      Border.all(color: AppColors.Profiletextes, width: 1.h),
                 ),
                 child: Center(
                   child: TextFormField(
@@ -293,8 +295,7 @@ class EditprofileView extends GetView<EditprofileController> {
                           .requestFocus(controller.focusNode5);
                     },
                     style: TextStyle(
-                      color:
-                          AppColors.LoginOR, // Setting text color to white
+                      color: AppColors.LoginOR, // Setting text color to white
                       fontFamily: ApptextStyle.fontfamily,
                       fontSize: 12.sp,
                     ),
@@ -313,7 +314,7 @@ class EditprofileView extends GetView<EditprofileController> {
                 ),
               ),
               SizedBox(
-                height: 16.h,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -331,14 +332,14 @@ class EditprofileView extends GetView<EditprofileController> {
                 ],
               ),
               SizedBox(
-                height: 5.5.h,
+                height: 5.h,
               ),
               Container(
                 height: 46.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                      color: AppColors.Profiletextes, width: 1.h),
+                  border:
+                      Border.all(color: AppColors.Profiletextes, width: 1.h),
                 ),
                 child: Center(
                   child: TextFormField(
@@ -349,8 +350,7 @@ class EditprofileView extends GetView<EditprofileController> {
                           .requestFocus(controller.focusNode6);
                     },
                     style: TextStyle(
-                      color:
-                          AppColors.LoginOR, // Setting text color to white
+                      color: AppColors.LoginOR, // Setting text color to white
                       fontFamily: ApptextStyle.fontfamily,
                       fontSize: 12.sp,
                     ),
@@ -369,11 +369,14 @@ class EditprofileView extends GetView<EditprofileController> {
                 ),
               ),
               SizedBox(
-                height: 30.h,
+                height: 31.h,
               ),
               GestureDetector(
-                onTap: (){
-                  Get.to(ProfileView(),binding: ProfileBinding(),);
+                onTap: () {
+                  Get.to(
+                    ProfileView(),
+                    binding: ProfileBinding(),
+                  );
                 },
                 child: Container(
                   height: 49.h,
@@ -402,5 +405,3 @@ class EditprofileView extends GetView<EditprofileController> {
     );
   }
 }
-
-

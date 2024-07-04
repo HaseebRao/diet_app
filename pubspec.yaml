@@ -52,6 +52,10 @@ dependencies:
   dots_indicator: ^3.0.0
   progress_indicator: ^0.2.2
   syncfusion_flutter_charts: ^25.2.5
+  horizontal_week_calendar: ^0.0.17
+  dotted_line: ^3.2.2
+  liquid_progress_indicator_v2:
+  flutter_holo_date_picker: ^1.1.3
 
 
 

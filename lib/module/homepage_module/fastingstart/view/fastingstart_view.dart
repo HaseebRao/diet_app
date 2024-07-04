@@ -10,6 +10,8 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
+import '../../bottom_nav_bar/binding/bottom_nav_bar_binding.dart';
+import '../../bottom_nav_bar/view/bottom_nav_page.dart';
 
 class FastingstartView extends GetView<FastingstartController> {
   @override
@@ -58,8 +60,8 @@ class FastingstartView extends GetView<FastingstartController> {
                   children: [
                     Obx(() => CircularPercentIndicator(
                           backgroundColor: AppColors.wellcome.withOpacity(0.8),
-                          radius: 142.0.h,
-                          lineWidth: 16.5.h,
+                          radius: 128.0.h,
+                          lineWidth: 15.5.h,
                           percent: controller.percent.value,
                           center: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +70,7 @@ class FastingstartView extends GetView<FastingstartController> {
                               Text(
                                 Apptexts.fastingwill,
                                 style: TextStyle(
-                                  fontSize: 16.sp,
+                                  fontSize: 14.sp,
                                   fontFamily: ApptextStyle.fontfamily,
                                   color: AppColors.blackTextColor,
                                   fontWeight: FontWeight.w700,
@@ -78,7 +80,7 @@ class FastingstartView extends GetView<FastingstartController> {
                               Obx(() => Text(
                                     "${controller.hours}",
                                     style: TextStyle(
-                                      fontSize: 25.sp,
+                                      fontSize: 22.sp,
                                       fontFamily: ApptextStyle.fontfamily,
                                       color: AppColors.blackTextColor,
                                       fontWeight: FontWeight.w900,
@@ -96,8 +98,8 @@ class FastingstartView extends GetView<FastingstartController> {
                                       !controller.stop.value;
                                 },
                                 child: Obx(() => Container(
-                                      height: 39.h,
-                                      width: 160.w,
+                                      height: 37.h,
+                                      width: 140.w,
                                       decoration: BoxDecoration(
                                         color: controller.stop.value
                                             ? AppColors.yellow
@@ -110,7 +112,7 @@ class FastingstartView extends GetView<FastingstartController> {
                                               ? "End Fasting"
                                               : Apptexts.start,
                                           style: TextStyle(
-                                            fontSize: 17.sp,
+                                            fontSize: 14.sp,
                                             fontFamily: ApptextStyle.fontfamily,
                                             color: AppColors.whiteTextColor,
                                             fontWeight: FontWeight.w800,
@@ -129,7 +131,7 @@ class FastingstartView extends GetView<FastingstartController> {
                             Text(
                               "         Started\n ${controller.startTime}",
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 13.sp,
                                 fontFamily: ApptextStyle.fontfamily,
                                 color: AppColors.blackTextColor,
                                 fontWeight: FontWeight.w700,
@@ -139,7 +141,7 @@ class FastingstartView extends GetView<FastingstartController> {
                             Text(
                               "  End Fasting\nTime ${controller.hours}",
                               style: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 13.sp,
                                 fontFamily: ApptextStyle.fontfamily,
                                 color: AppColors.blackTextColor,
                                 fontWeight: FontWeight.w700,
@@ -148,14 +150,14 @@ class FastingstartView extends GetView<FastingstartController> {
                           ],
                         )),
                     SizedBox(
-                      height: 28.h,
+                      height: 17.h,
                     ),
                     Container(
                       height: 0.3.h,
                       color: AppColors.opacityWhiteColor,
                     ),
                     SizedBox(
-                      height: 12.h,
+                      height: 10.h,
                     ),
                     Row(
                       children: [
@@ -172,18 +174,18 @@ class FastingstartView extends GetView<FastingstartController> {
                             Text(
                               Apptexts.fatburn,
                               style: TextStyle(
-                                fontSize: 16.sp,
+                                fontSize: 15.sp,
                                 fontFamily: ApptextStyle.fontfamily,
                                 color: AppColors.blackTextColor,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
                             SizedBox(
-                              width: 190.w,
+                              width: 180.w,
                               child: Text(
                                 Apptexts.fattext,
                                 style: TextStyle(
-                                  fontSize: 10.sp,
+                                  fontSize: 9.sp,
                                   fontFamily: ApptextStyle.fontfamily,
                                   color: AppColors.fastingtext,
                                   fontWeight: FontWeight.w400,
@@ -195,7 +197,7 @@ class FastingstartView extends GetView<FastingstartController> {
                       ],
                     ),
                     SizedBox(
-                      height: 12.h,
+                      height: 10.h,
                     ),
                     Container(
                       height: 0.3.h,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class AppColors {
   static const bgThemeColor = Color(0xFF1C2325);
   static const blackTextColor = Colors.black;
@@ -23,7 +24,7 @@ class AppColors {
   static const wellcome = Color(0xffE5E5EA);
   static const Profile = Color(0xffA3D2CA);
   static const Profilecircle = Color(0xff78B0A3);
-  static const Profilecircles =Color(0xffA3D2CA);
+  static const Profilecircles = Color(0xffA3D2CA);
   static const Profiletext = Color(0xff354259);
   static const Profiletexts = Color(0xff0E0E0E);
   static const Profiletextes = Color(0xffE1F4FF);
@@ -40,7 +41,7 @@ class AppColors {
   static const blue = Color(0xff6E67D8);
   static const purplees = Color(0xffEA4A67);
   static const texts = Color(0xff979797);
-  static const container  = Color(0xffF1F5F4);
+  static const container = Color(0xffF1F5F4);
   static const backcolors = Color(0xffEBEBEB);
   static const dblack = Color(0xffA3A3A3);
   static const yellowdark = Color(0xffF7B149);
@@ -51,4 +52,12 @@ class AppColors {
   static const bordercolor = Color(0xffD6D6D6);
   static const fastingtext = Color(0xff626262);
   static const bordercolors = Color(0xffEEEEEE);
+  static const calendar = Color(0xffA3D2CA);
+  static const colorofcontainer = Color(0xffD9D9D9);
+  static const iconcolor = Color(0xff97A2B0);
+  static const borderofCon = Color(0xff838383);
+  static const graycolor = Color(0xff78B0A3);
+  static const coloroff = Color(0xffE3E3E3);
+  static const fieldinner = Color(0xffE1F4FF);
+  static const fieldinnercolor = Color(0xffF6F9FE);
 }

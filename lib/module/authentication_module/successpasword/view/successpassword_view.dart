@@ -13,51 +13,55 @@ import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
 
-class SuccesspasswordView extends StatelessWidget{
+class SuccesspasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
-      Get.off(() => LoginView(), binding: LoginBinding());
+      Get.offAll(() => LoginView(), binding: LoginBinding());
     });
-   return
- Scaffold(
-   backgroundColor: AppColors.whiteTextColor,
-   body: Padding(
-     padding:  EdgeInsets.symmetric(horizontal: 21.w),
-     child: Column(
-       children: [
-SizedBox(height: 180.h,),
-         Center(
-           child: Container(
-             width: 220.w,
-             height: 220.h,
-             decoration: BoxDecoration(
-               image: DecorationImage(
-                 image: AssetImage(Appasset.Successpassword,),
-                 fit: BoxFit.cover,
-               ),
-             ),
-             // Other properties of the container
-           ),
-         ),
-         SizedBox(height: 25.h,),
-         SizedBox(
-           width: 310.w,
-           child: Text(
-             textAlign: TextAlign.center,
-             Apptexts.passwordChanged,
-             style: TextStyle(
-               fontSize: 17.sp,
-               fontFamily: ApptextStyle.fontfamily,
-               color:AppColors.blueBtnColor ,
-               fontWeight: FontWeight.w700,
-             ),),
-         ),
-       ],
-     ),
-   ),
- );
-
+    return Scaffold(
+      backgroundColor: AppColors.whiteTextColor,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 21.w),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 180.h,
+            ),
+            Center(
+              child: Container(
+                width: 220.w,
+                height: 220.h,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      Appasset.Successpassword,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                // Other properties of the container
+              ),
+            ),
+            SizedBox(
+              height: 25.h,
+            ),
+            SizedBox(
+              width: 310.w,
+              child: Text(
+                textAlign: TextAlign.center,
+                Apptexts.passwordChanged,
+                style: TextStyle(
+                  fontSize: 17.sp,
+                  fontFamily: ApptextStyle.fontfamily,
+                  color: AppColors.blueBtnColor,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
-
 }

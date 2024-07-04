@@ -8,6 +8,7 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_textstyle.dart';
 import '../controllers/reminders_controllers.dart';
+
 class MyCheckboxWidget extends StatelessWidget {
   final MyCheckboxController checkboxController =
       Get.put(MyCheckboxController());
@@ -166,7 +167,7 @@ class MyCheckboxWidget extends StatelessWidget {
             child: Row(
               children: [
                 SvgPicture.asset(
-                  Appasset.fasting,
+                  Appasset.reminder,
                   height: 19.h,
                 ),
                 SizedBox(
@@ -232,7 +233,6 @@ class MyCheckboxWidget extends StatelessWidget {
                 Obx(
                   () => Checkbox(
                     side: BorderSide(color: AppColors.Profilecircle),
-
                     activeColor: AppColors.Profilecircle,
                     tristate: true,
                     value: checkboxController.isChecked[4],

@@ -6,20 +6,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-class BottomNavBarScreen extends GetView<BottomNavBarController>{
+class BottomNavBarScreen extends GetView<BottomNavBarController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: PersistentTabView(
+        context,
         resizeToAvoidBottomInset: false,
-        body: PersistentTabView(
-                  context,
-                  resizeToAvoidBottomInset: false,
-                  navBarHeight: 50 .h,
-                  screens: controller.tabItems,
-                  navBarStyle: NavBarStyle.style10,
-                  items: controller.navBarsItems(),
-                  backgroundColor:AppColors.whiteTextColor
-    ),
+        navBarHeight: 50.h,
+        screens: controller.tabItems,
+        navBarStyle: NavBarStyle.style10,
+        items: controller.navBarsItems(),
+        backgroundColor: AppColors.whiteTextColor,
+        decoration: NavBarDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.5), // Shadow color
+              spreadRadius: 2, // Spread radius
+              blurRadius: 5, // Blur radius
+              offset: const Offset(0, 3), // Shadow position (x, y)
+            )
+          ],
+        ),
+      ),
     );
   }
 }

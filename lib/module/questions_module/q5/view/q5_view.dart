@@ -14,8 +14,7 @@ import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
 
-
-class Q5View extends GetView<Q5Controller>{
+class Q5View extends GetView<Q5Controller> {
   Widget itemBuilder(BuildContext context, int index, bool isSelected) {
     final textStyle = TextStyle(
       fontSize: 22.0.sp,
@@ -52,7 +51,7 @@ class Q5View extends GetView<Q5Controller>{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 35.h,
+              height: 42.h,
             ),
             SizedBox(
               height: 25.h,
@@ -62,9 +61,10 @@ class Q5View extends GetView<Q5Controller>{
                   hoverColor: Colors.transparent,
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.all(0),
-                  onPressed: (){
+                  onPressed: () {
                     Get.back();
-                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
+                  },
+                  icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -89,17 +89,17 @@ class Q5View extends GetView<Q5Controller>{
               backgroundColor: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
               valueColor:
-              AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
+                  AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height:45.h,
+              height: 45.h,
             ),
             Center(
               child: Text(
                 textAlign: TextAlign.center,
                 Apptexts.Q5text,
                 style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 18.5.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -135,15 +135,14 @@ class Q5View extends GetView<Q5Controller>{
                           WheelPicker(
                             builder: (context, index) => itemBuilder(context,
                                 index, index == controller.selectedHour.value),
-                            itemCount:
-                            9, // Increase itemCount to 500 for hours
+                            itemCount: 9, // Increase itemCount to 500 for hours
                             initialIndex: controller.selectedHour.value,
                             looping: false,
                             style: wheelStyle,
                             selectedIndexColor: Colors.black,
                             onIndexChanged: controller.handleHourChange,
                           ),
-                           Text("        ",
+                          Text("        ",
                               style: TextStyle(
                                   fontSize: 21.sp,
                                   height: 1.5,
@@ -203,7 +202,7 @@ class Q5View extends GetView<Q5Controller>{
                     ),
                   ],
                 ),
-                SizedBox(width:15.w),
+                SizedBox(width: 15.w),
                 WheelPicker(
                   itemCount: 2,
                   builder: (context, index) {
@@ -230,10 +229,18 @@ class Q5View extends GetView<Q5Controller>{
             Center(
               child: Container(
                 height: 45.h,
-                width: 150.w,
+                width: 140.w,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                      color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
+                  color: AppColors.whiteTextColor,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 2), // changes position of shadow
+                    ),
+                  ],
                 ),
                 child: Center(
                   child: Obx(() {
@@ -243,7 +250,11 @@ class Q5View extends GetView<Q5Controller>{
                         controller.selectedWeightUnitIndex.value;
                     String displayText;
                     if (selectedWeightUnitIndex == 0) {
-                      displayText = """${selectedHour.toString().padLeft(2, )}' ${selectedMinute.toString().padLeft(2, )}" """;
+                      displayText = """${selectedHour.toString().padLeft(
+                            2,
+                          )}' ${selectedMinute.toString().padLeft(
+                            2,
+                          )}" """;
                     } else {
                       int totalInches = (selectedHour * 12) + selectedMinute;
                       displayText = '$totalInches"';
@@ -261,13 +272,16 @@ class Q5View extends GetView<Q5Controller>{
                 ),
               ),
             ),
-         Spacer(),
+            Spacer(),
             GestureDetector(
               onTap: () {
-                Get.to(Q6View(),binding: Q6Binding(),);
+                Get.to(
+                  Q6View(),
+                  binding: Q6Binding(),
+                );
               },
               child: Padding(
-                padding:  EdgeInsets.only(bottom: 45.h),
+                padding: EdgeInsets.only(bottom: 45.h),
                 child: Container(
                   height: 49.h,
                   decoration: BoxDecoration(
@@ -286,7 +300,6 @@ class Q5View extends GetView<Q5Controller>{
                       ),
                     ),
                   ),
-
                 ),
               ),
             ),

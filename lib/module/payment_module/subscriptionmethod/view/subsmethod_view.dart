@@ -22,103 +22,117 @@ class _SubsmethodViewState extends State<SubsmethodView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: AppColors.whiteTextColor,
+      backgroundColor: AppColors.whiteTextColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21.w,),
+        padding: EdgeInsets.symmetric(
+          horizontal: 10.w,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 40.h,
+              height: 38.h,
             ),
             SizedBox(
-              height: 25.h,
+              height: 37,
               child: IconButton(
-
-                  alignment: Alignment.topLeft,
-                  padding: EdgeInsets.all(0),
-                  onPressed: (){
+                  onPressed: () {
                     Get.back();
-                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
+                  },
+                  icon: SvgPicture.asset(
+                    Appasset.Arrowdiet,
+                    height: 21.h,
+                    fit: BoxFit.fitHeight,
+                  )),
             ),
-            SizedBox(height: 75.h),
-            Center(
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    Apptexts.paymente,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontFamily: ApptextStyle.fontfamily,
-                      color: AppColors.blackTextColor,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                  Text(
-                    Apptexts.pay,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontFamily: ApptextStyle.fontfamily,
-                      color: AppColors.blackTextColor.withOpacity(0.6),
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height:30.h),
-                  SubsmethodWidget(
-                    svgAsset: Appasset.LoginGoogle,
-                    text: "G Pay",
-                    isSelected: selectedIndex == 0,
-                    onSelectionChanged: (isSelected) {
-                      setState(() {
-                        selectedIndex = isSelected ? 0 : -1;
-                      });
-                    },
-                  ),
-                  SizedBox(height: 3.h),
-                  SubsmethodWidget(
-                    svgAsset: Appasset. cardicon, // Use SVG asset
-                    text: "Add Card",
-                    isSelected: selectedIndex == 1,
-                    onSelectionChanged: (isSelected) {
-                      setState(() {
-                        selectedIndex = isSelected ? 1 : -1;
-                      });
-                    },
-                  ),
-                  SizedBox(
-                    height: 217 .h,
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Get.to(AddpaymentmethodView(),binding: AddpaymentmethodBinding(),);
-                    },
-                    child: Container(
-                      height: 49.h,
-                      decoration: BoxDecoration(
-                        color: AppColors.blueBtnColor,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Text(
+                  SizedBox(height: 75.h),
+                  Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          Apptexts.paymente,
                           textAlign: TextAlign.center,
-                          Apptexts.next,
                           style: TextStyle(
-                            fontSize: 15.sp,
+                            fontSize: 18.sp,
                             fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.whiteTextColor,
+                            color: AppColors.blackTextColor,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        SizedBox(height: 10.h),
+                        Text(
+                          Apptexts.pay,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontFamily: ApptextStyle.fontfamily,
+                            color: AppColors.blackTextColor.withOpacity(0.6),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
+                        SizedBox(height: 30.h),
+                        SubsmethodWidget(
+                          svgAsset: Appasset.LoginGoogle,
+                          text: "G Pay",
+                          isSelected: selectedIndex == 0,
+                          onSelectionChanged: (isSelected) {
+                            setState(() {
+                              selectedIndex = isSelected ? 0 : -1;
+                            });
+                          },
+                        ),
+                        SizedBox(height: 3.h),
+                        SubsmethodWidget(
+                          svgAsset: Appasset.cardicon, // Use SVG asset
+                          text: "Add Card",
+                          isSelected: selectedIndex == 1,
+                          onSelectionChanged: (isSelected) {
+                            setState(() {
+                              selectedIndex = isSelected ? 1 : -1;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          height: 226.h,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(
+                              AddpaymentmethodView(),
+                              binding: AddpaymentmethodBinding(),
+                            );
+                          },
+                          child: Container(
+                            height: 49.h,
+                            decoration: BoxDecoration(
+                              color: AppColors.blueBtnColor,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Center(
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                Apptexts.next,
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                  fontFamily: ApptextStyle.fontfamily,
+                                  color: AppColors.whiteTextColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),

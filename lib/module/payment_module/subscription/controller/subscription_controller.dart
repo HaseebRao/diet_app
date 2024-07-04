@@ -1,15 +1,49 @@
 // subscription_controller.dart
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/app_text.dart';
+import '../../subscriptionmethod/binding/subsmethod_binding.dart';
+import '../../subscriptionmethod/view/subsmethod_view.dart';
 
 class SubscriptionController extends GetxController {
-  var selectedContainerIndex = RxInt(-1); // Initialize with an invalid index
+  var selectedIndex = (-1).obs;
+  var currentPage = 0.obs;
+  PageController pageController = PageController();
+
+  void changePage(int index) {
+    currentPage.value = index;
+  }
+
+  var selectedContainerIndex = RxInt(-1);
+  void selectContainer() {
+    if (selectedContainerIndex.value == -1) {
+      Get.snackbar("Error", "Please select any package");
+    } else {
+      Get.to(
+        SubsmethodView(),
+        binding: SubsmethodBinding(),
+      );
+    }
+  }
+
   var isChecked = <bool>[false, false, false].obs;
   var text = <modelclass>[
-    modelclass(Apptexts.applaustextes, Apptexts.exteratext),
-    modelclass(Apptexts.applaustextes2, Apptexts.applaustextes4),
-    modelclass(Apptexts.applaustextes3, Apptexts.applaustextes5),
+    modelclass(
+      Apptexts.applaustextes,
+      Apptexts.exteratext,
+      'assets/images/subscription2.png',
+    ),
+    modelclass(
+      Apptexts.applaustextes2,
+      Apptexts.applaustextes4,
+      'assets/images/subscription1.png',
+    ),
+    modelclass(
+      Apptexts.applaustextes3,
+      Apptexts.applaustextes5,
+      'assets/images/subscription3.png',
+    ),
   ].obs;
   var isSaveButtonVisible = false.obs;
   void toggleCheckbox(int index, bool value) {
@@ -17,25 +51,25 @@ class SubscriptionController extends GetxController {
   }
 
   void handleContainerTap(int index) {
-    // If the tapped container is already selected, toggle the checkbox
     if (index == selectedContainerIndex.value) {
       toggleCheckbox(index, !isChecked[index]);
     } else {
-      // Otherwise, update the selected container index and fill the checkbox
       selectedContainerIndex.value = index;
-      isChecked.assignAll(List.filled(isChecked.length, false)); // Unfill all checkboxes
+      isChecked.assignAll(
+          List.filled(isChecked.length, false)); // Unfill all checkboxes
       toggleCheckbox(index, true);
 
       // Toggle visibility of the Save button for the third container
-      isSaveButtonVisible.value = (index == 2);// Fill the checkbox at the tapped index
+      isSaveButtonVisible.value =
+          (index == 2); // Fill the checkbox at the tapped index
     }
   }
-
 }
 
 class modelclass {
   final String texts;
   final String differentTexts;
+  final String image;
 
-  modelclass(this.texts, this.differentTexts);
+  modelclass(this.texts, this.differentTexts, this.image);
 }

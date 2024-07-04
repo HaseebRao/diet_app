@@ -12,8 +12,6 @@ import '../../../../common/app_colors.dart';
 
 import '../../../../common/app_textstyle.dart';
 
-
-
 class QuestionContainerWidget extends GetView<Q3Controller> {
   final String containerName;
   final int containerIndex;
@@ -41,22 +39,23 @@ class QuestionContainerWidget extends GetView<Q3Controller> {
             height: 54.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppColors.Profiletextes,width: 1.h),
+              border: Border.all(color: AppColors.Profiletextes, width: 1.h),
             ),
-            child:  Padding(
+            child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 1.w),
               child: Row(
-
                 children: [
-                 Container(
-                   height: 53.h,
-                   width: 60.w,
-                   decoration: BoxDecoration(
-                     color: AppColors.Profilecircle,
-                     borderRadius: BorderRadius.circular(10)
-                   ),
-                   child: SvgPicture.asset(icon,fit: BoxFit.scaleDown,),
-                 ),
+                  Container(
+                    height: 53.h,
+                    width: 60.w,
+                    decoration: BoxDecoration(
+                        color: AppColors.Profilecircle,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: SvgPicture.asset(
+                      icon,
+                      fit: BoxFit.scaleDown,
+                    ),
+                  ),
                   SizedBox(
                     width: 11.w,
                   ),
@@ -64,43 +63,32 @@ class QuestionContainerWidget extends GetView<Q3Controller> {
                     containerName,
                     style: TextStyle(
                       color:
-                      Theme.of(context).appBarTheme.titleTextStyle?.color,
+                          Theme.of(context).appBarTheme.titleTextStyle?.color,
                       fontSize: 13.sp,
                       fontFamily: ApptextStyle.fontfamily,
-                      fontWeight: FontWeight.w400,),
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-
-
-
                   Spacer(),
-
-
-
                   Transform.scale(
                     scale: 1.h,
                     child: Obx(
-                          () => Radio<int>(
-                            fillColor:MaterialStateProperty.resolveWith ((Set  states) {
-                              if (states.contains(MaterialState.disabled)) {
-                                return AppColors.Profilecircle;
-                              }
-                              return AppColors.Profilecircle;
-                            }) ,
+                      () => Radio<int>(
+                        fillColor:
+                            MaterialStateProperty.resolveWith((Set states) {
+                          if (states.contains(MaterialState.disabled)) {
+                            return AppColors.Profilecircle;
+                          }
+                          return AppColors.Profilecircle;
+                        }),
                         value: containerIndex,
                         groupValue: controller.selectedRadio.value,
                         onChanged: (val) {
                           controller.setSelectedRadio(val!);
-                          // Call the changeTheme method to update the theme
-                          switch (val) {
-                            case 1:
-                          }
                         },
                       ),
                     ),
                   ),
-
-
-
                 ],
               ),
             ),

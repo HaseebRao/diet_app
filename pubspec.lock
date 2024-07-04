@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auto_size_text:
+    dependency: transitive
+    description:
+      name: auto_size_text
+      sha256: "3f5261cd3fb5f2a9ab4e2fc3fba84fd9fcaac8821f20a1d4e71f557521b22599"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -89,6 +97,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  dotted_line:
+    dependency: "direct main"
+    description:
+      name: dotted_line
+      sha256: c931ba331656154711d9420f369f80cf9e8869ca9933ae5fb35b7669bcbe7d2e
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.2"
   fake_async:
     dependency: transitive
     description:
@@ -134,6 +150,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_holo_date_picker:
+    dependency: "direct main"
+    description:
+      name: flutter_holo_date_picker
+      sha256: "839ac788e468c8c51a280b3847e4d56e6286bef3a823ba2e81a304564ec59822"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.3"
   flutter_image_slideshow:
     dependency: "direct main"
     description:
@@ -200,6 +224,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
+  horizontal_week_calendar:
+    dependency: "direct main"
+    description:
+      name: horizontal_week_calendar
+      sha256: "08b61a226233472a6bed0d3ea24b3efd2a4b0e462b3a983bcc513317d1c8c607"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.17"
   http:
     dependency: transitive
     description:
@@ -320,6 +352,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  liquid_progress_indicator_v2:
+    dependency: "direct main"
+    description:
+      name: liquid_progress_indicator_v2
+      sha256: "6bb2c675bab4936864a63ccd503be417e407974e11c62711917a4006bb9288b8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.0"
   matcher:
     dependency: transitive
     description:

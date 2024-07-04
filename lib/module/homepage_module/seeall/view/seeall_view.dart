@@ -28,24 +28,32 @@ import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
 import '../../../../common/app_textstyle.dart';
 
-class SeeallView extends GetView<SeeAllController>{
+class SeeallView extends GetView<SeeAllController> {
   @override
   Widget build(BuildContext context) {
-
-    return
-    Scaffold(
+    return Scaffold(
+      // backgroundColor: AppColors.whiteTextColor,
       backgroundColor: AppColors.dietBackgroundColor,
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 10.w),
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           children: [
-            SizedBox(height: 45.h,),
+            SizedBox(
+              height: 45.h,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(onPressed: () => Get.back(), icon: SvgPicture.asset(Appasset.Arrowdiet, height: 15.8.h, color: AppColors.blackTextColor,),),
+                IconButton(
+                  onPressed: () => Get.back(),
+                  icon: SvgPicture.asset(
+                    Appasset.Arrowdiet,
+                    height: 15.8.h,
+                    color: AppColors.blackTextColor,
+                  ),
+                ),
                 Text(
-                  Apptexts.seall ,
+                  Apptexts.seall,
                   style: TextStyle(
                     fontSize: 20.sp,
                     fontFamily: ApptextStyle.fontfamily,
@@ -58,79 +66,80 @@ class SeeallView extends GetView<SeeAllController>{
                 ),
               ],
             ),
-            SizedBox(height: 10.h,),
-
+            SizedBox(
+              height: 10.h,
+            ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 12.w),
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: SizedBox(
                 height: 590.h,
                 child: ListView.builder(
-                  scrollDirection: Axis.vertical,
+                    scrollDirection: Axis.vertical,
                     itemCount: controller.texts.length,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index){
-                    return Padding(
-                      padding:  EdgeInsets.only(bottom: 13.h),
-                      child: GestureDetector(
-                        onTap: (){
-                          switch(index){
-
-                            case 0 :
-                             Get.to(KetoView(),binding: KetoBinding());
-                            case 1:
-                              Get.to(MediterraneandietView(),binding: MediterraneandietBinding());
-                            case 2:
-                              Get.to(PaleodietView(),binding: PaleodietBinding());
-                            case 3:
-                              Get.to(VegetariandietView(),binding: VegetariandietBinding());
-                            case 4:
-                              Get.to(VegandietView(),binding: VegandietBinding());
-                            case 5:
-                              Get.to(LowcarbdietView(),binding: LowcarbdietBinding());
-                            case 6:
-                              Get.to(DietarydietView(),binding: DietarydietBinding());
-                            case 7:
-                              Get.to( ZonedietView(),binding:ZonedietBinding());
-
-                          }
-                        },
-                        child: Container(
-                          height: 53.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: AppColors.whiteTextColor,
-                            border: Border.all(color: AppColors.dietBorderColor)
-                          ),
-                          child:  Padding(
-                            padding:  EdgeInsets.only(left:20.w),
-                            child: Row(
-                              children: [
-                                Text(
-                            controller.texts[index].toString(),
-                                  style: TextStyle(
-                                    fontSize: 11.sp,
-                                    fontFamily: ApptextStyle.fontfamily,
-                                    color: AppColors.blackTextColor,
-                                    fontWeight: FontWeight.w600,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(bottom: 13.h),
+                        child: GestureDetector(
+                          onTap: () {
+                            switch (index) {
+                              case 0:
+                                Get.to(KetoView(), binding: KetoBinding());
+                              case 1:
+                                Get.to(MediterraneandietView(),
+                                    binding: MediterraneandietBinding());
+                              case 2:
+                                Get.to(PaleodietView(),
+                                    binding: PaleodietBinding());
+                              case 3:
+                                Get.to(VegetariandietView(),
+                                    binding: VegetariandietBinding());
+                              case 4:
+                                Get.to(VegandietView(),
+                                    binding: VegandietBinding());
+                              case 5:
+                                Get.to(LowcarbdietView(),
+                                    binding: LowcarbdietBinding());
+                              case 6:
+                                Get.to(DietarydietView(),
+                                    binding: DietarydietBinding());
+                              case 7:
+                                Get.to(ZonedietView(),
+                                    binding: ZonedietBinding());
+                            }
+                          },
+                          child: Container(
+                            height: 53.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(11),
+                                color: AppColors.whiteTextColor,
+                                border: Border.all(
+                                    color: AppColors.dietBorderColor)),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20.w),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    controller.texts[index].toString(),
+                                    style: TextStyle(
+                                      fontSize: 11.sp,
+                                      fontFamily: ApptextStyle.fontfamily,
+                                      color: AppColors.blackTextColor,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-
-                    );
-                    }
-                ),
-
+                      );
+                    }),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
-
 }

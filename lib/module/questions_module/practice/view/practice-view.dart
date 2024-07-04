@@ -16,8 +16,8 @@ import '../controller/practice_controller.dart';
 
 class PracticeView extends GetView<PracticeController> {
   const PracticeView({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   Widget itemBuilder(BuildContext context, int index, bool isSelected) {
     final textStyle = TextStyle(
@@ -26,7 +26,9 @@ class PracticeView extends GetView<PracticeController> {
       fontWeight: FontWeight.w500,
       color: isSelected ? Colors.black : AppColors.blueBtnColor,
     );
-    final itemText = "$index".padLeft(2,);
+    final itemText = "$index".padLeft(
+      2,
+    );
     return Container(
       decoration: BoxDecoration(),
       child: Text(itemText, style: textStyle),
@@ -51,19 +53,20 @@ class PracticeView extends GetView<PracticeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 35.h,
+              height: 42.h,
             ),
             SizedBox(
-              height: 30,
+              height: 25.h,
               child: IconButton(
-                focusColor: Colors.transparent,
-                 splashColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                alignment: Alignment.topLeft,
-                 padding: EdgeInsets.all(0),
-                  onPressed: (){
-                Get.back();
-              }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
+                  focusColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(0),
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +74,7 @@ class PracticeView extends GetView<PracticeController> {
                 Text(
                   Apptexts.textno,
                   style: TextStyle(
-                      fontSize: 15.sp,
+                    fontSize: 15.sp,
                     fontFamily: ApptextStyle.fontfamily,
                     color: AppColors.blackTextColor,
                     fontWeight: FontWeight.w700,
@@ -98,7 +101,7 @@ class PracticeView extends GetView<PracticeController> {
                 textAlign: TextAlign.center,
                 Apptexts.weight,
                 style: TextStyle(
-                  fontSize: 19.sp,
+                  fontSize: 18.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -142,7 +145,7 @@ class PracticeView extends GetView<PracticeController> {
                             selectedIndexColor: Colors.black,
                             onIndexChanged: controller.handleHourChange,
                           ),
-                           Text("        ",
+                          Text("        ",
                               style: TextStyle(
                                   fontSize: 21.sp,
                                   height: 1.5,
@@ -225,14 +228,22 @@ class PracticeView extends GetView<PracticeController> {
                 ),
               ],
             ),
-            SizedBox(height: 35.h), // Add some spacing
+            SizedBox(height: 35.h),
             Center(
               child: Container(
                 height: 45.h,
-                width: 150.w,
+                width: 140.w,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                      color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
+                  color: AppColors.whiteTextColor,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 2), // changes position of shadow
+                    ),
+                  ],
                 ),
                 child: Center(
                   child: Obx(() {
@@ -255,14 +266,18 @@ class PracticeView extends GetView<PracticeController> {
                   }),
                 ),
               ),
-            ),
-          Spacer(), // Add some spacing
+            ), // Add some spacing
+
+            Spacer(), // Add some spacing
             GestureDetector(
               onTap: () {
-                Get.to(Q2View(),binding: Q2Binding(),);
+                Get.to(
+                  Q2View(),
+                  binding: Q2Binding(),
+                );
               },
               child: Padding(
-                padding:  EdgeInsets.only(bottom: 45.h),
+                padding: EdgeInsets.only(bottom: 45.h),
                 child: Container(
                   height: 47.h,
                   decoration: BoxDecoration(
@@ -290,3 +305,21 @@ class PracticeView extends GetView<PracticeController> {
     );
   }
 }
+
+//
+// SizedBox(
+// height: 38,
+// child: IconButton(
+// // focusColor: Colors.transparent,
+// // splashColor: Colors.transparent,
+// // hoverColor: Colors.transparent,
+//
+// onPressed: () {
+// Get.back();
+// },
+// icon: SvgPicture.asset(
+// Appasset.Arrowdiet,
+// height: 25.h,
+// fit: BoxFit.fitHeight,
+// )),
+// ),

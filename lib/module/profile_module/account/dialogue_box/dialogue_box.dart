@@ -45,7 +45,7 @@ class DialogueBox extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 SizedBox(
-                 width: 275.w,
+                  width: 275.w,
                   child: Text(
                     textAlign: TextAlign.center,
                     Apptexts.dummytext,
@@ -72,7 +72,6 @@ class DialogueBox extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-
                     Column(
                       children: [
                         SizedBox(height: 7.h),
@@ -80,7 +79,7 @@ class DialogueBox extends StatelessWidget {
                           height: 34.h,
                           width: 230.w,
                           decoration: BoxDecoration(
-                            color: AppColors. Profile,
+                            color: AppColors.Profile,
                             boxShadow: [
                               BoxShadow(
                                 color: AppColors.LoginTextform,
@@ -92,26 +91,28 @@ class DialogueBox extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20.w,bottom: 2.h),
+                            padding: EdgeInsets.only(left: 20.w, bottom: 10.h),
                             child: SizedBox(
                               height: 40.h,
                               child: TextFormField(
-                                controller: controller.textController2,
-                                focusNode: controller.focusNode2,
-                                textInputAction: TextInputAction.done,
-                                onChanged: (value) {
-                                  controller.updateButtonColor(value.isNotEmpty);
+                                controller: controller.textController1,
+                                focusNode: controller.focusNode1,
+                                textInputAction: TextInputAction.next,
+                                onFieldSubmitted: (_) {
+                                  FocusScope.of(context)
+                                      .requestFocus(controller.focusNode2);
                                 },
                                 style: TextStyle(
-                                  color: AppColors.LoginOR,
-                                  fontFamily: ApptextStyle.fontfamily,
+                                  color: AppColors
+                                      .LoginOR, // Setting text color to white
+                                  fontFamily: ApptextStyle
+                                      .fontfamily, // Setting font family
                                 ),
                                 decoration: InputDecoration(
-                                  hintText: Apptexts.enterpassword,
+                                  hintText: Apptexts.emailaddresss,
                                   border: InputBorder.none,
                                   hintStyle: TextStyle(
                                     fontSize: 12.sp,
-
                                     color: AppColors.opacityGreyColor,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w400,
@@ -121,35 +122,31 @@ class DialogueBox extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height:70.h),
-                        Obx(() => GestureDetector(
+                        SizedBox(height: 70.h),
+                        GestureDetector(
                           onTap: () {
+                            controller.validateForgot();
                           },
-                          child: GestureDetector(
-                            onTap: (){
-                           Get.offAll(LoginView(),binding: LoginBinding());
-                            },
-                            child: Container(
-                              height: 34.h,
-                              width: 230.w,
-                              decoration: BoxDecoration(
-                                color: controller.isTextEntered.value ? AppColors.buttoncolor: AppColors.Profilecircles,
-                                borderRadius: BorderRadius.circular(60).w,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  Apptexts.deleteAccount,
-                                  style: TextStyle(
-                                    fontSize: 15.sp,
-                                    fontFamily: ApptextStyle.fontfamily,
-                                    color: AppColors.whiteTextColor,
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                          child: Container(
+                            height: 33.h,
+                            width: 225.w,
+                            decoration: BoxDecoration(
+                              color: AppColors.account.withOpacity(0.88),
+                              borderRadius: BorderRadius.circular(60).w,
+                            ),
+                            child: Center(
+                              child: Text(
+                                Apptexts.deleteAccount,
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontFamily: ApptextStyle.fontfamily,
+                                  color: AppColors.whiteTextColor,
+                                  fontWeight: FontWeight.w700,
                                 ),
                               ),
                             ),
                           ),
-                        )),
+                        ),
                       ],
                     ),
                   ],
