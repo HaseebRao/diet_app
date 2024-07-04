@@ -3,6 +3,9 @@ import 'package:diet_app/common/app_textstyle.dart';
 import 'package:diet_app/module/questions_module/q5/binding/q5_binding.dart';
 import 'package:diet_app/module/questions_module/q5/view/q5_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_holo_date_picker/date_picker.dart';
+import 'package:flutter_holo_date_picker/date_picker_theme.dart';
+import 'package:flutter_holo_date_picker/widget/date_picker_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -32,9 +35,10 @@ class Q4View extends GetView<Q4Controller> {
                   hoverColor: Colors.transparent,
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.all(0),
-                  onPressed: (){
+                  onPressed: () {
                     Get.back();
-                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
+                  },
+                  icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -58,17 +62,18 @@ class Q4View extends GetView<Q4Controller> {
               minHeight: 10.h,
               backgroundColor: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
+              valueColor:
+                  AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
-              height: 65.h,
+              height: 45.h,
             ),
             Center(
               child: Text(
                 textAlign: TextAlign.center,
                 Apptexts.tell,
                 style: TextStyle(
-                  fontSize: 20.2.sp,
+                  fontSize: 19.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -79,7 +84,7 @@ class Q4View extends GetView<Q4Controller> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 23.h),
+                  padding: EdgeInsets.symmetric(horizontal: 40.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -87,7 +92,7 @@ class Q4View extends GetView<Q4Controller> {
                         "Day",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 11.sp,
+                          fontSize: 13.sp,
                           fontFamily: ApptextStyle.fontfamily,
                           color: AppColors.blackTextColor,
                           fontWeight: FontWeight.w600,
@@ -97,7 +102,7 @@ class Q4View extends GetView<Q4Controller> {
                         "Month",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 11.sp,
+                          fontSize: 13.sp,
                           fontFamily: ApptextStyle.fontfamily,
                           color: AppColors.blackTextColor,
                           fontWeight: FontWeight.w600,
@@ -107,7 +112,7 @@ class Q4View extends GetView<Q4Controller> {
                         "Year",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 11.sp,
+                          fontSize: 13.sp,
                           fontFamily: ApptextStyle.fontfamily,
                           color: AppColors.blackTextColor,
                           fontWeight: FontWeight.w600,
@@ -116,203 +121,78 @@ class Q4View extends GetView<Q4Controller> {
                     ],
                   ),
                 ),
-                SizedBox(height: 5.h),
-                Row(
-                  children: [
-                    Container(
-                      height: 185.h,
-                      width: 80.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteTextColor,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 2),
-                          ),
-                        ],
+                SizedBox(height: 20.h),
+                Container(
+                  height: 190.h,
+                  width: 280.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: AppColors.whiteTextColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.4),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0, 2), // changes position of shadow
                       ),
-                      child: SizedBox(
-                        height: 180.h,
-                        width: 93,
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: controller.days.length,
-                          itemBuilder: (context, index) {
-                            var product = controller.days[index];
-                            return GestureDetector(
-                              onTap: () {
-                                controller.slectedDay.value = index;
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 17.h),
-                                child: Obx(
-                                      () => SizedBox(
-                                    height: 27.h,
-                                    child: Text(
-                                      "${product.day}",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: controller.slectedDay.value == index
-                                            ? 17.sp
-                                            : 11.sp,
-                                        fontFamily: ApptextStyle.fontfamily,
-                                        color: AppColors.blackTextColor,
-                                        fontWeight: controller.slectedDay.value == index
-                                            ? FontWeight.w800
-                                            : FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
+                    ],
+                  ),
+                  child: DatePickerWidget(
+                    looping: false,
+                    firstDate: DateTime(1900), // Start year
+                    lastDate: DateTime.now(), // End year
+                    dateFormat: "dd/MMMM/yyyy",
+                    locale: DatePicker.localeFromString('en'),
+                    onChange: (DateTime newDate, _) {
+                      controller.updateAge(newDate);
+                    },
+                    pickerTheme: DateTimePickerTheme(
+                      pickerHeight: 160.h,
+                      itemHeight: 43.h,
+                      backgroundColor: Colors.transparent,
+                      itemTextStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: ApptextStyle.fontfamily,
                       ),
+                      dividerColor: Colors.transparent,
                     ),
-                    SizedBox(width: 33.w),
-                    Container(
-                      height: 185.h,
-                      width: 85.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteTextColor,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: SizedBox(
-                        height: 180.h,
-                        width: 93,
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: controller.months.length,
-                          itemBuilder: (context, index) {
-                            var product = controller.months[index];
-                            return GestureDetector(
-                              onTap: () {
-                                controller.selectedMonth.value = index;
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 15.h),
-                                child: Obx(
-                                      () => SizedBox(
-                                    height: 27.h,
-                                    child: Text(
-                                      "${product.month}",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: controller.selectedMonth.value == index
-                                            ? 17.sp
-                                            : 11.sp,
-                                        fontFamily: ApptextStyle.fontfamily,
-                                        color: AppColors.blackTextColor,
-                                        fontWeight: controller.selectedMonth.value == index
-                                            ? FontWeight.w700
-                                            : FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 33.w),
-                    Container(
-                      height: 185.h,
-                      width: 85.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteTextColor,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: SizedBox(
-                        height: 180.h,
-                        width: 93,
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: controller.years.length,
-                          itemBuilder: (context, index) {
-                            var year = controller.years[index];
-                            return GestureDetector(
-                              onTap: () {
-                                controller.selectedYear.value = index;
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 15.h),
-                                child: Obx(
-                                      () => SizedBox(
-                                    height: 27.h,
-                                    child: Text(
-                                      "${year.year}",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: controller.selectedYear.value == index
-                                            ? 17.sp
-                                            : 11.sp,
-                                        fontFamily: ApptextStyle.fontfamily,
-                                        color: AppColors.blackTextColor,
-                                        fontWeight: controller.selectedYear.value == index
-                                            ? FontWeight.w700
-                                            : FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-                SizedBox(height: 70.h),
+                SizedBox(height: 35.h),
                 Container(
                   height: 45.h,
                   width: 140.w,
                   decoration: BoxDecoration(
-                    border: Border.all(
-                        color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
+                    color: AppColors.whiteTextColor,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.4),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0, 2), // changes position of shadow
+                      ),
+                    ],
                   ),
                   child: Center(
-                    child: Obx(
-                          () {
-                        String age = controller.calculateAge();
-                        return Text(
-                          age.isEmpty ? '' : ' $age  years',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.Profilecircle,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        );
-                      },
-                    ),
+                    child: Obx(() {
+                      final age = controller.age.value;
+                      return Text(
+                        age != null ? " $age years" : 'Select a date',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: AppColors.Profilecircle,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 38.h),
+            SizedBox(height: 68.h),
             GestureDetector(
               onTap: () {
                 Get.to(Q5View(), binding: Q5Binding());

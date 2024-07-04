@@ -12,18 +12,18 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
-
         automaticallyImplyLeading: false,
-        title:             Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            GestureDetector(
-              onTap: () {
-                Get.back();
-              },
-              child: SvgPicture.asset(Appasset.Arrowdiet, height: 17.h),
+            IconButton(
+              onPressed: () => Get.back(),
+              icon: SvgPicture.asset(
+                Appasset.Arrowdiet,
+                height: 15.8.h,
+                color: AppColors.blackTextColor,
+              ),
             ),
             Text(
               Apptexts.favorite,
@@ -36,7 +36,7 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
             ),
             Container(
               height: 1.h,
-              width: 12.w,
+              width: 30.w,
             ),
           ],
         ),
@@ -45,8 +45,7 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
           tabs: const [
             Tab(text: "Recipe"),
             Tab(text: "Diet"),
-            Tab(text: "Custom recipe"),
-
+            Tab(text: "My recipe"),
           ],
           dividerColor: AppColors.whiteTextColor,
           labelColor: AppColors.blackTextColor,
@@ -57,26 +56,35 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-           SizedBox(height: 10.h,),
+            SizedBox(
+              height: 10.h,
+            ),
             Expanded(
               child: TabBarView(
                 controller: controller.tabController,
                 children: [
-                  Center(child: Column(
+                  Center(
+                      child: Column(
                     children: [
                       SizedBox(
                         height: 32.h,
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Search',hintStyle: TextStyle(
-                            fontSize: 11.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.blackTextColor,
-                            fontWeight: FontWeight.w400,
-                          ),
-                            prefixIcon: Icon(Icons.search,color: AppColors.blackTextColor,size: 30,),
+                            hintText: 'Search',
+                            hintStyle: TextStyle(
+                              fontSize: 11.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: AppColors.blackTextColor,
+                              size: 30,
+                            ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(18.0), // Circular border
+                              borderRadius: BorderRadius.circular(
+                                  18.0), // Circular border
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
@@ -85,11 +93,15 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15.h,),
+                      SizedBox(
+                        height: 15.h,
+                      ),
                       Row(
                         children: [
                           SvgPicture.asset(Appasset.lines, height: 18.h),
-                          SizedBox(width: 12.w,),
+                          SizedBox(
+                            width: 12.w,
+                          ),
                           Obx(() {
                             return SizedBox(
                               width: 130.w,
@@ -98,28 +110,28 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                 borderRadius: BorderRadius.circular(10),
                                 iconEnabledColor: AppColors.Profilecircles,
                                 decoration: InputDecoration(
-
                                   border: InputBorder.none,
                                 ),
                                 dropdownColor: AppColors.whiteTextColor,
                                 value: controller.selectedTimer.value,
                                 items: controller.months
                                     .map<DropdownMenuItem<String>>(
-                                      (String timer) => DropdownMenuItem<String>(
-                                    alignment: Alignment.center,
-                                    value: timer,
-                                    child: Text(
-                                      timer,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: AppColors.blackTextColor,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12.sp,
-                                          fontFamily:
-                                          ApptextStyle.fontfamily,),
-                                    ),
-                                  ),
-                                )
+                                      (String timer) =>
+                                          DropdownMenuItem<String>(
+                                        alignment: Alignment.center,
+                                        value: timer,
+                                        child: Text(
+                                          timer,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: AppColors.blackTextColor,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12.sp,
+                                            fontFamily: ApptextStyle.fontfamily,
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                     .toList(),
                                 onChanged: (String? newValue) {
                                   controller.selectTime(newValue!);
@@ -139,7 +151,9 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h,),
+                      SizedBox(
+                        height: 20.h,
+                      ),
                       SizedBox(
                         height: 450.h,
                         width: 325.w,
@@ -147,7 +161,8 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           padding: EdgeInsets.all(0),
                           scrollDirection: Axis.vertical,
                           itemCount: 4, // Number of icons
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2, // 5 icons in each row
                             mainAxisSpacing: 17.0,
                             crossAxisSpacing: 6.0,
@@ -170,37 +185,47 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                   ],
                                 ),
                                 child: Padding(
-                                  padding:EdgeInsets.only(left: 13.h),
+                                  padding: EdgeInsets.only(left: 13.h),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(height: 10.h,),
+                                      SizedBox(
+                                        height: 10.h,
+                                      ),
                                       Container(
                                         height: 94.h,
-                                        width:120.w,
+                                        width: 120.w,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                           image: DecorationImage(
-                                            image: AssetImage('assets/images/gridviewe.png'),
+                                            image: AssetImage(
+                                                'assets/images/gridviewe.png'),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
-                                        child:Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10.0),
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
                                             children: [
-                                              SizedBox(height: 6.h,),
+                                              SizedBox(
+                                                height: 6.h,
+                                              ),
                                               Container(
                                                 height: 26.h,
                                                 width: 27.w,
                                                 decoration: BoxDecoration(
-                                                  color: AppColors.whiteTextColor,
-                                                  borderRadius: BorderRadius.circular(7),
+                                                  color:
+                                                      AppColors.whiteTextColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(7),
                                                 ),
                                                 child: Icon(
-                                               Icons.favorite,
+                                                  Icons.favorite,
                                                   size: 23,
                                                   color: AppColors.account,
                                                 ),
@@ -209,7 +234,9 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(height: 8.h,),
+                                      SizedBox(
+                                        height: 8.h,
+                                      ),
                                       Text(
                                         Apptexts.spicy,
                                         style: TextStyle(
@@ -219,7 +246,9 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
-                                      SizedBox(height: 5.h,),
+                                      SizedBox(
+                                        height: 5.h,
+                                      ),
                                       Text(
                                         Apptexts.serving,
                                         style: TextStyle(
@@ -229,7 +258,7 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                      SizedBox(height: 10.h,),
+                                      Spacer(),
                                       Row(
                                         children: [
                                           Container(
@@ -237,63 +266,81 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                             width: 55.w,
                                             decoration: BoxDecoration(
                                               color: AppColors.Profilecircle,
-                                              borderRadius: BorderRadius.circular(7),
+                                              borderRadius:
+                                                  BorderRadius.circular(7),
                                             ),
                                             child: Center(
                                               child: Text(
                                                 Apptexts.keto,
                                                 style: TextStyle(
                                                   fontSize: 9.sp,
-                                                  fontFamily: ApptextStyle.fontfamily,
-                                                  color: AppColors.whiteTextColor,
+                                                  fontFamily:
+                                                      ApptextStyle.fontfamily,
+                                                  color:
+                                                      AppColors.whiteTextColor,
                                                   fontWeight: FontWeight.w700,
                                                 ),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(width: 25.w,),
+                                          SizedBox(
+                                            width: 25.w,
+                                          ),
                                           SvgPicture.asset(
                                             Appasset.fire,
                                             height: 12.h,
                                           ),
-                                          SizedBox(width: 3.w,),
+                                          SizedBox(
+                                            width: 3.w,
+                                          ),
                                           Text(
                                             Apptexts.kcl,
                                             style: TextStyle(
                                               fontSize: 9.sp,
-                                              fontFamily: ApptextStyle.fontfamily,
+                                              fontFamily:
+                                                  ApptextStyle.fontfamily,
                                               color: AppColors.dblack,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
                                         ],
-                                      )
+                                      ),
+                                      SizedBox(
+                                        height: 6.h,
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                            );// Replace with your desired icons
+                            ); // Replace with your desired icons
                           },
                           // Make the grid non-scrollable
                         ),
                       ),
                     ],
                   )),
-                  Center(child: Column(
+                  Center(
+                      child: Column(
                     children: [
                       SizedBox(
                         height: 32.h,
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Search',hintStyle: TextStyle(
-                            fontSize: 11.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.blackTextColor,
-                            fontWeight: FontWeight.w400,
-                          ),
-                            prefixIcon: Icon(Icons.search,color: AppColors.blackTextColor,size: 30,),
+                            hintText: 'Search',
+                            hintStyle: TextStyle(
+                              fontSize: 11.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: AppColors.blackTextColor,
+                              size: 30,
+                            ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(18.0), // Circular border
+                              borderRadius: BorderRadius.circular(
+                                  18.0), // Circular border
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
@@ -302,12 +349,15 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15.h,),
+                      SizedBox(
+                        height: 15.h,
+                      ),
                       Row(
                         children: [
                           SvgPicture.asset(Appasset.lines, height: 18.h),
-                          SizedBox(width: 10.w,),
-
+                          SizedBox(
+                            width: 10.w,
+                          ),
                           Obx(() {
                             return SizedBox(
                               width: 130.w,
@@ -316,28 +366,28 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                 borderRadius: BorderRadius.circular(10),
                                 iconEnabledColor: AppColors.Profilecircles,
                                 decoration: InputDecoration(
-
                                   border: InputBorder.none,
                                 ),
                                 dropdownColor: AppColors.whiteTextColor,
                                 value: controller.selectedTimers.value,
                                 items: controller.months
                                     .map<DropdownMenuItem<String>>(
-                                      (String timer) => DropdownMenuItem<String>(
-                                    alignment: Alignment.center,
-                                    value: timer,
-                                    child: Text(
-                                      timer,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: AppColors.blackTextColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 12.sp,
-                                        fontFamily:
-                                        ApptextStyle.fontfamily,),
-                                    ),
-                                  ),
-                                )
+                                      (String timer) =>
+                                          DropdownMenuItem<String>(
+                                        alignment: Alignment.center,
+                                        value: timer,
+                                        child: Text(
+                                          timer,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: AppColors.blackTextColor,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12.sp,
+                                            fontFamily: ApptextStyle.fontfamily,
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                     .toList(),
                                 onChanged: (String? newValue) {
                                   controller.selectTimee(newValue!);
@@ -357,7 +407,9 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h,),
+                      SizedBox(
+                        height: 20.h,
+                      ),
                       Center(
                         child: SingleChildScrollView(
                           child: SizedBox(
@@ -366,7 +418,8 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                             child: GridView.builder(
                               scrollDirection: Axis.vertical,
                               itemCount: 4, // Number of icons
-                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2, // 5 icons in each row
                                 mainAxisSpacing: 17.0,
                                 crossAxisSpacing: 10.0,
@@ -389,54 +442,69 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                       ],
                                     ),
                                     child: Padding(
-                                      padding:EdgeInsets.symmetric(horizontal: 12.w),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 12.w),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          SizedBox(height: 10.h,),
+                                          SizedBox(
+                                            height: 10.h,
+                                          ),
                                           Container(
-                                            height: 112.h,
-                                            width:125.w,
+                                            height: 100.h,
+                                            width: 120.w,
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                               image: DecorationImage(
-                                                image: AssetImage('assets/images/gridviewe.png'),
+                                                image: AssetImage(
+                                                    'assets/images/gridviewe.png'),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
-                                            child:Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 10.0),
                                               child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
                                                 children: [
-                                                  SizedBox(height: 6.h,),
+                                                  SizedBox(
+                                                    height: 6.h,
+                                                  ),
                                                   Container(
                                                     height: 26.h,
                                                     width: 27.w,
                                                     decoration: BoxDecoration(
-                                                      color: AppColors.whiteTextColor,
-                                                      borderRadius: BorderRadius.circular(7),
+                                                      color: AppColors
+                                                          .whiteTextColor,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              7),
                                                     ),
-                                                    child:Icon(
-                                                    Icons.favorite,
+                                                    child: Icon(
+                                                      Icons.favorite,
                                                       size: 23,
                                                       color: AppColors.account,
-                                                   ),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
                                             ),
                                           ),
-                                          SizedBox(height: 10.h,),
+                                          Spacer(),
                                           Row(
                                             children: [
                                               Text(
                                                 Apptexts.plan2,
                                                 style: TextStyle(
                                                   fontSize: 14.sp,
-                                                  fontFamily: ApptextStyle.fontfamily,
-                                                  color: AppColors.blackTextColor,
+                                                  fontFamily:
+                                                      ApptextStyle.fontfamily,
+                                                  color:
+                                                      AppColors.blackTextColor,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                               ),
@@ -445,29 +513,36 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                                 height: 18.h,
                                                 width: 55.w,
                                                 decoration: BoxDecoration(
-                                                  color: AppColors.Profilecircle,
-                                                  borderRadius: BorderRadius.circular(9),
+                                                  color:
+                                                      AppColors.Profilecircle,
+                                                  borderRadius:
+                                                      BorderRadius.circular(9),
                                                 ),
                                                 child: Center(
                                                   child: Text(
                                                     Apptexts.days27,
                                                     style: TextStyle(
                                                       fontSize: 9.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.whiteTextColor,
-                                                      fontWeight: FontWeight.w600,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .whiteTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
                                                 ),
                                               ),
-
                                             ],
-                                          )
+                                          ),
+                                          SizedBox(
+                                            height: 10.h,
+                                          ),
                                         ],
                                       ),
                                     ),
                                   ),
-                                );// Replace with your desired icons
+                                ); // Replace with your desired icons
                               },
                               // Make the grid non-scrollable
                             ),
@@ -476,21 +551,28 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                       ),
                     ],
                   )),
-                  Center(child: Column(
+                  Center(
+                      child: Column(
                     children: [
                       SizedBox(
                         height: 32.h,
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Search',hintStyle: TextStyle(
-                            fontSize: 11.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.blackTextColor,
-                            fontWeight: FontWeight.w400,
-                          ),
-                            prefixIcon: Icon(Icons.search,color: AppColors.blackTextColor,size: 30,),
+                            hintText: 'Search',
+                            hintStyle: TextStyle(
+                              fontSize: 11.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: AppColors.blackTextColor,
+                              size: 30,
+                            ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(18.0), // Circular border
+                              borderRadius: BorderRadius.circular(
+                                  18.0), // Circular border
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
@@ -499,12 +581,15 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15.h,),
+                      SizedBox(
+                        height: 15.h,
+                      ),
                       Row(
                         children: [
                           SvgPicture.asset(Appasset.lines, height: 18.h),
-                          SizedBox(width: 10.w,),
-
+                          SizedBox(
+                            width: 10.w,
+                          ),
                           Obx(() {
                             return SizedBox(
                               width: 130.w,
@@ -513,28 +598,28 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                                 borderRadius: BorderRadius.circular(10),
                                 iconEnabledColor: AppColors.Profilecircles,
                                 decoration: InputDecoration(
-
                                   border: InputBorder.none,
                                 ),
                                 dropdownColor: AppColors.whiteTextColor,
                                 value: controller.selectedTimeres.value,
                                 items: controller.months
                                     .map<DropdownMenuItem<String>>(
-                                      (String timer) => DropdownMenuItem<String>(
-                                    alignment: Alignment.center,
-                                    value: timer,
-                                    child: Text(
-                                      timer,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: AppColors.blackTextColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 12.sp,
-                                        fontFamily:
-                                        ApptextStyle.fontfamily,),
-                                    ),
-                                  ),
-                                )
+                                      (String timer) =>
+                                          DropdownMenuItem<String>(
+                                        alignment: Alignment.center,
+                                        value: timer,
+                                        child: Text(
+                                          timer,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: AppColors.blackTextColor,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12.sp,
+                                            fontFamily: ApptextStyle.fontfamily,
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                     .toList(),
                                 onChanged: (String? newValue) {
                                   controller.selectTimes(newValue!);
@@ -554,78 +639,90 @@ class FavoritesrecipeView extends GetView<FavoritesrecipeController> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h,),
+                      SizedBox(
+                        height: 20.h,
+                      ),
                       Expanded(
                         child: ListView.builder(
                           itemCount: 3,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding:  EdgeInsets.only(bottom: 20.h),
+                              padding: EdgeInsets.only(bottom: 20.h),
                               child: Container(
                                 height: 76.h, // Adjusted height for visibility
                                 width: 328.w,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(6),
                                   image: DecorationImage(
-                                    image: AssetImage('assets/images/myrecipe.png'),
+                                    image: AssetImage(
+                                        'assets/images/myrecipe.png'),
                                     fit: BoxFit.fill,
                                   ),
-
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.only(left: 20.w,right: 10.w),
+                                  padding:
+                                      EdgeInsets.only(left: 20.w, right: 10.w),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(height:7.h,),
+                                      SizedBox(
+                                        height: 7.h,
+                                      ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             Apptexts.myrecipe1,
                                             style: TextStyle(
                                               fontSize: 21.4.sp,
-                                              fontFamily: ApptextStyle.fontfamily,
+                                              fontFamily:
+                                                  ApptextStyle.fontfamily,
                                               color: AppColors.whiteTextColor,
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
                                           Padding(
-                                            padding:  EdgeInsets.only(bottom: 22.h),
+                                            padding:
+                                                EdgeInsets.only(bottom: 22.h),
                                             child: Container(
                                               height: 23.h,
                                               width: 24.w,
                                               decoration: BoxDecoration(
                                                 color: AppColors.whiteTextColor,
-                                                borderRadius: BorderRadius.circular(6),
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
                                               ),
                                               child: Center(
-                                                child:Icon(
-                                                  Icons.favorite,
-                                                  color: AppColors.account,
-                                                )
-                                              ),
+                                                  child: Icon(
+                                                Icons.favorite,
+                                                color: AppColors.account,
+                                              )),
                                             ),
                                           )
                                         ],
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             Apptexts.myrecipes2,
                                             style: TextStyle(
                                               fontSize: 11.sp,
-                                              fontFamily: ApptextStyle.fontfamily,
+                                              fontFamily:
+                                                  ApptextStyle.fontfamily,
                                               color: AppColors.whiteTextColor,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
                                           Text(
-                                            Apptexts.myrecipes3 ,
+                                            Apptexts.myrecipes3,
                                             style: TextStyle(
                                               fontSize: 11.sp,
-                                              fontFamily: ApptextStyle.fontfamily,
+                                              fontFamily:
+                                                  ApptextStyle.fontfamily,
                                               color: AppColors.whiteTextColor,
                                               fontWeight: FontWeight.w700,
                                             ),

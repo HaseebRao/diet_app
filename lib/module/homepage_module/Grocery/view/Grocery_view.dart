@@ -28,7 +28,7 @@ class GroceryView extends GetView<GroceryController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () => Get.to(BottomNavBarScreen(),binding: BottomNavBarBinding()),
+                  onPressed: () => Get.back(),
                   icon: SvgPicture.asset(
                     Appasset.Arrowdiet,
                     height: 15.8.h,
@@ -188,55 +188,61 @@ class GroceryView extends GetView<GroceryController> {
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) {
                         return Obx(
-                              () => Column(
+                          () => Column(
                             children: [
                               Padding(
                                 padding: EdgeInsets.symmetric(vertical: 8.w),
-                                child: Container(
-                                  height: 48.h,
-                                  width: 315.w,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: AppColors.borderofCon),
-                                    // boxShadow: [
-                                    //   BoxShadow(
-                                    //     color: Colors.grey.withOpacity(0.3),
-                                    //     spreadRadius: 1,
-                                    //     blurRadius: 6,
-                                    //     offset: Offset(0, 2),
-                                    //   ),
-                                    // ],
-
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(14.0),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          controller.texts[index].toString(),
-                                          style: TextStyle(
-                                            fontSize: 13.sp,
-                                            fontFamily: ApptextStyle.fontfamily,
-                                            color: AppColors.blackTextColor,
-                                            fontWeight: FontWeight.w400,
+                                child: GestureDetector(
+                                  onTap: () => controller.toggleDropdown(index),
+                                  child: Container(
+                                    height: 48.h,
+                                    width: 315.w,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(
+                                          width: 0.5,
+                                          color: AppColors.borderofCon),
+                                      // boxShadow: [
+                                      //   BoxShadow(
+                                      //     color: Colors.grey.withOpacity(0.3),
+                                      //     spreadRadius: 1,
+                                      //     blurRadius: 6,
+                                      //     offset: Offset(0, 2),
+                                      //   ),
+                                      // ],
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(14.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            controller.texts[index].toString(),
+                                            style: TextStyle(
+                                              fontSize: 13.sp,
+                                              fontFamily:
+                                                  ApptextStyle.fontfamily,
+                                              color: AppColors.blackTextColor,
+                                              fontWeight: FontWeight.w400,
+                                            ),
                                           ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () => controller.toggleDropdown(index),
-                                          child: Icon(
+                                          Icon(
                                             controller.isDropdownOpen[index]
                                                 ? Icons.keyboard_arrow_up_sharp
-                                                : Icons.keyboard_arrow_down_sharp,size: 30,
+                                                : Icons
+                                                    .keyboard_arrow_down_sharp,
+                                            size: 30,
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                               if (controller.isDropdownOpen[index])
                                 Padding(
-                                  padding: EdgeInsets.only(bottom:30.h),
+                                  padding: EdgeInsets.only(bottom: 30.h),
                                   child: Container(
                                     height: 230.h,
                                     width: 315.w,
@@ -260,7 +266,8 @@ class GroceryView extends GetView<GroceryController> {
                                         itemBuilder: (context, index) {
                                           return Padding(
                                             padding: EdgeInsets.symmetric(
-                                                horizontal: 15.w, vertical: 5.h),
+                                                horizontal: 15.w,
+                                                vertical: 5.h),
                                             child: Container(
                                               height: 34.h,
                                               width: 256.w,
@@ -268,20 +275,25 @@ class GroceryView extends GetView<GroceryController> {
                                                 color: AppColors.whiteTextColor,
                                                 border: Border.all(
                                                     color: AppColors.graycolor),
-                                                borderRadius: BorderRadius.circular(12),
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.only(left: 20.w),
+                                                padding:
+                                                    EdgeInsets.only(left: 20.w),
                                                 child: Row(
                                                   children: [
                                                     Text(
-                                                      controller.texts[index].toString(),
+                                                      controller.texts[index]
+                                                          .toString(),
                                                       style: TextStyle(
                                                         fontSize: 11.sp,
-                                                        fontFamily:
-                                                        ApptextStyle.fontfamily,
-                                                        color: AppColors.blackTextColor,
-                                                        fontWeight: FontWeight.w500,
+                                                        fontFamily: ApptextStyle
+                                                            .fontfamily,
+                                                        color: AppColors
+                                                            .blackTextColor,
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                       ),
                                                     ),
                                                   ],

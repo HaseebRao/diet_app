@@ -3,6 +3,9 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../bottom_nav_bar/binding/bottom_nav_bar_binding.dart';
+import '../../bottom_nav_bar/view/bottom_nav_page.dart';
+
 class MealItem {
   final String svgAsset;
   final String text;
@@ -20,7 +23,7 @@ class MealItem {
 class AddwhatyouwantController extends GetxController {
   var selectedDate = DateTime.now().obs;
 
-  // List of meal items with initial values
+  TextEditingController customFoodController = TextEditingController();
   var mealItems = <MealItem>[
     MealItem(svgAsset: Appasset.faluda, text: Apptexts.breakfast),
     MealItem(svgAsset: Appasset.chaay, text: Apptexts.lunch),
@@ -31,5 +34,13 @@ class AddwhatyouwantController extends GetxController {
     selectedDate.value = newDate;
   }
 
- var changecolor = (-1).obs;
+  void validation() {
+    if (customFoodController.text.isEmpty) {
+      Get.snackbar("Error", "Please enter your food");
+    } else {
+      Get.to(BottomNavBarScreen(), binding: BottomNavBarBinding());
+    }
+  }
+
+  var changecolor = (-1).obs;
 }

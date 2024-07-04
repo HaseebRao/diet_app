@@ -11,6 +11,7 @@ import '../../progress/controller/progress_controller.dart';
 import '../../runningpageend/binding/runningpageend_binding.dart';
 import '../../runningpageend/view/runningpageend_view.dart';
 import '../controller/runningpagestart_controller.dart';
+
 class RunningpagestartView extends GetView<RunningpagestartController> {
   @override
   Widget build(BuildContext context) {
@@ -60,44 +61,49 @@ class RunningpagestartView extends GetView<RunningpagestartController> {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return Obx(() => Padding(
-                          padding: EdgeInsets.only(right: 10.w),
-                          child: GestureDetector(
-                            onTap: () {
-                              controller.toggleIndex(index);
-                            },
-                            child: Container(
-                              height: 33.h,
-                              width: 38.w,
-                              decoration: BoxDecoration(
-                                color: controller.selectedIndices.contains(index)
-                                    ? AppColors.Profilecircle
-                                    : Colors.transparent,
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: Center(
-                                child: controller.selectedIndices.contains(index)
-                                    ? Icon(
-                                  Icons.done,
-                                  size: 20.sp,
-                                  color: Colors.white,
-                                )
-                                    : Text(
-                                  controller.textNo[index],
-                                  style: TextStyle(
-                                    fontSize: 15.sp,
-                                    fontFamily: ApptextStyle.fontfamily,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w600,
+                              padding: EdgeInsets.only(right: 10.w),
+                              child: GestureDetector(
+                                onTap: () {
+                                  controller.toggleIndex(index);
+                                },
+                                child: Container(
+                                  height: 33.h,
+                                  width: 38.w,
+                                  decoration: BoxDecoration(
+                                    color: controller.selectedIndices
+                                            .contains(index)
+                                        ? AppColors.Profilecircle
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  child: Center(
+                                    child: controller.selectedIndices
+                                            .contains(index)
+                                        ? Icon(
+                                            Icons.done,
+                                            size: 20.sp,
+                                            color: Colors.white,
+                                          )
+                                        : Text(
+                                            controller.textNo[index],
+                                            style: TextStyle(
+                                              fontSize: 15.sp,
+                                              fontFamily:
+                                                  ApptextStyle.fontfamily,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ));
+                            ));
                       },
                     ),
                   ),
-                  SizedBox(height: 40.h,),
+                  SizedBox(
+                    height: 40.h,
+                  ),
                   Stack(
                     children: [
                       Container(
@@ -113,7 +119,8 @@ class RunningpagestartView extends GetView<RunningpagestartController> {
                               dataSource: controller.data,
                               xValueMapper: (ChartData data, _) => data.x,
                               yValueMapper: (ChartData data, _) => data.y,
-                              pointColorMapper: (ChartData data, _) => data.color,
+                              pointColorMapper: (ChartData data, _) =>
+                                  data.color,
                               radius: '185%',
                               innerRadius: '55%',
                               name: 'Gold',
@@ -138,58 +145,65 @@ class RunningpagestartView extends GetView<RunningpagestartController> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 50.h,),
-                  Container(height: 47.h,
-                  width: 315.w,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.coloroff),
-                    borderRadius: BorderRadius.circular(12)
+                  SizedBox(
+                    height: 50.h,
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 17.w),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 10.h,
-                          width: 10.w,
-                          decoration: BoxDecoration(
-                            color:AppColors.Profilecircle,
-                            borderRadius: BorderRadius.circular(100)
+                  Container(
+                    height: 47.h,
+                    width: 315.w,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.coloroff),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 17.w),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 10.h,
+                            width: 10.w,
+                            decoration: BoxDecoration(
+                                color: AppColors.Profilecircle,
+                                borderRadius: BorderRadius.circular(100)),
                           ),
-                        ),
-                        SizedBox(width: 8.w,),
-                        Text(
-                          Apptexts.diarytext,
-                          style: TextStyle(
-                            fontSize: 11.5.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.blackTextColor,
-                            fontWeight: FontWeight.w500,
+                          SizedBox(
+                            width: 8.w,
                           ),
-                        ),
-                        Spacer(),
-                        Container(
-                          height: 10.h,
-                          width: 10.w,
-                          decoration: BoxDecoration(
-                              color:AppColors.yellowdark,
-                              borderRadius: BorderRadius.circular(100)
+                          Text(
+                            Apptexts.diarytext,
+                            style: TextStyle(
+                              fontSize: 11.5.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 8.w,),
-                        Text(
-                          Apptexts. totalsteps,
-                          style: TextStyle(
-                            fontSize: 11.5.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.blackTextColor,
-                            fontWeight: FontWeight.w500,
+                          Spacer(),
+                          Container(
+                            height: 10.h,
+                            width: 10.w,
+                            decoration: BoxDecoration(
+                                color: AppColors.yellowdark,
+                                borderRadius: BorderRadius.circular(100)),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: 8.w,
+                          ),
+                          Text(
+                            Apptexts.totalsteps,
+                            style: TextStyle(
+                              fontSize: 11.5.sp,
+                              fontFamily: ApptextStyle.fontfamily,
+                              color: AppColors.blackTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),),
-                  SizedBox(height: 20.h,),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   Center(
                     child: SizedBox(
                       height: 135.h,
@@ -198,9 +212,13 @@ class RunningpagestartView extends GetView<RunningpagestartController> {
                           itemCount: controller.modelclass.length,
                           physics: NeverScrollableScrollPhysics(),
                           scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index){
+                          itemBuilder: (context, index) {
                             return Padding(
-                              padding:  EdgeInsets.only(right: 10.w,top: 5.h,bottom: 5.h,left:3.w),
+                              padding: EdgeInsets.only(
+                                  right: 10.w,
+                                  top: 5.h,
+                                  bottom: 5.h,
+                                  left: 3.w),
                               child: Container(
                                 width: 95.w,
                                 decoration: BoxDecoration(
@@ -211,61 +229,70 @@ class RunningpagestartView extends GetView<RunningpagestartController> {
                                       color: Colors.grey.withOpacity(0.2),
                                       spreadRadius: 3,
                                       blurRadius: 3,
-                                      offset: Offset(0, 2), // changes position of shadow
+                                      offset: Offset(
+                                          0, 2), // changes position of shadow
                                     ),
                                   ],
                                 ),
-                                child: Column(
-                                    children: [
-                                      SizedBox(height: 15.h,),
-                                      Container(
-                                        height: 38.h,
-                                        width: 41.w,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.Profilecircle,
-                                          borderRadius: BorderRadius.circular(100),
-                                        ),
-                                        child:  Padding(
-                                          padding: const EdgeInsets.all(8),
-                                          child: SvgPicture.asset(
-                                            controller.modelclass[index].image,
-                                            height: 12.h,
-                                            color: AppColors.whiteTextColor,
-                                          ),
-                                        ),
+                                child: Column(children: [
+                                  SizedBox(
+                                    height: 15.h,
+                                  ),
+                                  Container(
+                                    height: 38.h,
+                                    width: 41.w,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.Profilecircle,
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8),
+                                      child: SvgPicture.asset(
+                                        controller.modelclass[index].image,
+                                        height: 12.h,
+                                        color: AppColors.whiteTextColor,
                                       ),
-
-                                      SizedBox(height: 12.h,),
-                                      Text(
-                                        controller.modelclass[index].text1,
-                                        style: TextStyle(
-                                          fontSize: 12.sp,
-                                          fontFamily: ApptextStyle.fontfamily,
-                                          color: AppColors.blackTextColor,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      SizedBox(height: 6.h,),
-                                      Text(
-                                        controller.modelclass[index].text2,
-                                        style: TextStyle(
-                                          fontSize: 9.7.sp,
-                                          fontFamily: ApptextStyle.fontfamily,
-                                          color: AppColors.blackTextColor,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ]
-                                ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 12.h,
+                                  ),
+                                  Text(
+                                    controller.modelclass[index].text1,
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontFamily: ApptextStyle.fontfamily,
+                                      color: AppColors.blackTextColor,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6.h,
+                                  ),
+                                  Text(
+                                    controller.modelclass[index].text2,
+                                    style: TextStyle(
+                                      fontSize: 9.7.sp,
+                                      fontFamily: ApptextStyle.fontfamily,
+                                      color: AppColors.blackTextColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ]),
                               ),
                             );
                           }),
                     ),
                   ),
-                  SizedBox(height: 75.h,),
+                  SizedBox(
+                    height: 66.h,
+                  ),
                   GestureDetector(
-                    onTap: (){
-                      Get.to(RunningpageendView(),binding: RunningpageendBinding(),);
+                    onTap: () {
+                      Get.to(
+                        RunningpageendView(),
+                        binding: RunningpageendBinding(),
+                      );
                     },
                     child: Container(
                       height: 47.h,
@@ -273,16 +300,17 @@ class RunningpagestartView extends GetView<RunningpagestartController> {
                         color: AppColors.blueBtnColor,
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child:  Center(
+                      child: Center(
                         child: Text(
                           textAlign: TextAlign.center,
                           Apptexts.startTexts,
                           style: TextStyle(
                             fontSize: 15.sp,
                             fontFamily: ApptextStyle.fontfamily,
-                            color:AppColors.whiteTextColor,
+                            color: AppColors.whiteTextColor,
                             fontWeight: FontWeight.w600,
-                          ),),
+                          ),
+                        ),
                       ),
                     ),
                   ),

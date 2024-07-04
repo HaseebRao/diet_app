@@ -165,10 +165,7 @@ class QuestionView extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(
-                    PracticeView(),
-                    binding: PracticeBinding(),
-                  );
+                  controller.selectValue();
                 },
                 child: Container(
                   height: 47.h,

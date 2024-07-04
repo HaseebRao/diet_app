@@ -1,3 +1,5 @@
+import 'package:diet_app/module/authentication_module/login/binding/login_binding.dart';
+import 'package:diet_app/module/authentication_module/login/view/login_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -44,5 +46,23 @@ class AccountController extends GetxController {
   // Method to update button color
   void updateButtonColor(bool isTextEntered) {
     this.isTextEntered.value = isTextEntered;
+  }
+
+  void validateForgot() {
+    String emailPattern =
+        r'^[^@\s]+@[^@\s]+\.[^@\s]+$'; // Regex pattern for validating email
+    RegExp regExp = RegExp(emailPattern);
+
+    String email = textController1.text;
+
+    if (email.isEmpty) {
+      Get.snackbar("Error", "Please enter your email");
+    } else if (!regExp.hasMatch(email)) {
+      Get.snackbar("Error", "Please enter a valid email address");
+    } else if (email.contains(' ')) {
+      Get.snackbar("Error", "Email address should not contain spaces");
+    } else {
+      Get.off(LoginView(), binding: LoginBinding());
+    }
   }
 }

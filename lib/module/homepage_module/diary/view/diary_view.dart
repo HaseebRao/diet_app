@@ -36,7 +36,7 @@ class DiaryView extends GetView<DiaryController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
-                        onPressed: () => Get.to(BottomNavBarScreen(), binding: BottomNavBarBinding(),),
+                        onPressed: () => Get.back(),
                         icon: SvgPicture.asset(
                           Appasset.Arrowdiet,
                           height: 15.8.h,
@@ -78,38 +78,65 @@ class DiaryView extends GetView<DiaryController> {
                         GestureDetector(
                           onTap: () => controller.selectText(Apptexts.Daily),
                           child: Obx(() => Text(
-                            Apptexts.Daily,
-                            style: TextStyle(
-                              fontSize: controller.selectedText.value == Apptexts.Daily ? 14.sp : 13.sp,
-                              fontFamily: ApptextStyle.fontfamily,
-                              color: controller.selectedText.value == Apptexts.Daily ? AppColors.whiteTextColor : AppColors.Profile,
-                              fontWeight: controller.selectedText.value == Apptexts.Daily ? FontWeight.w700 : FontWeight.w400,
-                            ),
-                          )),
+                                Apptexts.Daily,
+                                style: TextStyle(
+                                  fontSize: controller.selectedText.value ==
+                                          Apptexts.Daily
+                                      ? 14.sp
+                                      : 13.sp,
+                                  fontFamily: ApptextStyle.fontfamily,
+                                  color: controller.selectedText.value ==
+                                          Apptexts.Daily
+                                      ? AppColors.whiteTextColor
+                                      : AppColors.Profile,
+                                  fontWeight: controller.selectedText.value ==
+                                          Apptexts.Daily
+                                      ? FontWeight.w700
+                                      : FontWeight.w400,
+                                ),
+                              )),
                         ),
                         GestureDetector(
                           onTap: () => controller.selectText(Apptexts.Weekly),
                           child: Obx(() => Text(
-                            Apptexts.Weekly,
-                            style: TextStyle(
-                              fontSize: controller.selectedText.value == Apptexts.Weekly ? 14.sp : 13.sp,
-                              fontFamily: ApptextStyle.fontfamily,
-                              color: controller.selectedText.value == Apptexts.Weekly ? AppColors.whiteTextColor : AppColors.Profile,
-                              fontWeight: controller.selectedText.value == Apptexts.Weekly ? FontWeight.w700 : FontWeight.w400,
-                            ),
-                          )),
+                                Apptexts.Weekly,
+                                style: TextStyle(
+                                  fontSize: controller.selectedText.value ==
+                                          Apptexts.Weekly
+                                      ? 14.sp
+                                      : 13.sp,
+                                  fontFamily: ApptextStyle.fontfamily,
+                                  color: controller.selectedText.value ==
+                                          Apptexts.Weekly
+                                      ? AppColors.whiteTextColor
+                                      : AppColors.Profile,
+                                  fontWeight: controller.selectedText.value ==
+                                          Apptexts.Weekly
+                                      ? FontWeight.w700
+                                      : FontWeight.w400,
+                                ),
+                              )),
                         ),
                         GestureDetector(
                           onTap: () => controller.selectText(Apptexts.Monthly),
                           child: Obx(() => Text(
-                            Apptexts.Monthly,
-                            style: TextStyle(
-                              fontSize: controller.selectedText.value == Apptexts.Monthly ? 14.sp : 13.sp,
-                              fontFamily: ApptextStyle.fontfamily,
-                              color: controller.selectedText.value == Apptexts.Monthly ? AppColors.whiteTextColor : AppColors.Profile,
-                              fontWeight: controller.selectedText.value == Apptexts.Monthly ? FontWeight.w700 : FontWeight.w400,
-                            ),
-                          )),
+                                Apptexts.Monthly,
+                                style: TextStyle(
+                                  fontSize: controller.selectedText.value ==
+                                          Apptexts.Monthly
+                                      ? 14.sp
+                                      : 13.sp,
+                                  fontFamily: ApptextStyle.fontfamily,
+                                  color: controller.selectedText.value ==
+                                          Apptexts.Monthly
+                                      ? AppColors.whiteTextColor
+                                      : AppColors.Profile,
+                                  fontWeight: controller.selectedText.value ==
+                                          Apptexts.Monthly
+                                      ? FontWeight.w700
+                                      : FontWeight.w400,
+                                ),
+                              )),
                         ),
                       ],
                     ),
@@ -134,49 +161,53 @@ class DiaryView extends GetView<DiaryController> {
                       return GestureDetector(
                         onTap: () => controller.selectIndex(index),
                         child: Obx(() => Row(
-                          children: [
-                            Container(
-                              height: 33.h,
-                              width: 34.w,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: controller.selectedIndex.value == index
-                                    ? AppColors.Profilecircle
-                                    : Colors.transparent,
-                                border: Border.all(
-                                  color: AppColors.Profilecircle,
-                                  width: 1.3.w,
-                                ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  controller.text1[index].toString(),
-                                  style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontFamily: ApptextStyle.fontfamily,
-                                    color: controller.selectedIndex.value == index
-                                        ? Colors.white
-                                        : AppColors.Profilecircle,
-                                    fontWeight: FontWeight.w600,
+                              children: [
+                                Container(
+                                  height: 33.h,
+                                  width: 34.w,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color:
+                                        controller.selectedIndex.value == index
+                                            ? AppColors.Profilecircle
+                                            : Colors.transparent,
+                                    border: Border.all(
+                                      color: AppColors.Profilecircle,
+                                      width: 1.3.w,
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      controller.text1[index].toString(),
+                                      style: TextStyle(
+                                        fontSize: 12.sp,
+                                        fontFamily: ApptextStyle.fontfamily,
+                                        color: controller.selectedIndex.value ==
+                                                index
+                                            ? Colors.white
+                                            : AppColors.Profilecircle,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            if (index < 6)
-                              Container(
-                                height: 1.4.h,
-                                width: 15.w,
-                                decoration: BoxDecoration(
-                                  color: AppColors.Profilecircle,
-                                ),
-                              ),
-                          ],
-                        )),
+                                if (index < 6)
+                                  Container(
+                                    height: 1.4.h,
+                                    width: 15.w,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.Profilecircle,
+                                    ),
+                                  ),
+                              ],
+                            )),
                       );
                     },
                   ),
                 ),
-                SizedBox(height: 50.h,),
+                SizedBox(
+                  height: 50.h,
+                ),
                 Center(
                   child: SizedBox(
                     height: 115.h,
@@ -185,9 +216,10 @@ class DiaryView extends GetView<DiaryController> {
                         itemCount: controller.modelclass.length,
                         physics: NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index){
+                        itemBuilder: (context, index) {
                           return Padding(
-                            padding:  EdgeInsets.only(right: 15.w,top: 5.h,bottom: 5.h,left: 5.w),
+                            padding: EdgeInsets.only(
+                                right: 15.w, top: 5.h, bottom: 5.h, left: 5.w),
                             child: Container(
                               width: 87.w,
                               decoration: BoxDecoration(
@@ -198,203 +230,222 @@ class DiaryView extends GetView<DiaryController> {
                                     color: Colors.grey.withOpacity(0.3),
                                     spreadRadius: 2,
                                     blurRadius: 4,
-                                    offset: Offset(0, 3), // changes position of shadow
+                                    offset: Offset(
+                                        0, 3), // changes position of shadow
                                   ),
                                 ],
                               ),
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 15.h,),
-                                  Container(
-                                    height: 33.h,
-                                    width: 34.w,
-                                    decoration: BoxDecoration(
-                                      color: AppColors.Profilecircle,
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    child:  Padding(
-                                      padding: const EdgeInsets.all(6.3),
-                                      child: SvgPicture.asset(
-                                       controller.modelclass[index].image,
-                                        height: 12.h,
-                                        color: AppColors.whiteTextColor,
-                                      ),
+                              child: Column(children: [
+                                SizedBox(
+                                  height: 15.h,
+                                ),
+                                Container(
+                                  height: 33.h,
+                                  width: 34.w,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: AppColors.Profilecircle,
+                                    // borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.3),
+                                    child: SvgPicture.asset(
+                                      controller.modelclass[index].image,
+                                      height: 7.h,
+                                      color: AppColors.whiteTextColor,
                                     ),
                                   ),
-
-                                  SizedBox(height: 10.h,),
-                                  Text(
+                                ),
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                Text(
                                   controller.modelclass[index].text1,
-                                    style: TextStyle(
-                                      fontSize: 12.sp,
-                                      fontFamily: ApptextStyle.fontfamily,
-                                      color: AppColors.blackTextColor,
-                                      fontWeight: FontWeight.w700,
-                                    ),
+                                  style: TextStyle(
+                                    fontSize: 12.sp,
+                                    fontFamily: ApptextStyle.fontfamily,
+                                    color: AppColors.blackTextColor,
+                                    fontWeight: FontWeight.w700,
                                   ),
-                                  SizedBox(height: 5.h,),
-                                  Text(
+                                ),
+                                SizedBox(
+                                  height: 5.h,
+                                ),
+                                Text(
                                   controller.modelclass[index].text2,
-                                    style: TextStyle(
-                                      fontSize: 7.sp,
-                                      fontFamily: ApptextStyle.fontfamily,
-                                      color: AppColors.blackTextColor,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                  style: TextStyle(
+                                    fontSize: 7.sp,
+                                    fontFamily: ApptextStyle.fontfamily,
+                                    color: AppColors.blackTextColor,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                ]
-                              ),
+                                ),
+                              ]),
                             ),
                           );
                         }),
                   ),
                 ),
-SizedBox(height: 5.h,),
-Row(
-  children: [
-    SizedBox(width: 40,height: 313,
-      child: ListView.builder(
-        physics: NeverScrollableScrollPhysics(),
-          itemCount: 4,
-          scrollDirection: Axis.vertical,
-          itemBuilder: (context,index){
-            return    Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-    GestureDetector(
-    onTap: () => controller.toggleFill(index),
-    child: Obx(() {
-    return
-                Container(
-                  height: 19.h,
-                  width: 20.w,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.yellowdark),
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Container(
-                      height: 14.h,
-                      width: 14.w,
-                      decoration: BoxDecoration(
-                        color: controller.fillStates[index].value
-                            ? AppColors.yellowdark
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                    ),
-                  ),
-                );
-    }),
-    ),
-                if(index<controller.modelclas.length-1)
-                  SizedBox(
-                    height: 53.h,
-                    child: DottedLine(
-                      direction: Axis.vertical,
-                      alignment: WrapAlignment.center,
-                      lineLength: double.infinity,
-                      lineThickness: 1.0,
-                      dashColor: AppColors.yellowdark,
-                      dashRadius: 0.0,
-                      dashGapLength: 3.0,
-                      dashGapColor: Colors.transparent,
-                      dashGapRadius: 0.0,
-                    ),
-                  )
-                else
-                  SizedBox(
-                    height: 42.h,
-                    child: DottedLine(
-                      direction: Axis.vertical,
-                      alignment: WrapAlignment.center,
-                      lineLength: double.infinity,
-                      lineThickness: 1.0,
-                      dashColor: Colors.transparent,
-                      dashRadius: 0.0,
-                      dashGapLength: 3.0,
-                      dashGapColor: Colors.transparent,
-                      dashGapRadius: 0.0,
-                    ),
-                  )
-              ],
-            );
-          }),
-    ),
-    SizedBox(width: 3.w,),
-    SizedBox(height: 300.h,
-      width: 290.w,
-      child: ListView.builder(
-        physics: NeverScrollableScrollPhysics(),
-          itemCount: controller.modelclas.length,
-          scrollDirection: Axis.vertical,
-          itemBuilder: (context,index){
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-             Spacer(),
-                Padding(
-                  padding:  EdgeInsets.only(bottom: 16.h),
-                  child: Container(
-                    height: 55.h,
-                    width: 290.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.whiteTextColor,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: AppColors.coloroff)
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(width: 12.w,),
-                        Container(
-                          height: 36.h,
-                          width: 38.w,
-                          decoration: BoxDecoration(
-                            color: AppColors.Profilecircle,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: SvgPicture.asset(
-                            controller.modelclas[index].svgpath,
-                              height: 15.8.h,
-                              color: AppColors.whiteTextColor,
-                            ),
-                          ),
-                        ),
-                  SizedBox(width: 15.w,),
-                        Text(
-                         controller.modelclas[index].breakfast,
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontFamily: ApptextStyle.fontfamily,
-                            color: AppColors.blackTextColor,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        // Spacer(),
-                    Text(
-                   controller.modelclas[index].lunch,
-                    style: TextStyle(
-                    fontSize: 12.sp,
-                    fontFamily: ApptextStyle.fontfamily,
-                  color: AppColors.blackTextColor,
-                  fontWeight: FontWeight.w700,
-                  ),
-                  ),
-                        SizedBox(width: 12.w,),
-                      ],
-                    ),
-                  ),
+                SizedBox(
+                  height: 5.h,
                 ),
-              ],
-            );
-          }),
-    ),
-  ],
-)
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 35.w,
+                      height: 263.h,
+                      child: ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: 4,
+                          scrollDirection: Axis.vertical,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () => controller.toggleFill(index),
+                                  child: Obx(() {
+                                    return Container(
+                                      height: 19.h,
+                                      width: 20.w,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: AppColors.yellowdark),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(4.0),
+                                        child: Container(
+                                          height: 14.h,
+                                          width: 14.w,
+                                          decoration: BoxDecoration(
+                                            color: controller
+                                                    .fillStates[index].value
+                                                ? AppColors.yellowdark
+                                                : Colors.transparent,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }),
+                                ),
+                                if (index < controller.modelclas.length - 1)
+                                  SizedBox(
+                                    height: 53.h,
+                                    child: DottedLine(
+                                      direction: Axis.vertical,
+                                      alignment: WrapAlignment.center,
+                                      lineLength: double.infinity,
+                                      lineThickness: 1.0,
+                                      dashColor: AppColors.yellowdark,
+                                      dashRadius: 0.0,
+                                      dashGapLength: 3.0,
+                                      dashGapColor: Colors.transparent,
+                                      dashGapRadius: 0.0,
+                                    ),
+                                  )
+                                else
+                                  SizedBox(
+                                    height: 42.h,
+                                    child: DottedLine(
+                                      direction: Axis.vertical,
+                                      alignment: WrapAlignment.center,
+                                      lineLength: double.infinity,
+                                      lineThickness: 1.0,
+                                      dashColor: Colors.transparent,
+                                      dashRadius: 0.0,
+                                      dashGapLength: 3.0,
+                                      dashGapColor: Colors.transparent,
+                                      dashGapRadius: 0.0,
+                                    ),
+                                  )
+                              ],
+                            );
+                          }),
+                    ),
+                    SizedBox(
+                      width: 3.w,
+                    ),
+                    SizedBox(
+                      height: 300.h,
+                      width: 290.w,
+                      child: ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: controller.modelclas.length,
+                          scrollDirection: Axis.vertical,
+                          itemBuilder: (context, index) {
+                            return Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Spacer(),
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 16.h),
+                                  child: Container(
+                                    height: 55.h,
+                                    width: 290.w,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.whiteTextColor,
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                            color: AppColors.coloroff)),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 12.w,
+                                        ),
+                                        Container(
+                                          height: 36.h,
+                                          width: 38.w,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.Profilecircle,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: SvgPicture.asset(
+                                              controller
+                                                  .modelclas[index].svgpath,
+                                              height: 15.8.h,
+                                              color: AppColors.whiteTextColor,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 15.w,
+                                        ),
+                                        Text(
+                                          controller.modelclas[index].breakfast,
+                                          style: TextStyle(
+                                            fontSize: 12.sp,
+                                            fontFamily: ApptextStyle.fontfamily,
+                                            color: AppColors.blackTextColor,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        // Spacer(),
+                                        Text(
+                                          controller.modelclas[index].lunch,
+                                          style: TextStyle(
+                                            fontSize: 12.sp,
+                                            fontFamily: ApptextStyle.fontfamily,
+                                            color: AppColors.blackTextColor,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 12.w,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          }),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

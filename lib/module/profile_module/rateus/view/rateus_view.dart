@@ -1,5 +1,3 @@
-import 'package:diet_app/module/profile_module/profile/binding/profile_binding.dart';
-import 'package:diet_app/module/profile_module/profile/view/profile_view.dart';
 import 'package:diet_app/module/profile_module/rateus/controller/rateus_controller.dart';
 import 'package:diet_app/module/profile_module/rateusdone/binding/rateusdone_binding.dart';
 import 'package:diet_app/module/profile_module/rateusdone/view/rateusdone_view.dart';
@@ -9,7 +7,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
 import '../../../../common/app_assets.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/app_text.dart';
@@ -33,26 +30,30 @@ class RateusView extends GetView<IconController> {
               children: [
                 GestureDetector(
                   onTap: () {
-                  Get.back();
+                    Get.back();
                   },
                   child: SvgPicture.asset(
                     Appasset.Arrowdiet,
                     height: 17.h,
                   ),
                 ),
+                Text(
+                  Apptexts.rateus,
+                  style: TextStyle(
+                    fontSize: 22.sp,
+                    fontFamily: ApptextStyle.fontfamily,
+                    color: AppColors.blackTextColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Container(
+                  height: 1.h,
+                  width: 25.w,
+                ),
               ],
             ),
             SizedBox(
               height: 4.h,
-            ),
-            Text(
-              Apptexts.rateus,
-              style: TextStyle(
-                fontSize: 22.sp,
-                fontFamily: ApptextStyle.fontfamily,
-                color: AppColors.blackTextColor,
-                fontWeight: FontWeight.w700,
-              ),
             ),
             SizedBox(
               height: 165.h,
@@ -86,12 +87,11 @@ class RateusView extends GetView<IconController> {
               ),
             ),
             SizedBox(height: 1.h),
-
             RateusCustomwidget(),
             SizedBox(height: 42.h),
             GestureDetector(
-              onTap: (){
-               Get.to( RateusdoneView(),binding: RateusdoneBinding());
+              onTap: () {
+                Get.to(RateusdoneView(), binding: RateusdoneBinding());
               },
               child: Container(
                 height: 49.h,

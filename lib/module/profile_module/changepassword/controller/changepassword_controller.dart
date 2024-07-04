@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class ChangepasswordController extends GetxController{
+import '../../../authentication_module/successpasword/view/successpassword_view.dart';
+
+class ChangepasswordController extends GetxController {
   final TextEditingController textController1 = TextEditingController();
   final TextEditingController textController2 = TextEditingController();
   final TextEditingController textController3 = TextEditingController();
-  final TextEditingController textController4 = TextEditingController();
   final FocusNode focusNode1 = FocusNode();
   final FocusNode focusNode2 = FocusNode();
   final FocusNode focusNode3 = FocusNode();
@@ -36,12 +37,30 @@ class ChangepasswordController extends GetxController{
       }
     });
   }
+
+  void validation() {
+    if (textController1.text.isEmpty &&
+        textController2.text.isEmpty &&
+        textController3.text.isEmpty) {
+      Get.snackbar("Error", "Fields can not be empty");
+    } else if (textController1.text.isEmpty) {
+      Get.snackbar("Error", "Please enter current password");
+    } else if (textController2.text.isEmpty) {
+      Get.snackbar("Error", "Please enter new password");
+    } else if (textController3.text.isEmpty) {
+      Get.snackbar("Error", "Please enter confirm password");
+    } else {
+      Get.off(
+        SuccesspasswordView(),
+      );
+    }
+  }
+
   @override
   void onClose() {
     textController1.dispose();
     textController2.dispose();
     textController3.dispose();
-    textController4.dispose();
 
     focusNode1.dispose();
     focusNode2.dispose();

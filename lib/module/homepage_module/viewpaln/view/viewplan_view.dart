@@ -1,3 +1,5 @@
+import 'package:diet_app/module/homepage_module/pickyourown/binding/pickyourown_binding.dart';
+import 'package:diet_app/module/homepage_module/pickyourown/view/pickyourown_view.dart';
 import 'package:diet_app/module/homepage_module/viewpaln/controller/viewplan_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -54,7 +56,7 @@ class ViewplanView extends GetView<ViewplanController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 8.h,
+                      height: 4.h,
                     ),
                     Text(
                       Apptexts.dayes,
@@ -78,7 +80,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(0);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 0
@@ -92,7 +94,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 0
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -107,7 +109,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(1);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 1
@@ -121,7 +123,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 1
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -136,7 +138,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(2);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 2
@@ -150,7 +152,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 2
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -165,7 +167,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(3);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 3
@@ -179,7 +181,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 3
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -194,7 +196,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(4);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 4
@@ -208,7 +210,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 4
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -223,7 +225,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(5);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 5
@@ -237,7 +239,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 5
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -252,7 +254,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                 controller.selectText(7);
                               },
                               child: Container(
-                                height: 44.h,
+                                height: 35.h,
                                 padding: EdgeInsets.all(8.w),
                                 decoration: BoxDecoration(
                                   color: controller.selectedIndex.value == 7
@@ -266,7 +268,7 @@ class ViewplanView extends GetView<ViewplanController> {
                                     color: controller.selectedIndex.value == 7
                                         ? Colors.white
                                         : AppColors.Profilecircle,
-                                    fontSize: 19.sp,
+                                    fontSize: 15.sp,
                                     fontFamily: ApptextStyle.fontfamily,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -316,33 +318,38 @@ class ViewplanView extends GetView<ViewplanController> {
                             height: 10.h,
                           ),
                           SizedBox(
-                            height: 180.h,
+                            height: 170.h,
                             child: ListView.builder(
                                 padding: EdgeInsets.all(0),
                                 itemCount: 2,
                                 scrollDirection: Axis.vertical,
                                 itemBuilder: (context, index) {
                                   return Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 15.h),
                                         child: Container(
-                                          height: 75.h,
+                                          height: 70.h,
                                           width: 253.w,
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               border: Border.all(
-                                                  color: AppColors.bordercolor)),
+                                                  color:
+                                                      AppColors.bordercolor)),
                                           child: Row(
                                             children: [
                                               Container(
-                                                height: 75.h,
+                                                height: 70.h,
                                                 width: 80.w,
                                                 decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10),
-                                                  border: Border.all(color: AppColors.bordercolor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                      color: AppColors
+                                                          .bordercolor),
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/images/img.png'),
@@ -350,50 +357,70 @@ class ViewplanView extends GetView<ViewplanController> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(width: 17.w,),
-                                        Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              Apptexts.food2,
-                                              style: TextStyle(
-                                                fontSize: 12.sp,
-                                                fontFamily: ApptextStyle.fontfamily,
-                                                color: AppColors.blackTextColor,
-                                                fontWeight: FontWeight.w600,
+                                              SizedBox(
+                                                width: 17.w,
                                               ),
-                                            ),
-                                            SizedBox(height: 4.h,),
-                                            Text(
-                                              Apptexts.recommended,
-                                              style: TextStyle(
-                                                fontSize:8.sp,
-                                                fontFamily: ApptextStyle.fontfamily,
-                                                color: AppColors.blackTextColor.withOpacity(0.4),
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            ),
-                                          ],
-                                        )
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    Apptexts.food2,
+                                                    style: TextStyle(
+                                                      fontSize: 12.sp,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4.h,
+                                                  ),
+                                                  Text(
+                                                    Apptexts.recommended,
+                                                    style: TextStyle(
+                                                      fontSize: 8.sp,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor
+                                                          .withOpacity(0.4),
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ],
+                                              )
                                             ],
                                           ),
                                         ),
                                       ),
                                       Spacer(),
                                       Padding(
-                                        padding:  EdgeInsets.symmetric(vertical: 13.h),
-                                        child: Container(
-                                          height: 46.h,
-                                          width: 46.w,
-                                          decoration: BoxDecoration(
-                                              color: AppColors.Profilecircle,
-                                              borderRadius:
-                                                  BorderRadius.circular(13)),
-                                          child: Icon(
-                                            Icons.add,
-                                            color: AppColors.whiteTextColor,
-                                            size: 25.h,
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 13.h),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Get.to(PickyourownView(),
+                                                binding: PickyourownBinding());
+                                          },
+                                          child: Container(
+                                            height: 40.h,
+                                            width: 44.w,
+                                            decoration: BoxDecoration(
+                                                color: AppColors.Profilecircle,
+                                                borderRadius:
+                                                    BorderRadius.circular(13)),
+                                            child: Icon(
+                                              Icons.add,
+                                              color: AppColors.whiteTextColor,
+                                              size: 25.h,
+                                            ),
                                           ),
                                         ),
                                       )
@@ -401,11 +428,13 @@ class ViewplanView extends GetView<ViewplanController> {
                                   );
                                 }),
                           ),
-                          SizedBox(height: 5.w,),
+                          // SizedBox(
+                          //   height: 5.w,
+                          // ),
                           Row(
                             children: [
                               SvgPicture.asset(
-                                Appasset. lunchyellow,
+                                Appasset.lunchyellow,
                                 height: 26.h,
                               ),
                               SizedBox(
@@ -426,7 +455,7 @@ class ViewplanView extends GetView<ViewplanController> {
                             height: 15.h,
                           ),
                           SizedBox(
-                            height: 180.h,
+                            height: 170.h,
                             child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
                                 padding: EdgeInsets.all(0),
@@ -434,26 +463,31 @@ class ViewplanView extends GetView<ViewplanController> {
                                 scrollDirection: Axis.vertical,
                                 itemBuilder: (context, index) {
                                   return Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 15.h),
                                         child: Container(
-                                          height: 75.h,
+                                          height: 70.h,
                                           width: 253.w,
                                           decoration: BoxDecoration(
                                               borderRadius:
-                                              BorderRadius.circular(10),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
-                                                  color: AppColors.bordercolor)),
+                                                  color:
+                                                      AppColors.bordercolor)),
                                           child: Row(
                                             children: [
                                               Container(
-                                                height: 75.h,
+                                                height: 70.h,
                                                 width: 80.w,
                                                 decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10),
-                                                  border: Border.all(color: AppColors.bordercolor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                      color: AppColors
+                                                          .bordercolor),
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/images/img.png'),
@@ -461,28 +495,41 @@ class ViewplanView extends GetView<ViewplanController> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(width: 17.w,),
+                                              SizedBox(
+                                                width: 17.w,
+                                              ),
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     Apptexts.food2,
                                                     style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.blackTextColor,
-                                                      fontWeight: FontWeight.w600,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
-                                                  SizedBox(height: 4.h,),
+                                                  SizedBox(
+                                                    height: 4.h,
+                                                  ),
                                                   Text(
                                                     Apptexts.recommended,
                                                     style: TextStyle(
-                                                      fontSize:8.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.blackTextColor.withOpacity(0.4),
-                                                      fontWeight: FontWeight.w500,
+                                                      fontSize: 8.sp,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor
+                                                          .withOpacity(0.4),
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                     ),
                                                   ),
                                                 ],
@@ -493,18 +540,25 @@ class ViewplanView extends GetView<ViewplanController> {
                                       ),
                                       Spacer(),
                                       Padding(
-                                        padding:  EdgeInsets.symmetric(vertical: 13.h),
-                                        child: Container(
-                                          height: 46.h,
-                                          width: 46.w,
-                                          decoration: BoxDecoration(
-                                              color: AppColors.Profilecircle,
-                                              borderRadius:
-                                              BorderRadius.circular(13)),
-                                          child: Icon(
-                                            Icons.add,
-                                            color: AppColors.whiteTextColor,
-                                            size: 25.h,
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 13.h),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Get.to(PickyourownView(),
+                                                binding: PickyourownBinding());
+                                          },
+                                          child: Container(
+                                            height: 40.h,
+                                            width: 44.w,
+                                            decoration: BoxDecoration(
+                                                color: AppColors.Profilecircle,
+                                                borderRadius:
+                                                    BorderRadius.circular(13)),
+                                            child: Icon(
+                                              Icons.add,
+                                              color: AppColors.whiteTextColor,
+                                              size: 25.h,
+                                            ),
                                           ),
                                         ),
                                       )
@@ -512,7 +566,9 @@ class ViewplanView extends GetView<ViewplanController> {
                                   );
                                 }),
                           ),
-                          SizedBox(height: 5.w,),
+                          // SizedBox(
+                          //   height: 5.w,
+                          // ),
                           Row(
                             children: [
                               SvgPicture.asset(
@@ -537,7 +593,7 @@ class ViewplanView extends GetView<ViewplanController> {
                             height: 15.h,
                           ),
                           SizedBox(
-                            height: 180.h,
+                            height: 170.h,
                             child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
                                 padding: EdgeInsets.all(0),
@@ -545,26 +601,31 @@ class ViewplanView extends GetView<ViewplanController> {
                                 scrollDirection: Axis.vertical,
                                 itemBuilder: (context, index) {
                                   return Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 15.h),
                                         child: Container(
-                                          height: 75.h,
+                                          height: 70.h,
                                           width: 253.w,
                                           decoration: BoxDecoration(
                                               borderRadius:
-                                              BorderRadius.circular(10),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
-                                                  color: AppColors.bordercolor)),
+                                                  color:
+                                                      AppColors.bordercolor)),
                                           child: Row(
                                             children: [
                                               Container(
-                                                height: 75.h,
+                                                height: 70.h,
                                                 width: 80.w,
                                                 decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10),
-                                                  border: Border.all(color: AppColors.bordercolor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                      color: AppColors
+                                                          .bordercolor),
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/images/img.png'),
@@ -572,28 +633,41 @@ class ViewplanView extends GetView<ViewplanController> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(width: 17.w,),
+                                              SizedBox(
+                                                width: 17.w,
+                                              ),
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     Apptexts.food2,
                                                     style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.blackTextColor,
-                                                      fontWeight: FontWeight.w600,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
-                                                  SizedBox(height: 4.h,),
+                                                  SizedBox(
+                                                    height: 4.h,
+                                                  ),
                                                   Text(
                                                     Apptexts.recommended,
                                                     style: TextStyle(
-                                                      fontSize:8.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.blackTextColor.withOpacity(0.4),
-                                                      fontWeight: FontWeight.w500,
+                                                      fontSize: 8.sp,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor
+                                                          .withOpacity(0.4),
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                     ),
                                                   ),
                                                 ],
@@ -604,18 +678,25 @@ class ViewplanView extends GetView<ViewplanController> {
                                       ),
                                       Spacer(),
                                       Padding(
-                                        padding:  EdgeInsets.symmetric(vertical: 13.h),
-                                        child: Container(
-                                          height: 46.h,
-                                          width: 46.w,
-                                          decoration: BoxDecoration(
-                                              color: AppColors.Profilecircle,
-                                              borderRadius:
-                                              BorderRadius.circular(13)),
-                                          child: Icon(
-                                            Icons.add,
-                                            color: AppColors.whiteTextColor,
-                                            size: 25.h,
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 13.h),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Get.to(PickyourownView(),
+                                                binding: PickyourownBinding());
+                                          },
+                                          child: Container(
+                                            height: 40.h,
+                                            width: 44.w,
+                                            decoration: BoxDecoration(
+                                                color: AppColors.Profilecircle,
+                                                borderRadius:
+                                                    BorderRadius.circular(13)),
+                                            child: Icon(
+                                              Icons.add,
+                                              color: AppColors.whiteTextColor,
+                                              size: 25.h,
+                                            ),
                                           ),
                                         ),
                                       )
@@ -623,7 +704,9 @@ class ViewplanView extends GetView<ViewplanController> {
                                   );
                                 }),
                           ),
-                          SizedBox(height: 5.w,),
+                          // SizedBox(
+                          //   height: 5.w,
+                          // ),
                           Row(
                             children: [
                               SvgPicture.asset(
@@ -648,7 +731,7 @@ class ViewplanView extends GetView<ViewplanController> {
                             height: 15.h,
                           ),
                           SizedBox(
-                            height: 180.h,
+                            height: 170.h,
                             child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
                                 padding: EdgeInsets.all(0),
@@ -656,27 +739,31 @@ class ViewplanView extends GetView<ViewplanController> {
                                 scrollDirection: Axis.vertical,
                                 itemBuilder: (context, index) {
                                   return Row(
-
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 15.h),
                                         child: Container(
-                                          height: 75.h,
+                                          height: 70.h,
                                           width: 253.w,
                                           decoration: BoxDecoration(
                                               borderRadius:
-                                              BorderRadius.circular(10),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
-                                                  color: AppColors.bordercolor)),
+                                                  color:
+                                                      AppColors.bordercolor)),
                                           child: Row(
                                             children: [
                                               Container(
-                                                height: 75.h,
+                                                height: 70.h,
                                                 width: 80.w,
                                                 decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10),
-                                                  border: Border.all(color: AppColors.bordercolor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                      color: AppColors
+                                                          .bordercolor),
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/images/img.png'),
@@ -684,28 +771,41 @@ class ViewplanView extends GetView<ViewplanController> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(width: 17.w,),
+                                              SizedBox(
+                                                width: 17.w,
+                                              ),
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     Apptexts.food2,
                                                     style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.blackTextColor,
-                                                      fontWeight: FontWeight.w600,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
-                                                  SizedBox(height: 4.h,),
+                                                  SizedBox(
+                                                    height: 4.h,
+                                                  ),
                                                   Text(
                                                     Apptexts.recommended,
                                                     style: TextStyle(
-                                                      fontSize:8.sp,
-                                                      fontFamily: ApptextStyle.fontfamily,
-                                                      color: AppColors.blackTextColor.withOpacity(0.4),
-                                                      fontWeight: FontWeight.w500,
+                                                      fontSize: 8.sp,
+                                                      fontFamily: ApptextStyle
+                                                          .fontfamily,
+                                                      color: AppColors
+                                                          .blackTextColor
+                                                          .withOpacity(0.4),
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                     ),
                                                   ),
                                                 ],
@@ -716,25 +816,35 @@ class ViewplanView extends GetView<ViewplanController> {
                                       ),
                                       Spacer(),
                                       Padding(
-                                        padding:  EdgeInsets.symmetric(vertical: 13.h),
-                                        child: Container(
-                                          height: 46.h,
-                                          width: 46.w,
-                                          decoration: BoxDecoration(
-                                              color: AppColors.Profilecircle,
-                                              borderRadius:
-                                              BorderRadius.circular(13)),
-                                          child: Icon(
-                                            Icons.add,
-                                            color: AppColors.whiteTextColor,
-                                            size: 25.h,
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 13.h),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Get.to(PickyourownView(),
+                                                binding: PickyourownBinding());
+                                          },
+                                          child: Container(
+                                            height: 40.h,
+                                            width: 44.w,
+                                            decoration: BoxDecoration(
+                                                color: AppColors.Profilecircle,
+                                                borderRadius:
+                                                    BorderRadius.circular(13)),
+                                            child: Icon(
+                                              Icons.add,
+                                              color: AppColors.whiteTextColor,
+                                              size: 25.h,
+                                            ),
                                           ),
                                         ),
                                       )
                                     ],
                                   );
                                 }),
-                          )
+                          ),
+                          SizedBox(
+                            height: 35.h,
+                          ),
                         ],
                       ),
                     )

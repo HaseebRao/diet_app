@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 
-class Q6Controller extends GetxController{
+import '../../applausescreen/binding/applausescreen_binding.dart';
+import '../../applausescreen/view/applausescreen_view.dart';
 
+class Q6Controller extends GetxController {
   final RxInt selectedRadio = 0.obs;
   RxBool isDarkMode = false.obs;
 
@@ -15,7 +17,17 @@ class Q6Controller extends GetxController{
   }
 
   void changeTheme() {
-
     update();
+  }
+
+  void selectValue() {
+    if (selectedRadio.value == 0) {
+      Get.snackbar("Error", "Please choose any one");
+    } else {
+      Get.to(
+        ApplausescreenView(),
+        binding: ApplausescreenBinding(),
+      );
+    }
   }
 }

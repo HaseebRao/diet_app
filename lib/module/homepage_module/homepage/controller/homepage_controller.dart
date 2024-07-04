@@ -4,21 +4,20 @@ import '../../../../common/app_assets.dart';
 import '../../../../common/app_text.dart';
 
 class HomepageController extends GetxController {
-  final List<String>textes =[
-"Intermittent Fasting",
+  final List<String> textes = [
+    "Intermittent Fasting",
     "Water",
     "My Daily Diet",
     "Cheat Food",
     "Grocery",
     "Diary",
-
-];
-  var currentIndex = 0.obs; // Observable for the current index of the carousel
+  ];
+  var currentIndex = 0.obs;
   var currentPage = 0.obs;
   var isChecked = <bool>[false, false, false].obs;
-  var isListVisible = false.obs; // Observable to track the visibility of the list
-  var isDropdownOpen = false.obs; // Observable to track dropdown state
-  var issDropdownOpen = true.obs; // Observable to track dropdown state
+  var isListVisible = false.obs;
+  var isDropdownOpen = false.obs;
+  var issDropdownOpen = true.obs;
   final List<String> imageUrls = [
     'assets/images/staar.png',
     'assets/images/staar.png',
@@ -26,9 +25,12 @@ class HomepageController extends GetxController {
   ];
 
   var text = <ModelClass>[
-    ModelClass(Apptexts.breakfasts, Apptexts.carbs, Appasset.egg, "assets/images/image.png"),
-    ModelClass(Apptexts.lunch, Apptexts.carbs, Appasset.lunche, "assets/images/imagee.png"),
-    ModelClass(Apptexts.dinner, Apptexts.carbs, Appasset.dinneer, "assets/images/imageee.png"),
+    ModelClass(Apptexts.breakfasts, Apptexts.carbs, Appasset.egg,
+        "assets/images/image.png"),
+    ModelClass(Apptexts.lunch, Apptexts.carbs, Appasset.lunche,
+        "assets/images/imagee.png"),
+    ModelClass(Apptexts.dinner, Apptexts.carbs, Appasset.dinneer,
+        "assets/images/imageee.png"),
   ].obs;
 
   void onPageChanged(int index, CarouselPageChangedReason reason) {
@@ -36,11 +38,13 @@ class HomepageController extends GetxController {
   }
 
   void toggleListVisibility() {
-    isListVisible.value = !isListVisible.value; // Toggle the visibility of the list
+    isListVisible.value = !isListVisible.value;
   }
+
   void openDropdown() {
     isDropdownOpen.toggle();
   }
+
   void openDropdowns() {
     issDropdownOpen.toggle();
   }

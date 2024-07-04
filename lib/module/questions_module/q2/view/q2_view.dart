@@ -1,4 +1,3 @@
-
 import 'dart:math';
 import 'package:diet_app/common/app_colors.dart';
 import 'package:diet_app/module/questions_module/q2/controller/q2_controller.dart';
@@ -54,7 +53,7 @@ class Q2View extends GetView<Q2Controller> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height:35.h,
+              height: 42.h,
             ),
             SizedBox(
               height: 25.h,
@@ -64,9 +63,10 @@ class Q2View extends GetView<Q2Controller> {
                   hoverColor: Colors.transparent,
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.all(0),
-                  onPressed: (){
+                  onPressed: () {
                     Get.back();
-                  }, icon: SvgPicture.asset(Appasset.Arrowdiet)),
+                  },
+                  icon: SvgPicture.asset(Appasset.Arrowdiet)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +91,7 @@ class Q2View extends GetView<Q2Controller> {
               backgroundColor: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
               valueColor:
-              AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
+                  AlwaysStoppedAnimation<Color>(AppColors.Profilecircle),
             ),
             SizedBox(
               height: 45.h,
@@ -99,9 +99,9 @@ class Q2View extends GetView<Q2Controller> {
             Center(
               child: Text(
                 textAlign: TextAlign.center,
-                Apptexts.weight,
+                Apptexts.Q2,
                 style: TextStyle(
-                  fontSize: 19.sp,
+                  fontSize: 18.sp,
                   fontFamily: ApptextStyle.fontfamily,
                   color: AppColors.blackTextColor,
                   fontWeight: FontWeight.w700,
@@ -138,7 +138,7 @@ class Q2View extends GetView<Q2Controller> {
                             builder: (context, index) => itemBuilder(context,
                                 index, index == controller.selectedHour.value),
                             itemCount:
-                            200, // Increase itemCount to 500 for hours
+                                200, // Increase itemCount to 500 for hours
                             initialIndex: controller.selectedHour.value,
                             looping: false,
                             style: wheelStyle,
@@ -228,14 +228,22 @@ class Q2View extends GetView<Q2Controller> {
                 ),
               ],
             ),
-            SizedBox(height: 35.h), // Add some spacing
+            SizedBox(height: 35.h),
             Center(
               child: Container(
                 height: 45.h,
-                width: 150.w,
+                width: 140.w,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                      color: AppColors.backcolor.withOpacity(0.7), width: 1.w),
+                  color: AppColors.whiteTextColor,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 2), // changes position of shadow
+                    ),
+                  ],
                 ),
                 child: Center(
                   child: Obx(() {
@@ -245,10 +253,10 @@ class Q2View extends GetView<Q2Controller> {
                         controller.selectedWeightUnitIndex.value;
                     return Text(
                       '${selectedWeightUnitIndex == 0 ? selectedHour.toString().padLeft(
-                        2,
-                      ) + '.' + selectedMinute.toString().padLeft(
-                        2,
-                      ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
+                            2,
+                          ) + '.' + selectedMinute.toString().padLeft(
+                            2,
+                          ) + " Kg" : (selectedHour * 2.20462).toStringAsFixed(2) + " Lb"}',
                       style: TextStyle(
                           fontSize: 22.0,
                           height: 1.5,
@@ -258,14 +266,18 @@ class Q2View extends GetView<Q2Controller> {
                   }),
                 ),
               ),
-            ),
-          Spacer(),
+            ), // Add some spacing
+
+            Spacer(),
             GestureDetector(
               onTap: () {
-                Get.to(Q3View(),binding: Q3Binding(),);
+                Get.to(
+                  Q3View(),
+                  binding: Q3Binding(),
+                );
               },
               child: Padding(
-                padding:  EdgeInsets.only(bottom: 45.h),
+                padding: EdgeInsets.only(bottom: 45.h),
                 child: Container(
                   height: 47.h,
                   decoration: BoxDecoration(
